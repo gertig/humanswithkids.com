@@ -20,7 +20,7 @@ class Post < ActiveRecord::Base
   end
   
   def should_generate_new_friendly_id?
-    true #toggle this to false when changing back to the correct title
+    self.id != 1 #this makes sure that the Hack a Marathon slug doesn't get changed by accident
   end
   
   
