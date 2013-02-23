@@ -1,4 +1,6 @@
 ---
+364-4up@2x.png: 364-4up@2x-46531d50ad139fc457f99d3cf7545bbc.png
+364-4up@2x/index.png: 364-4up@2x-46531d50ad139fc457f99d3cf7545bbc.png
 rails.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
 rails/index.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
 application.js: application-def90fee1d5497126c55aa9964e078bb.js
