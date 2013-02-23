@@ -4,6 +4,10 @@ class SessionsController < ApplicationController
   def new
     puts "New Session"
   end
+  
+  def not_today
+    redirect_to root_url
+  end
 
   def create
     puts "Trying to Login"
