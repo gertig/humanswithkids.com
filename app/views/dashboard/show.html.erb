@@ -1,0 +1,17 @@
+<div class="row top">
+  <div class="span8 offset2 post-content">
+    <h1><%= current_user.name %></h1>
+    
+    <%= link_to 'New Post', new_user_post_path(current_user.id), class: "btn" %>
+  
+    
+    <table class="table">
+     <% @posts.each do |post| %>
+       <tr>
+         <td><%= link_to post.title, blogpost_path(post) %></td>
+         <td><%= link_to post.published_on, edit_user_post_path(current_user, post) %></td>
+       </tr>
+     <% end %>
+    </table>
+  </div>
+</div><!--/row-->

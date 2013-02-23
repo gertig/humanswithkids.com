@@ -1,0 +1,35 @@
+
+<h1 style="text-align: center;">Andrew Gertig</h1>
+
+<div class="row">
+
+  <div class="span10">
+   <% @posts.each do |post| %>
+   <div class="row">
+     <div class="span2 post-author">
+       <p>
+         <strong><%= link_to post.user.name, author_path(post.user) %></strong>
+       </p>
+       <p>
+        <%= post.published_on %>
+       </p>
+     </div>
+     
+     <div class="span8 post-content">
+       <h2 id="post_title">
+           <%= link_to post.title, blogpost_path(post) %>
+       </h2>
+
+       <div id="post_body">
+          <%#= raw post.content %>
+       </div>
+     </div>
+   </div>
+   <% end %>
+  </div>
+ 
+  <div class="span2 authors well">
+
+  </div>
+  
+</div><!--/row-->

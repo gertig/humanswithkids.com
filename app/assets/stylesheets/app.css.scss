@@ -1,0 +1,73 @@
+//* { outline: 1px solid #369; }
+
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+
+html {
+//  height: 100%;
+  background-image: url(/assets/grid.png); 
+}
+
+body { 
+//  padding-top: 0px; 
+  background-image: url(/assets/grid.png); 
+//  height: 100%;
+}
+
+.top {
+  margin-top: 20px;
+}
+
+
+#admin-link {
+  position: absolute;
+  top: 6px;
+  right: 5px;
+  width: 30px;
+  height: 21px;
+  background: #EFEFEF;
+}
+
+#home-link {
+  position: absolute;
+  top: 6px;
+  left: 5px;
+  width: 30px;
+  height: 21px;
+}
+
+.post-author {
+   padding-top: 20px; 
+   text-align: right;
+}
+
+.post-content {
+  background: rgba(255,255,255,.3); 
+  padding: 0 10px 10px;
+}
+
+.post.contain {
+  width: 600px;
+  margin: 0 auto;
+}
+
+/* HOME
+====================== */
+.authors {
+  
+  &.well {
+    background: rgba(255,255,255,.3);
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    li { list-style: none;}
+  }
+}

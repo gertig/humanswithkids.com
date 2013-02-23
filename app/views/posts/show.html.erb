@@ -1,0 +1,12 @@
+<section id="post-<%= @post.id %>">
+  <div class="post contain">
+      <h1>
+          <%= @post.title %>
+      </h1>
+
+      <% if @post.content %>
+        <%= markdown(@post.content).to_html.html_safe %>
+      <% end %>
+
+  </div>
+</section>

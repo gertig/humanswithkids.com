@@ -1,0 +1,22 @@
+module PathsHelper
+  
+  def admin_path
+    user_signed_in? ? dashboard_path : "/auth/identity"
+  end
+  
+  def author_path(user)
+    "/#{user.name.downcase}" 
+  end
+  
+  def blogpost_path(post)
+    if !post.published_at.nil?
+      time = post.published_at.strftime("%Y/%m")
+      path = "/#{time}/#{post.slug}"
+    else
+      path = post
+    end
+    
+    path
+  end
+  
+end
