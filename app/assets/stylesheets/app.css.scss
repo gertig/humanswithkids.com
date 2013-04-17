@@ -52,6 +52,10 @@ body {
    text-align: right;
 }
 
+h3.post-title {
+  margin-bottom: 0px;
+}
+
 .post-content {
   background: rgba(255,255,255,.3); 
   padding: 0 10px 10px;
@@ -60,6 +64,15 @@ body {
 
 /* HOME
 ====================== */
+h1#blog-title {
+  margin: 20px 0;
+  text-align: center;
+}
+
+p.post-date {
+  margin-top: 0;
+}
+
 .authors {
   
   &.well {
