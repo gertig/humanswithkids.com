@@ -8,6 +8,7 @@ Delete the following sprocket directive in application.css.scss:
  3. Import all additional stylesheets from your app/assets/stylesheets directory underneath the bourbon import:
 */
 
-@import "bourbon";
+/*@import "bourbon";*/
 @import "bootstrap";
 @import "app";
+@import "posts";

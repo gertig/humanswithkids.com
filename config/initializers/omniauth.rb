@@ -1,14 +1,17 @@
 module OmniAuth::Strategies
 
    class Identity
+     # http://stackoverflow.com/questions/8854703/override-auth-identity-page-of-omniauth-identity
      # def request_phase
      #   redirect '/'
      # end
      
+     #Overriding this prevents the form from being displayed at all
      def registration_form
        redirect '/'
      end
      
+     #Overriding this makes submitting the form just redirect to the root
      def registration_phase
        options[:registration_path] = nil
        redirect '/'
