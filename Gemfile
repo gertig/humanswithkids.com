@@ -10,10 +10,6 @@ end
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -27,7 +23,8 @@ gem "cancan", "~> 1.6.9"
 gem "tophat", "~> 2.1.0"
 gem "bourbon", "~> 3.1.1"
 gem "neat", "~> 1.2.0"
-gem "bootstrap-sass", "~> 2.1.0.0"
+# gem "bootstrap-sass", "~> 2.1.0.0"
+gem "bootstrap-sass", "~> 2.3.1.0"
 gem "backbonejs-rails", "~> 0.0.6"
 gem "friendly_id", "~> 4.0.9"
 gem 'carrierwave', "~> 0.8.0"
