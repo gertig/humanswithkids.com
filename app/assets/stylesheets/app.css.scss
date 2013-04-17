@@ -19,6 +19,7 @@ body {
 }
 
 .container {
+  width: auto; //this fixes the problem with Bootstrap's 940px width not allowing the posts to be fluid
   max-width: 600px;
   margin: 0 auto;
 }
