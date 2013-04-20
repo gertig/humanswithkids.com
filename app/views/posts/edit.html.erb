@@ -1,5 +1,8 @@
 <h1>Editing</h1>
 <h4><%= @post.title %></h4>
+<h5><%= @post.id %></h5>
+<h5><%= @post.published_on %></h5>
+<h5><%= blogpost_path(@post) %></h5>
 
 <%= render 'form' %>
 

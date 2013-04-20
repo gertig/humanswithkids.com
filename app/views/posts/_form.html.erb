@@ -23,6 +23,10 @@
       <%= f.check_box :published %> Published
     <% end %>
     
+    <%= f.label :protect_slug, class: "checkbox" do %>
+      <%= f.check_box :protect_slug %> Protect url slug from updates
+    <% end %>
+    
   
   <div class="form-actions">
     <%= f.submit class: "btn" %>
