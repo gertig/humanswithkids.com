@@ -32,3 +32,6 @@
     <%= f.submit class: "btn" %>
   </div>
 <% end %>
+
+<p><b>Tip:</b> when changing the published_at date so the url is correct for old Posts, change it from heroku console.</p>
+<p><em>Post.last.update_attribute(:published_at, '2011-05-15 00:00:00')</em></p>
