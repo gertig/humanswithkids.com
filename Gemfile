@@ -4,7 +4,7 @@ gem 'rails', '3.2.13'
   
 group :development do
   gem "quiet_assets", "~> 1.0.2" #Gets the junk out of the console
-  gem "sextant", "~> 0.2.3" #Rails routes at /rails/routes without rake routs
+  gem "sextant", "~> 0.2.3" #Rails routes at /rails/routes without rake routes
 end
 
 group :assets do
@@ -30,3 +30,8 @@ gem 'carrierwave', "~> 0.8.0"
 gem 'cloudinary', "~> 1.0"
 gem "nested_scaffold", "~> 0.2.1"
 gem "redcarpet", "~> 2.2.2"
+
+# sitemap generator will store files on S3 via fog/carrierwave
+gem 'sitemap_generator', '~> 3.4'
+gem 'fog' # uploads to S3
+
