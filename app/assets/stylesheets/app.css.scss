@@ -87,3 +87,18 @@ p.post-date {
     li { list-style: none;}
   }
 }
+
+/* SOCIAL BUTTONS
+====================== */
+#social-buttons {
+  margin-bottom: 60px;
+  margin: 0 auto;
+  text-align: center;
+  
+  a {
+    margin: 8px;
+    &:active, &:hover {
+      text-decoration: none;
+    }
+  }
+}

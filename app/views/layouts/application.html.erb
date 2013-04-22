@@ -29,6 +29,21 @@
 
   <div class="container">
     <%= yield %>
+    
+    <div id="social-buttons" class="social">
+      <%= link_to "http://twitter.com/gertig" do %>
+        <%= image_tag(asset_path("twitter42.png")) %>
+      <% end %>
+      
+      <%= link_to "http://youtube.com/user/AndrewGertig" do %>
+        <%= image_tag(asset_path("youtube42.png")) %>
+      <% end %>
+      
+      <%= link_to "https://plus.google.com/111594140093002939124" do %>
+        <%= image_tag(asset_path("google-plus42.png")) %>
+      <% end %>
+
+    </div>
   </div> <!-- /container -->
 
   <!-- Javascripts
