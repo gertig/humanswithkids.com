@@ -34,4 +34,5 @@ gem "redcarpet", "~> 2.2.2"
 # sitemap generator will store files on S3 via fog/carrierwave
 gem 'sitemap_generator', '~> 3.4'
 gem 'fog' # uploads to S3
+gem 'rack-rewrite'
 
