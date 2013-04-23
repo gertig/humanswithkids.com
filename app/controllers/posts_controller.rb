@@ -1,6 +1,20 @@
 class PostsController < ApplicationController
   # GET users/1/posts
   # GET users/1/posts.json
+  
+  before_filter :find_post
+
+  def find_post
+    @post = Post.find(params[:id])
+
+    # If an old id or a numeric id was used to find the record, then
+    # the request path will not match the post_path, and we should do
+    # a 301 redirect that uses the current friendly id.
+    if request.path != blogpost_path(@post)
+      return redirect_to blogpost_path(@post), :status => :moved_permanently
+    end
+  end
+  
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts
@@ -19,10 +33,11 @@ class PostsController < ApplicationController
     @post = Post.find_by_slug(params[:id])
     @user = @post.user
 
-
     respond_to do |format|
-      format.html # show.html.erb
-      format.json { render :json => @post }
+      # if !@post.nil?
+        format.html # show.html.erb
+        format.json { render :json => @post }
+      # end
     end
   end
 
