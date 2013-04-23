@@ -14,7 +14,14 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= csrf_meta_tags %>
   
-  <link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lora|Poly|Open+Sans|Dancing+Script' rel='stylesheet' type='text/css'>
+
+  <!-- 
+    font-family: 'Lora', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Open Sans Condensed', sans-serif;
+  -->
   
   <%= render "analytics" %>
   
@@ -33,7 +40,7 @@
 
   <div class="container">
     <%= link_to root_url, id: "blog-title"  do %>
-      <h1 id="blog2-title">Andrew Gertig</h1>
+      Andrew Gertig
     <% end %>
     
     <%= yield %>

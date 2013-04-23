@@ -34,10 +34,8 @@ class PostsController < ApplicationController
     @user = @post.user
 
     respond_to do |format|
-      # if !@post.nil?
-        format.html # show.html.erb
-        format.json { render :json => @post }
-      # end
+      format.html # show.html.erb
+      format.json { render :json => @post }
     end
   end
 

@@ -4,13 +4,26 @@
 
 .post-container {
   position: relative;
-  margin-top: 60px;
+  margin-top: 40px;
   margin-bottom: 80px;
   
+  p, li {
+    font-family: 'Poly', 'Lora', serif;
+  }
+  
   p {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 26px;
     margin-bottom: 14px;
+  }
+  
+  ol {
+    padding-left: 20px;
+    
+    li {
+        font-size: 16px;
+        line-height: 26px;
+      }
   }
   
   .post-date {
@@ -19,6 +32,23 @@
     color: #ccc;
   }
 }
+
+/* POST LISTING or ARCHIVE
+====================== */
+h3.post-title {
+  margin-bottom: 0px;
+  
+  a {
+    color: rgb(42, 66, 78);
+  }
+}
+
+p.post-date {
+  margin-top: 0;
+  color: #ccc;
+  
+}
+
 
 /* Responsive
 -------------------------------------------------- */

@@ -8,14 +8,16 @@
 
 
 html {
-//  height: 100%;
-  background-image: url(/assets/grid.png); 
+/*  background-image: url(/assets/grid.png); */
 }
 
 body { 
-//  padding-top: 0px; 
-  background-image: url(/assets/grid.png); 
+/*  background-image: url(/assets/grid.png); */
 //  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-family: 'Open Sans', sans-serif;
 }
 
 .container {
@@ -47,59 +49,30 @@ body {
   height: 21px;
 }
 
-.post-author {
-   padding-top: 20px; 
-   text-align: right;
-}
-
-h3.post-title {
-  margin-bottom: 0px;
-}
-
-.post-content {
-  background: rgba(255,255,255,.3); 
-  padding: 0 10px 10px;
-}
-
 
 /* HOME
 ====================== */
 
 a#blog-title {
   color: #8562ef;
-  &:hover { text-decoration: none; }
-  
-  h1 {
-    margin: 20px 0;
+  margin: 20px 0 0;
+  font-size: 3.0em;
+  line-height: 1.5em;
   /*  text-align: center;*/
-    font-family: 'Satisfy', cursive;
-  }
-}
-
-
-p.post-date {
-  margin-top: 0;
-}
-
-.authors {
-  
-  &.well {
-    background: rgba(255,255,255,.3);
-  }
-  
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+/*    font-family: 'Satisfy', cursive;*/
+  font-family: 'Dancing Script', cursive; 
     
-    li { list-style: none;}
+  &:hover { 
+    text-decoration: none; 
   }
+
 }
+
 
 /* SOCIAL BUTTONS
 ====================== */
 #social-buttons {
-  margin-bottom: 60px;
+  padding-bottom: 60px;
   margin: 0 auto;
   text-align: center;
   
