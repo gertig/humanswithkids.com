@@ -64,11 +64,18 @@ h3.post-title {
 
 /* HOME
 ====================== */
-h1#blog-title {
-  margin: 20px 0;
-/*  text-align: center;*/
-  font-family: 'Satisfy', cursive;
+
+a#blog-title {
+  color: #8562ef;
+  &:hover { text-decoration: none; }
+  
+  h1 {
+    margin: 20px 0;
+  /*  text-align: center;*/
+    font-family: 'Satisfy', cursive;
+  }
 }
+
 
 p.post-date {
   margin-top: 0;
