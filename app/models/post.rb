@@ -4,6 +4,9 @@ class Post < ActiveRecord::Base
   
   scope :publisheds, where(:published => true)
   
+  scope :next,     lambda {|published_at| where("published_at > ?", published_at).order("published_at ASC") }
+  scope :previous, lambda {|published_at| where("published_at < ?", published_at).order("published_at DESC") }
+  
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history]
   
@@ -27,6 +30,16 @@ class Post < ActiveRecord::Base
     # 1. Create the post with the words in the url as the title.
     #    - A url like this: /2011/05/rails-backbone-js-example-screencast/
     #      needs a Post title like this: Rails backbone js example screencast and the Protect check box checked    
+  end
+  
+  def next
+    posts = Post.next(self.published_at)
+    posts.any? ? posts.first : false
+  end
+
+  def previous
+    posts = Post.previous(self.published_at)
+    posts.any? ? posts.first : false
   end
   
   

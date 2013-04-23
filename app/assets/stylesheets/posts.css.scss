@@ -46,7 +46,17 @@ h3.post-title {
 p.post-date {
   margin-top: 0;
   color: #ccc;
-  
+}
+
+
+/* POST NAV
+====================== */
+a.previous-post {
+  float: left;
+}
+
+a.next-post {
+  float: right;
 }
 
 

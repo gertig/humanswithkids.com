@@ -13,3 +13,8 @@
 
   </div>
 </section>
+
+<div id="post-navigation">
+  <%= link_to "← Previous Post", blogpost_path(@post.previous), class: "previous-post" if @post.previous %>
+  <%= link_to "Next Post →",  blogpost_path(@post.next), class: "next-post" if @post.next %>
+</div>
