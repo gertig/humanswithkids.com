@@ -5,4 +5,4 @@
 # Disallow: /
 
 # Sitemap: http://s3.amazonaws.com/andrewgertig.com/sitemaps/sitemap_index.xml.gz
-Sitemap: http://andrewgertig.com.s3-website-us-east-1.amazonaws.com/sitemaps/sitemap_index.xml.gz
+Sitemap: http://andrewgertig.com.s3-website-us-east-1.amazonaws.com/sitemaps/sitemap1.xml.gz

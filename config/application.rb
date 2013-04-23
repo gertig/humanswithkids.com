@@ -59,9 +59,15 @@ module Andrewgertig
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'  
     
-  #GERTIG - fixes assets on Heroku
-  config.assets.initialize_on_precompile = false
+    #GERTIG - fixes assets on Heroku
+    config.assets.initialize_on_precompile = false
   
+    #GERTIG - rewrites the sitemap URL to point to amazon S3
+    config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
+      # rewrite rules here
+      # r302 %r{^/sitemap.xml}, "http://#{ENV['FOG_HOST']}/sitemaps/sitemap1.xml.gz"
+      r302 %r{^/sitemap.xml}, "http://andrewgertig.com.s3-website-us-east-1.amazonaws.com/sitemaps/sitemap1.xml.gz"
+    end
 
 
   end
