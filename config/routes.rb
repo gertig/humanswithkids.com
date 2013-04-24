@@ -17,8 +17,12 @@ Andrewgertig::Application.routes.draw do
 
   match "dashboard", :to => "dashboard#show", :as => :dashboard
   
+  match "archives", :to => "posts#index", :as => :archives
+  
   match "/:year(/:month)/:id" => "posts#show", :constraints => { :year => /\d{4}/, :month => /\d{2}/ }
   # match '/:id', :to => "users#show"
+  
+  match "about", :to => "home#about", :as => :about
   
   root :to => 'home#index'
   get "home/index"

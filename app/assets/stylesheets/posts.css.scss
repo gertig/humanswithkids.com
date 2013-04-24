@@ -2,10 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.post-container {
+$black: rgb(42, 66, 78);
+
+article.post-container {
   position: relative;
   margin-top: 40px;
   margin-bottom: 80px;
+  
+  h2.post-title {
+    a {
+      color: $black;
+    }
+  }
   
   p, li {
     font-family: 'Poly', 'Lora', serif;
@@ -26,24 +34,25 @@
       }
   }
   
-  .post-date {
+  span.post-date {
     display: block;
     margin: -10px 0 10px;
     color: #ccc;
   }
 }
 
-/* POST LISTING or ARCHIVE
-====================== */
-h3.post-title {
+/* ARCHIVES
+=========================== */
+h2.archives-post-title {
   margin-bottom: 0px;
+  font-size: 24.5px;
   
   a {
-    color: rgb(42, 66, 78);
+    color: $black;
   }
 }
 
-p.post-date {
+span.archives-post-date {
   margin-top: 0;
   color: #ccc;
 }
@@ -53,10 +62,12 @@ p.post-date {
 ====================== */
 a.previous-post {
   float: left;
+  color: $purple;
 }
 
 a.next-post {
   float: right;
+  color: $purple;
 }
 
 

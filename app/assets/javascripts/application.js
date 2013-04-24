@@ -16,4 +16,5 @@
 //= require underscore
 //= require backbone
 //= require icanhaz
+//= require bootstrap-tooltip
 //= require_tree .

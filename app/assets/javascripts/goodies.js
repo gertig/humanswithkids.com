@@ -21,4 +21,6 @@ $(function(){
      $("div#messages").slideDown();
      $("div#messages").delay(5000).slideUp();
   }
+  
+  $('#email-me').tooltip();
 });

@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   # GET users/1/posts
   # GET users/1/posts.json
   
-  before_filter :find_post
+  before_filter :find_post, :only => :show
 
   def find_post
     @post = Post.find(params[:id])
@@ -16,8 +16,10 @@ class PostsController < ApplicationController
   end
   
   def index
-    @user = User.find(params[:user_id])
-    @posts = @user.posts
+    # @user = User.find(params[:user_id])
+    # @posts = @user.posts
+    
+    @posts = Post.publisheds.order("published_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -65,7 +67,8 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to([@post.user, @post], :notice => 'Post was successfully created.') }
+        # format.html { redirect_to([@post.user, @post], :notice => 'Post was successfully created.') }
+        format.html { redirect_to(blogpost_path(@post), :notice => 'Post was successfully created.') }
         format.json { render :json => @post, :status => :created, :location => [@post.user, @post] }
       else
         format.html { render :action => "new" }
