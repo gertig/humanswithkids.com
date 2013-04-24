@@ -66,7 +66,12 @@ module Andrewgertig
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
       # rewrite rules here
       # r302 %r{^/sitemap.xml}, "http://#{ENV['FOG_HOST']}/sitemaps/sitemap1.xml.gz"
+      # 301 is a permananet redirect (recommended)
+      # 302 is a temoporary redirect
       r302 %r{^/sitemap.xml}, "http://andrewgertig.com.s3-website-us-east-1.amazonaws.com/sitemaps/sitemap1.xml.gz"
+      r301 %r{.*}, 'http://www.andrewgertig.com$&', :if => Proc.new {|rack_env|
+        rack_env['SERVER_NAME'] == 'andrewgertig.com'
+      }
     end
 
 
