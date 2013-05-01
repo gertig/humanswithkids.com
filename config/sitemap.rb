@@ -35,6 +35,8 @@ SitemapGenerator::Sitemap.create do
   #     add article_path(article), :lastmod => article.updated_at
   #   end
   
+  add archives_path, :priority => 0.7, :changefreq => 'weekly'
+  
   # iterate over all the posts and generate links for the published ones
   Post.find_each do |post|
     if !post.published_at.nil?
