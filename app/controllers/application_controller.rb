@@ -12,6 +12,11 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
   
+  def is_andrew?
+    user_signed_in? && current_user.name == "Andrew"
+  end
+  helper_method :is_andrew?
+  
   def user_signed_in?
     !!current_user
   end

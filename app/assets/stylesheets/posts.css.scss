@@ -7,7 +7,7 @@ $black: rgb(42, 66, 78);
 article.post-container {
   position: relative;
   margin-top: 40px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   
   h2.post-title {
     a {
@@ -60,6 +60,10 @@ span.archives-post-date {
 
 /* POST NAV
 ====================== */
+#post-navigation {
+  margin-bottom: 40px;
+}
+
 a.previous-post {
   float: left;
   color: $purple;
