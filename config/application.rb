@@ -62,7 +62,7 @@ module Andrewgertig
     #GERTIG - fixes assets on Heroku
     config.assets.initialize_on_precompile = false
   
-    #GERTIG - rewrites the sitemap URL to point to amazon S3
+    #GERTIG - uses rack-rewrite gem to rewrite the sitemap URL to point to amazon S3
     config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
       # rewrite rules here
       # r302 %r{^/sitemap.xml}, "http://#{ENV['FOG_HOST']}/sitemaps/sitemap1.xml.gz"
@@ -76,6 +76,10 @@ module Andrewgertig
       r301 %r{.*}, 'http://www.andrewgertig.com$&', :if => Proc.new {|rack_env|
         rack_env['SERVER_NAME'] == 'andrewgertig.com'
       }
+      
+      # redirects the any url that ends in a / (forward slash) to the clean url without it
+      # http://rubular.com/r/rfCmOBjays
+      r301 %r{(.*)\/$}, 'http://www.andrewgertig.com$1'
     end
 
 
