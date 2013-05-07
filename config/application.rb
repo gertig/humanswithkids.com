@@ -79,7 +79,32 @@ module Andrewgertig
       
       # redirects any url that ends in a / (forward slash) to the clean url without it
       # http://rubular.com/r/rfCmOBjays
-      # r301 %r{(.*)\/$}, '$1'
+      r301 %r{(.+)\/$}, '$1'
+      
+      #Rails Request.env Variables
+      # SERVER_NAME
+      # PATH_INFO
+      # REMOTE_HOST
+      # HTTP_ACCEPT_ENCODING
+      # HTTP_USER_AGENT
+      # SERVER_PROTOCOL
+      # HTTP_CACHE_CONTROL
+      # HTTP_ACCEPT_LANGUAGE
+      # HTTP_HOST
+      # REMOTE_ADDR
+      # SERVER_SOFTWARE
+      # HTTP_KEEP_ALIVE
+      # HTTP_REFERER
+      # HTTP_COOKIE
+      # HTTP_ACCEPT_CHARSET
+      # REQUEST_URI
+      # SERVER_PORT
+      # GATEWAY_INTERFACE
+      # QUERY_STRING
+      # REMOTE_USER
+      # HTTP_ACCEPT
+      # REQUEST_METHOD
+      # HTTP_CONNECTION
       
     end
 
