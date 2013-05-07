@@ -77,9 +77,9 @@ module Andrewgertig
         rack_env['SERVER_NAME'] == 'andrewgertig.com'
       }
       
-      # redirects the any url that ends in a / (forward slash) to the clean url without it
+      # redirects any url that ends in a / (forward slash) to the clean url without it
       # http://rubular.com/r/rfCmOBjays
-      # r301 %r{(.*)\/$}, 'http://www.andrewgertig.com$1'
+      r301 %r{(.*)\/$}, '$1'
     end
 
 
