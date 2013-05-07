@@ -72,14 +72,14 @@ module Andrewgertig
       # redirects the sitemap URL to point to amazon S3
       r302 %r{^/sitemap.xml}, "http://andrewgertig.com.s3-website-us-east-1.amazonaws.com/sitemaps/sitemap1.xml.gz"
       
-      # redirects any url that ends in a / (forward slash) to the clean url without it
-      # http://rubular.com/r/rfCmOBjays
-      r301 %r{(.*)\/$}, '$1'
-      
       # redirects the root andrewgertig.com to www.andrewgertig.com
       r301 %r{.*}, 'http://www.andrewgertig.com$&', :if => Proc.new {|rack_env|
         rack_env['SERVER_NAME'] == 'andrewgertig.com'
       }
+      
+      # redirects any url that ends in a / (forward slash) to the clean url without it
+      # http://rubular.com/r/rfCmOBjays
+      r301 %r{(.*)\/$}, '$1'
       
     end
 
