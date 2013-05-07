@@ -79,7 +79,7 @@ module Andrewgertig
       
       # redirects any url that ends in a / (forward slash) to the clean url without it
       # http://rubular.com/r/rfCmOBjays
-      r301 %r{(.*)\/$}, '$1'
+      # r301 %r{(.*)\/$}, '$1'
       
     end
 
