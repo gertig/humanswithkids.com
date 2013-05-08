@@ -40,14 +40,15 @@
         <li><%= link_to "Archives", archives_path %></li>
         <li><%= link_to "Contact", "#", id: "email-me", title: "andrew.gertig at google's e-mail", data: { placement: "bottom", toggle: "tooltip" } %></li>
         <li><%= link_to "About", about_path %></li>
-        <!-- <li><%= "Hey Andrew" if is_andrew? %></li> -->
-        <li>
-          <%= link_to admin_path do %>
-            <div id="admin-link">
-              <%= image_tag(asset_path("364-4up@2x.png")) if user_signed_in? %>
-            </div>
-          <% end %>
-        </li>
+        <% if is_andrew? %>
+          <li class="admin-link"><%= link_to "Admin", admin_path %>
+            <!-- <%= link_to admin_path do %>
+              <div id="admin-link">
+                <%= image_tag(asset_path("364-4up@2x.png")) if user_signed_in? %>
+              </div>
+            <% end %> -->
+          </li>
+        <% end %>
       </ul>
     </nav>
     
