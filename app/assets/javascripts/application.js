@@ -17,4 +17,5 @@
 //= require backbone
 //= require icanhaz
 //= require bootstrap-tooltip
+//= require Countable
 //= require_tree .
