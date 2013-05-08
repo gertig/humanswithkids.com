@@ -97,12 +97,13 @@ class PostsController < ApplicationController
   # DELETE users/1/posts/1
   # DELETE users/1/posts/1.json
   def destroy
-    @user = User.find(params[:user_id])
+    # @user = User.find(params[:user_id])
+    @user = current_user
     @post = @user.posts.find(params[:id])
     @post.destroy
 
     respond_to do |format|
-      format.html { redirect_to user_posts_url(user) }
+      format.html { redirect_to user_posts_url(@user) }
       format.json { head :ok }
     end
   end

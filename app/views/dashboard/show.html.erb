@@ -5,14 +5,17 @@
     <%= link_to 'New Post', new_user_post_path(current_user.id), class: "btn" %>
   
     
-    <table class="table">
+    <table id="all-posts" class="table">
      <% @posts.each do |post| %>
-       <tr>
+       <tr class="<%= post.published? ? "published" : "private" %>">
          <td>
            <%= link_to post.title, blogpost_path(post) %></br>
            <%= post.published_on %>
          </td>
-         <td><%= link_to "Edit", edit_user_post_path(current_user, post) %></td>
+         <td>
+           <%= link_to "Edit", edit_user_post_path(current_user, post) %></br>
+           <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+         </td>
        </tr>
      <% end %>
     </table>
