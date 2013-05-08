@@ -11,7 +11,7 @@ class PostsController < ApplicationController
     # the request path will not match the post_path, and we should do
     # a 301 redirect that uses the current friendly id.
     if request.path != blogpost_path(@post)
-      return redirect_to blogpost_path(@post), :status => :moved_permanently
+      return redirect_to blogpost_path(@post), :status => :moved_permanently if @post.published?
     end
   end
   
