@@ -9,7 +9,7 @@
       </h2>
       <span class="post-date"><%= @post.published_on %></span>
       
-      <% link_to "Edit", edit_user_post_path(current_user, @post) if is_andrew? %>
+      <%= link_to "Edit", edit_user_post_path(current_user, @post) if is_andrew? %>
       
       <span class="twitter-button">
         <%= render "twitter_button" %>
