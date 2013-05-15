@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
+  include ActionView::Helpers
+  
   belongs_to :user
   attr_accessible :content, :permalink_path, :published, :published_at, :slug, :title, :protect_slug
   
@@ -40,6 +42,14 @@ class Post < ActiveRecord::Base
   def previous
     posts = Post.previous(self.published_at)
     posts.any? ? posts.first : false
+  end
+  
+  def meta_description
+    "#{strip_tags(strip_links(markdown(content.slice(0, 154).strip).to_html)).squish}..."
+  end
+  
+  def markdown(text)
+    RedcarpetCompat.new(text, :fenced_code, :gh_blockcode)
   end
   
   
