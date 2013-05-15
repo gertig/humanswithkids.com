@@ -1,6 +1,6 @@
 <% title @post.title %>
 <%# keywords %>
-<% description "#{@post.content.to_s.slice(0, 154).strip}..." %>
+<% description @post.meta_description %>
 
 <section id="post-<%= @post.id %>">
   <article class="post-container">
