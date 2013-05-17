@@ -8,7 +8,7 @@
 <%
  opengraph do |graph|
    graph.title "#{@post.title}"
-   graph.type 'website'
+   # graph.type 'object'
    graph.url "#{request.url}"
    graph.description @post.meta_description
    # graph.image "#{@post.header_image_url}"
