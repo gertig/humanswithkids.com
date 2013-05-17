@@ -6,8 +6,9 @@
 <%
  opengraph do |graph|
    graph.title "#{@post.title}"
-   graph.type 'object'
+   graph.type 'website'
    graph.url "#{request.url}"
+   graph.description @post.meta_description
    # graph.image "#{@post.header_image_url}"
    graph.image "http://f.cl.ly/items/34372102363p16220m2r/Gertig-Solo-04-Original.jpg"
  end
@@ -27,7 +28,7 @@
       </span>
       
       <div class="facebook-button">
-        <div class="fb-like" data-href="<%= request.url %>" data-send="false" data-width="450" data-show-faces="true"></div>
+        <div class="fb-like" data-href="<%= request.url %>" data-send="false" data-width="450" data-show-faces="false"></div>
       </div>
 
       <% if @post.content %>
