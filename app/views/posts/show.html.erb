@@ -24,6 +24,10 @@
       <span class="twitter-button">
         <%= render "twitter_button" %>
       </span>
+      
+      <div class="facebook-button">
+        <div class="fb-like" data-href="<%= request.url %>" data-send="false" data-width="450" data-show-faces="true"></div>
+      </div>
 
       <% if @post.content %>
         <%= markdown(@post.content).to_html.html_safe %>
