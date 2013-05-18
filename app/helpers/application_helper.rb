@@ -24,6 +24,7 @@ module ApplicationHelper
   def match_youtube(line)
     line.match(/^http.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/)
   end
+
   
   
 end

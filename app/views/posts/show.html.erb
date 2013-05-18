@@ -23,11 +23,13 @@
       </h2>
       <span class="post-date"><%= @post.published_on %></span>
       
-      <%= link_to "Edit", edit_user_post_path(current_user, @post) if is_andrew? %>
+      <div class="edit-post">
+        <%= link_to "Edit", edit_user_post_path(current_user, @post) if is_andrew? %>
+      </div>
       
-      <span class="twitter-button">
+      <div class="twitter-button">
         <%= render "twitter_button" %>
-      </span>
+      </div>
       
       <div class="facebook-button">
         <div class="fb-like" data-href="<%= request.url %>" data-send="false" data-layout="button_count" data-show-faces="false"></div>

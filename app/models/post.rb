@@ -52,5 +52,13 @@ class Post < ActiveRecord::Base
     RedcarpetCompat.new(text, :fenced_code, :gh_blockcode)
   end
   
+  def tweet_url(url)
+    if published_at > Time.at(1361061867)
+      "#{url.gsub("www.", "")}/"
+    else
+      url
+    end
+  end
+  
   
 end
