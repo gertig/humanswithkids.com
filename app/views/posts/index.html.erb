@@ -6,8 +6,14 @@
      </h2>
    
      <span class="archives-post-date">
-        <%= post.published_on %>
+       <%= post.published_on %> | 
+     </span>
+     
+     <span class="disqus-counts">
+       <%= link_to "0 Comments", "#{blogpost_path(post)}#disqus_thread" %>
      </span>
 
   <% end %>
 </section>
+
+<%= render "disqus" if Rails.env.production? %>

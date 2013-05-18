@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => [:create]
   
   def new
-    puts "New Session"
+    render text: "Try identity"
   end
   
   def not_today

@@ -1,3 +1,5 @@
+/** { outline: 1px solid #369; }*/
+
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
@@ -39,7 +41,20 @@ article.post-container {
     margin: -10px 0 10px;
     color: #ccc;
   }
+  
+  div.post-sharing-buttons {
+    position: absolute;
+    top: 12px;
+    right: -120px;
+  }
+  
+  div.post-admin-box {
+    position: absolute;
+    top: 12px;
+    left: -120px;
+  }
 }
+
 
 /* ARCHIVES
 =========================== */

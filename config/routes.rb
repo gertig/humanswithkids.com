@@ -8,6 +8,7 @@ Andrewgertig::Application.routes.draw do
   # Authentication/Login
   get   '/auth/:provider' => 'sessions#passthru'
   get   '/login', :to => 'sessions#new', :as => :login
+  # get   '/login', :to => '/auth/:provider', :as => :login
   match "/logout" => "sessions#destroy", :as => :logout
   match '/auth/:provider/callback', :to => 'sessions#create'
   match '/auth/failure', :to => 'sessions#failure'
