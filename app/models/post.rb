@@ -53,7 +53,7 @@ class Post < ActiveRecord::Base
   end
   
   def tweet_url(url)
-    if published_at > Time.at(1361061867)
+    if published_at < Time.at(1361061867)
       "#{url.gsub("www.", "")}/"
     else
       url
