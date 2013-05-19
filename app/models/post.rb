@@ -44,8 +44,12 @@ class Post < ActiveRecord::Base
     posts.any? ? posts.first : false
   end
   
-  def meta_description
-    "#{strip_tags(strip_links(markdown(content.slice(0, 154).strip).to_html)).squish}..."
+  def description
+    meta_description.nil? ? "#{strip_tags(strip_links(markdown(content.slice(0, 154).strip).to_html)).squish}..." : meta_description
+  end
+  
+  def image
+    image_url.nil? ? "http://f.cl.ly/items/34372102363p16220m2r/Gertig-Solo-04-Original.jpg" : image_url
   end
   
   def markdown(text)
@@ -59,6 +63,7 @@ class Post < ActiveRecord::Base
       url
     end
   end
+  
   
   
 end

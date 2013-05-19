@@ -1,6 +1,6 @@
 <% title @post.title %>
 <%# keywords %>
-<% description @post.meta_description %>
+<% description @post.description %>
 
 <%# Good stuff %>
 
@@ -10,9 +10,9 @@
    graph.title "#{@post.title}"
    graph.type 'article'
    graph.url "#{request.url}"
-   graph.description @post.meta_description
+   graph.description @post.description
    # graph.image "#{@post.header_image_url}"
-   graph.image "http://f.cl.ly/items/34372102363p16220m2r/Gertig-Solo-04-Original.jpg"
+   graph.image @post.image
  end
 %>
 

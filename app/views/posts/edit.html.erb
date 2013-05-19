@@ -1,6 +1,6 @@
 <h1><%= @post.title %></h1>
 <p><em><%= @post.published_on %></em></p>
-<p><em><%= blogpost_path(@post) %></em></p>
+<p><em><%= @post.published? ? blogpost_path(@post) : "ID: #{@post.id}" %></em></p>
 
 <%= render 'form' %>
 
