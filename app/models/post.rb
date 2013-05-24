@@ -1,6 +1,8 @@
 class Post < ActiveRecord::Base
   include ActionView::Helpers
   
+  has_attachments :photos
+  
   belongs_to :user
   attr_accessible :content, :permalink_path, :published, :published_at, :slug, :title, :protect_slug
   

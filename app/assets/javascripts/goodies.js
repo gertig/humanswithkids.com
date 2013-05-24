@@ -52,4 +52,9 @@ $(function() {
       // results.all.textContent = counter.all
     }
   };
+  
+  
+  # Cloudinary uploads via Attachinary
+  $('.attachinary-input').attachinary();
+  
 });

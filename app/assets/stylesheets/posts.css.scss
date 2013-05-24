@@ -89,6 +89,22 @@ a.next-post {
   color: $purple;
 }
 
+/* POST EDIT SIDEBAR
+====================== */
+
+section.post-edit-container {
+  position: relative;
+}
+
+div.post-edit-sidebar {
+  position: absolute;
+  top: 80px;
+  left: -220px;
+  width: 200px;
+  background: #EFEFEF;
+  border: 1px solid #DDDDDD;
+}
+
 /* Word Count when editing
 =========================== */
 ul#word-count.result {

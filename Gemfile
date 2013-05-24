@@ -27,7 +27,9 @@ gem "bootstrap-sass", "~> 2.3.1.0"
 gem "backbonejs-rails", "~> 0.0.6"
 gem "friendly_id", "~> 4.0.9"
 gem 'carrierwave', "~> 0.8.0"
-gem 'cloudinary', "~> 1.0"
+gem 'cloudinary'
+gem 'attachinary'
+
 gem "nested_scaffold", "~> 0.2.1"
 gem "redcarpet", "~> 2.2.2"
 

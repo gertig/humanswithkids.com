@@ -18,4 +18,6 @@
 //= require icanhaz
 //= require bootstrap-tooltip
 //= require Countable
+//= require cloudinary
+//= require attachinary
 //= require_tree .

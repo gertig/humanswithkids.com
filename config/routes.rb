@@ -1,4 +1,7 @@
 Andrewgertig::Application.routes.draw do
+  
+  mount Attachinary::Engine => "/attachinary"
+  
   resources :users do
     resources :posts
   end
