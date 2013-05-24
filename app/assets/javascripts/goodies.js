@@ -54,7 +54,7 @@ $(function() {
   };
   
   
-  # Cloudinary uploads via Attachinary
+  // Cloudinary uploads via Attachinary
   $('.attachinary-input').attachinary();
   
 });

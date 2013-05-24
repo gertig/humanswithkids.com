@@ -10,7 +10,7 @@ end
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '2.0.1'
+  gem 'uglifier', '>= 2.0.0'
 end
 
 gem 'jquery-rails', "~> 2.2.1"
