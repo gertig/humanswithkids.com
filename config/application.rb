@@ -89,9 +89,9 @@ module Andrewgertig
         rack_env['SERVER_NAME'] != "localhost"
       }
       
-      # redirects any url that ends in a /comment-page-1 (forward slash) to the clean url without it
+      # redirects any url that ends in a /tag/something (forward slash) to the clean url with ?tag=something
       # http://rubular.com/r/rfCmOBjays
-      r301 %r{(.+)\/tag\/(.*)$}, '$1?tag=$2', :if => Proc.new { |rack_env|
+      r301 %r{(.+)\/tag\/(.*)$}, '$1', :if => Proc.new { |rack_env|
         rack_env['SERVER_NAME'] != "localhost"
       }
       
