@@ -7,6 +7,10 @@ Andrewgertig::Application.routes.draw do
   end
 
   resources :posts
+  
+  match '/feed/rss' => 'posts#feed',
+        :as => :feed,
+        :defaults => { :format => 'atom' }
 
   # Authentication/Login
   get   '/auth/:provider' => 'sessions#passthru'
