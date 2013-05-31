@@ -31,6 +31,7 @@ Andrewgertig::Application.routes.draw do
   # match '/:id', :to => "users#show"
   
   match "about", :to => "home#about", :as => :about
+  match "hire-me", :to => "home#hire_me", :as => :hire_me
   
   root :to => 'home#index'
   get "home/index"

@@ -7,4 +7,8 @@ class HomeController < ApplicationController
     
   end
   
+  def hire_me
+    
+  end
+  
 end
