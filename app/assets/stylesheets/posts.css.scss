@@ -6,11 +6,9 @@
 
 $black: rgb(42, 66, 78);
 
-p, li {
-  font-family: 'Gentium Basic', serif;
-}
 
 p {
+  font-family: 'Gentium Basic', serif;
   font-size: 18px;
   line-height: 26px;
   margin-bottom: 14px;
@@ -25,6 +23,10 @@ article.post-container {
     a {
       color: $black;
     }
+  }
+  
+  p, li {
+    font-family: 'Gentium Basic', serif;
   }
   
   ol {
