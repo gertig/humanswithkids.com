@@ -16,6 +16,17 @@
  end
 %>
 
+<%# Twitter Card %>
+<%
+  twitter_card('summary') do |card|
+    card.url "#{request.url}"
+    card.title "#{@post.title}"
+    card.description @post.description
+    card.image @post.image
+  end
+%>
+
+
 <section id="post-<%= @post.id %>">
   <article class="post-container">
     <div class="post-sharing-buttons"><%= render partial: "sharing_buttons", locals: { post: @post } %></div>
