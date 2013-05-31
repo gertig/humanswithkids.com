@@ -8,7 +8,7 @@
   
   <meta name="msvalidate.01" content="F944F9D72689C043BC830D8D73AD8940" />
     
-  <%= title :site => "Andrew Gertig", :separator => '|', :reverse => true %>
+  <%= title :site => "Andrew Gertig", :separator => '-', :reverse => true %>
   <%= keywords :default => "ruby on rails, sales, design, medical devices, running, arduino" %>
   <%= description :default => "My claim to fame is that I graduated from high school twice. This is my personal blog and lab for trying new things." %>
   
@@ -18,6 +18,10 @@
   
   <%# TWITTER CARD %>
   <%= twitter_card %>
+  
+  <%# RSS FEED AUTODISCOVERY - this matches Wordpress's RSS feed url structure %>
+  <%= auto_discovery_link_tag :atom, "/feed/rss" %>
+  <%= auto_discovery_link_tag :rss, "/feed/rss.rss" %>
   
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= csrf_meta_tags %>
@@ -31,7 +35,7 @@
   
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.3/jquery.backstretch.min.js"></script>
   
-  <link href='http://fonts.googleapis.com/css?family=Gentium+Basic:400,700,400italic|Poly|Alegreya:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Gentium+Basic:400,700,400italic|Alegreya:400,700' rel='stylesheet' type='text/css'>
 
   <!-- 
     font-family: 'Lora', serif;
