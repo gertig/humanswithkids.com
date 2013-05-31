@@ -22,13 +22,11 @@
     card.url "#{request.url}"
     card.title "#{@post.title}"
     card.description @post.description
-    card.image @post.image
-    card.creator do |creator|
-      creator.id "gertig"
+    card.image @post.image do |image|
+      image.src @post.image
     end
-    card.site do |site|
-      site.id "gertig"
-    end
+    card.creator "@gertig"
+    card.site "@gertig"
   end
 %>
 
