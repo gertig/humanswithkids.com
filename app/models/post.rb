@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
   has_attachments :photos
   
   belongs_to :user
-  attr_accessible :content, :permalink_path, :published, :published_at, :slug, :title, :protect_slug
+  attr_accessible :content, :permalink_path, :published, :published_at, :slug, :title, :protect_slug, :image_url, :meta_description
   
   scope :publisheds, where(:published => true)
   

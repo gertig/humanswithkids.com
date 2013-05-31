@@ -23,6 +23,12 @@
     card.title "#{@post.title}"
     card.description @post.description
     card.image @post.image
+    card.creator do |creator|
+      creator.id "gertig"
+    end
+    card.site do |site|
+      site.id "gertig"
+    end
   end
 %>
 

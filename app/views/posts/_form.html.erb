@@ -27,7 +27,13 @@
 
     <%#= f.label :content %>
     <%= f.text_area :content, rows: "60", class: "input-block-level", placeholder: "Body" %>
+    
+    <h4>Social and SEO</h4>
+    <%= f.text_field :image_url, class: "input-block-level", placeholder: "URL of Image to be displayed on FB, Twitter etc." %>
+    
+    <%= f.text_area :meta_description, rows: "4", class: "input-block-level", placeholder: "Meta Description for search results, FB, and Twitter Cards. 150 Characters." %>
   
+    <h4>Publishing options</h4>
     <%= f.label :published, class: "checkbox" do %>
       <%= f.check_box :published %> Published
     <% end %>
