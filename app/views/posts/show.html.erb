@@ -12,7 +12,7 @@
    graph.url "#{request.url}"
    graph.description @post.description
    # graph.image "#{@post.header_image_url}"
-   graph.image @post.image
+   graph.image "#{@post.image}"
  end
 %>
 
@@ -22,8 +22,8 @@
     card.url "#{request.url}"
     card.title "#{@post.title}"
     card.description @post.description
-    card.image @post.image do |image|
-      image.src @post.image
+    card.image "#{@post.image}" do |image|
+      image.src "#{@post.image}"
     end
     card.creator "@gertig"
     card.site "@gertig"
