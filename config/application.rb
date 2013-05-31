@@ -89,6 +89,13 @@ module Andrewgertig
         rack_env['SERVER_NAME'] != "localhost"
       }
       
+      # redirects any url that ends in a /comment-page-1 (forward slash) to the clean url without it
+      # http://rubular.com/r/rfCmOBjays
+      r301 %r{(.+)\/tag\/(.*)$}, '$1?tag=$2', :if => Proc.new { |rack_env|
+        rack_env['SERVER_NAME'] != "localhost"
+      }
+      
+      
       #Rails Request.env Variables
       # SERVER_NAME
       # PATH_INFO
