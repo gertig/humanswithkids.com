@@ -74,7 +74,9 @@ module Andrewgertig
       
       # redirects the root andrewgertig.com to www.andrewgertig.com
       r301 %r{.*}, 'http://www.andrewgertig.com$&', :if => Proc.new {|rack_env|
+        # Rails.logger.info "PATH: #{rack_env['PATH_INFO']} matches Regex? #{rack_env['PATH_INFO'] === %r{\/tag\/.*$}}"
         rack_env['SERVER_NAME'] == 'andrewgertig.com'
+        # || rack_env['PATH_INFO'] === %r{\/tag\/.*$}
       }
       
       # redirects any url that ends in a / (forward slash) to the clean url without it
@@ -91,9 +93,9 @@ module Andrewgertig
       
       # redirects any url that ends in a /tag/something (forward slash) to the clean url with ?tag=something
       # http://rubular.com/r/rfCmOBjays
-      r301 %r{(.+)\/tag\/(.*)$}, '$1', :if => Proc.new { |rack_env|
-        rack_env['SERVER_NAME'] != "localhost"
-      }
+      # r301 %r{(.+)\/tag\/(.*)$}, '$1', :if => Proc.new { |rack_env|
+      #   rack_env['SERVER_NAME'] != "localhost"
+      # }
       
       
       #Rails Request.env Variables

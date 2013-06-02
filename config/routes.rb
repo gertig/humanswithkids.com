@@ -35,6 +35,8 @@ Andrewgertig::Application.routes.draw do
   
   root :to => 'home#index'
   get "home/index"
+  
+  match "/tag/:a_tag", :to => "home#index" # This catches links that used to point to the word press tag pages for things like /tag/seo and /tag/review and routes them to the home page
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
