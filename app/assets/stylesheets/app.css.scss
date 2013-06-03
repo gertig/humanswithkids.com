@@ -104,7 +104,7 @@ a#blog-title {
 /* SOCIAL BUTTONS
 ====================== */
 #social-buttons {
-  padding-bottom: 60px;
+  padding-bottom: 40px;
   margin: 0 auto;
   text-align: center;
   
@@ -130,4 +130,16 @@ article#about-me {
     margin-bottom: 14px;
   }
   
+}
+
+/* FOOTER
+====================== */
+#projects {
+  margin-bottom: 40px;
+  
+  ul { margin: 0; padding: 0;}
+  ul, li {
+    list-style: none;
+  }
+
 }
