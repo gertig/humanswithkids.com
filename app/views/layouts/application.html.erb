@@ -35,7 +35,7 @@
   
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.3/jquery.backstretch.min.js"></script>
   
-  <link href='http://fonts.googleapis.com/css?family=Gentium+Basic:400,700,400italic|Alegreya:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Gentium+Basic:400,700,400italic|Alegreya:400,700|Croissant+One|Codystar|Audiowide|Viga' rel='stylesheet' type='text/css'>
 
   <!-- 
     font-family: 'Lora', serif;
@@ -73,7 +73,7 @@
     </nav>
     
     <%= link_to root_url, id: "blog-title"  do %>
-      Andrew Gertig
+      <div id="avatar"></div>Andrew Gertig
     <% end %>
     
     <%= yield %>
@@ -94,12 +94,12 @@
     </div>
     
     <div id="projects">
-      <h4>Projects</h4>
+      <h3>Projects</h3>
       <ul>
         <li><%= link_to "RSS", feed_path %></li>
-        <li><%= link_to "A2bikes - A Balane Bike Store", "http://a2bikes.com" %></li>
-        <li><%= link_to "NormalRunner - How to become a runner, for normal people", "http://www.normalrunner.com" %></li>
-        <li><%= link_to "ControllerFeed - Arduino, Raspberry Pi, Tutorials, Videos, and Reviews", "http://www.controllerfeed.com" %></li>
+        <li><%= link_to "Humans With Kids", "http://humanswithkids.com" %> - Where I write about being a dad</li>
+        <li><%= link_to "NormalRunner", "http://www.normalrunner.com" %> - How to become a runner, for normal people</li>
+        <li><%= link_to "ControllerFeed", "http://www.controllerfeed.com" %> - Arduino, Raspberry Pi, Tutorials, Videos, and Reviews</li>
       </ul>
     </div>
   </div> <!-- /container -->

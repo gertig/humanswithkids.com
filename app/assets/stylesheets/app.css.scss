@@ -7,6 +7,7 @@
 /** { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }*/
 
 $purple: #8562ef;
+$midnight: #2C3E50;
 
 html {
 /*  background-image: url(/assets/grid.png); */
@@ -20,11 +21,12 @@ body {
 h1, h2, h3, h4, h5, h6, p {
 /*  font-family: 'Open Sans', sans-serif;*/
   font-family: 'Alegreya', serif;
+  color: $midnight;
 }
 
 .container {
   width: auto; //this fixes the problem with Bootstrap's 940px width not allowing the posts to be fluid
-  max-width: 600px;
+  max-width: 664px;
   margin: 0 auto;
 }
 
@@ -59,6 +61,7 @@ nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  font-size: 16px;
   
   li {
     display: inline-block;
@@ -68,7 +71,8 @@ nav ul {
   }
   
   li a {
-    color: #ccc;
+    color: #b4b4b4;
+    // color: #2980B9;
     
     &:hover {
       color: $purple;
@@ -85,20 +89,42 @@ nav ul {
 
 }
 
+/* MY NAME
+====================== */
+
 a#blog-title {
   display: block;
   color: $purple;
+  color: $midnight;
+  color: #70c6b7;
   margin: 60px 0 60px;
   font-size: 4.0em;
   line-height: 1.0em;
-  font-family: 'Alegreya', serif;
-  font-weight: 700;
+  font-family: 'Viga', 'Audiowide', 'Codystar', 'Croissant One','Alegreya', serif;
+  // font-weight: 700;
     
   &:hover { 
     text-decoration: none; 
   }
 
+  #avatar {
+    $size: 100px;
+    width: $size;
+    height: $size;
+    // float: left;
+    display: inline-block;
+    background-image: image-url("avatar2.jpeg"); //image-url is a sprockets helper, could also use asset-url("", image)
+    background-position: -5px 0px;
+    background-repeat: no-repeat;
+    border: 2px solid #ddd;
+    @include border-radius($size / 2);
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-bottom: 6px;
+  }
+
 }
+
 
 
 /* SOCIAL BUTTONS
@@ -124,11 +150,11 @@ article#about-me {
     margin-bottom: 20px;
   }
   
-  p {
-    font-size: 18px;
-    line-height: 26px;
-    margin-bottom: 14px;
-  }
+  // p {
+  //   font-size: 18px;
+  //   line-height: 26px;
+  //   margin-bottom: 14px;
+  // }
   
 }
 
