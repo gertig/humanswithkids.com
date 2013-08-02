@@ -1,4 +1,4 @@
-/** { outline: 1px solid #369; }*/
+// * { outline: 1px solid #369; }
 
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
@@ -98,14 +98,43 @@ section.post-edit-container {
   position: relative;
 }
 
-div.post-edit-sidebar {
+div.post-edit-left-sidebar {
   position: absolute;
-  top: 80px;
+  top: 92px;
   left: -220px;
   width: 200px;
   background: #EFEFEF;
   border: 1px solid #DDDDDD;
+  padding: 4px;
+  p {
+    font-size: 14px;
+    font-family: arial;
+  }
 }
+
+input.attachinary-input {
+  width: 200px;
+}
+
+/* EDIT/NEW A POST
+====================== */
+form.ag-post-form {
+  position: relative;
+}
+
+textarea.ag-post-editing-field {
+  height: 800px;
+}
+
+div.post-edit-right-sidebar {
+  position: absolute;
+  // top: 80px;
+  right: -220px;
+  width: 200px;
+  // background: #EFEFEF;
+  // border: 1px solid #DDDDDD;
+}
+
 
 /* Word Count when editing
 =========================== */
@@ -134,7 +163,7 @@ ul#word-count.result {
 
 @media (max-width: 480px) {
   pre {
-    font-size: 12px;
+    fofont-size: 12px;
     line-height: 20px;
   }
   .related h2,

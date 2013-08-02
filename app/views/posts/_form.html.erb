@@ -7,7 +7,11 @@
 
 <p><em>Words:</em> <strong><span id="result__words">0</span></strong>,   <em>Paragraphs:</em> <strong><span id="result__paragraphs">0</span></strong></p>
 
-<%= form_for([@post.user, @post]) do |f| %>
+<%= form_for([@post.user, @post], :html => { class: "ag-post-form" }) do |f| %>
+
+  <div class="post-edit-right-sidebar">
+    <%= f.submit class: "btn" %>
+  </div>
 
   <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -26,7 +30,7 @@
     <%= f.text_field :title, class: "input-block-level", placeholder: "Title" %>
 
     <%#= f.label :content %>
-    <%= f.text_area :content, rows: "60", class: "input-block-level", placeholder: "Body" %>
+    <%= f.text_area :content, class: "input-block-level ag-post-editing-field", placeholder: "Body" %>
     
     <h4>Social and SEO</h4>
     <%= f.text_field :image_url, class: "input-block-level", placeholder: "URL of Image to be displayed on FB, Twitter etc." %>
