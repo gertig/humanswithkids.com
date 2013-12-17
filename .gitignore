@@ -16,3 +16,4 @@
 config/database.yml
 .env
 .sass-cache/
+.DS_Store

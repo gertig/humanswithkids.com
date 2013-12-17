@@ -63,7 +63,7 @@ module Andrewgertig
     config.assets.initialize_on_precompile = false
   
     #GERTIG - uses rack-rewrite gem to rewrite the sitemap URL to point to amazon S3
-    config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
+    config.middleware.insert_before(Rack::Runtime, Rack::Rewrite) do
       # rewrite rules here
       # r302 %r{^/sitemap.xml}, "http://#{ENV['FOG_HOST']}/sitemaps/sitemap1.xml.gz"
       # 301 is a permananet redirect (recommended)
