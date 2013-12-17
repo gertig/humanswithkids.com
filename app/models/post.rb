@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
   include ActionView::Helpers
   
-  has_attachments :photos
+  # has_attachments :photos
   
   belongs_to :user
   
