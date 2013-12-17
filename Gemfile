@@ -3,6 +3,8 @@ ruby '2.0.0'
 
 # gem 'rails', '3.2.16'
 gem 'rails', '4.0.2'
+
+gem 'rails_12factor', group: :production # For Rails 4 to work on Heroku
   
 group :development do
   gem "quiet_assets", "~> 1.0.2" #Gets the junk out of the console
