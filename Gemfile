@@ -23,7 +23,7 @@ gem "pg", "~> 0.14.1"
 
 gem "unicorn", "~> 4.6.3"
 
-# gem "bcrypt-ruby", "~> 3.0.0"
+gem "bcrypt-ruby", "~> 3.0.0"
 gem "omniauth", "~> 1.0.1"
 gem "omniauth-identity", "~> 1.1.0"
 
