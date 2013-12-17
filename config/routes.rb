@@ -1,6 +1,10 @@
 Andrewgertig::Application.routes.draw do
   
-  mount Attachinary::Engine => "/attachinary"
+  resources :pictures
+
+  resources :galleries
+
+  # mount Attachinary::Engine => "/attachinary"
   
   resources :users do
     resources :posts

@@ -14,3 +14,10 @@ Delete the following sprocket directive in application.css.scss:
 @import "posts";
 @import "dashboard";
 @import "pages";
+
+// Image Upload
+@import "jquery.fileupload-ui";
+@import "jquery.Jcrop";
+@import "pictures";
+@import "slimbox2";
+
