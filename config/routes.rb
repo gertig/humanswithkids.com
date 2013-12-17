@@ -7,36 +7,56 @@ Andrewgertig::Application.routes.draw do
   end
 
   resources :posts
+
+  devise_for :users, :skip => [:sessions] #, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   
+  # https://github.com/plataformatec/devise/wiki/How-To:-Change-the-default-sign_in-and-sign_out-routes#steps-for-rails-300-forward
+  as :user do
+    get     "login"   => "devise/sessions#new",     :as => :new_user_session    # new_user_session_path
+    post    "login"   => "devise/sessions#create",  :as => :user_session  # user_session_path
+    delete  "logout"  => "devise/sessions#destroy", :as => :destroy_user_session # destroy_user_session_path
+  end
+
+  # devise_scope :user do
+  #   get "/login" => "devise/sessions#new"
+  # end
+
+  # get '/users/sign_in' => "devise/sessions#new"
+
+  # Devise security
+  authenticate :user do
+    # mount Sidekiq::Web => '/sidekiq'
+  end
+
   match '/feed/rss' => 'posts#feed',
         :as => :feed,
-        :defaults => { :format => 'atom' }
+        :defaults => { :format => 'atom' },
+        :via => :get
 
   # Authentication/Login
   get   '/auth/:provider' => 'sessions#passthru'
-  get   '/login', :to => 'sessions#new', :as => :login
-  # get   '/login', :to => '/auth/:provider', :as => :login
-  match "/logout" => "sessions#destroy", :as => :logout
-  match '/auth/:provider/callback', :to => 'sessions#create'
-  match '/auth/failure', :to => 'sessions#failure'
+  # get   '/login', :to => 'sessions#new', :as => :login
+  # match "/logout" => "sessions#destroy", :as => :logout, :via => :get
+  match '/auth/:provider/callback', :to => 'sessions#create', :via => :get
+  match '/auth/failure', :to => 'sessions#failure', :via => :get
 
-  resources :identities
-  resources :authentications
+  # resources :identities
+  # resources :authentications
 
-  match "dashboard", :to => "dashboard#show", :as => :dashboard
+  get "dashboard", :to => "dashboard#show", :as => :dashboard
   
-  match "archives", :to => "posts#index", :as => :archives
+  match "archives", :to => "posts#index", :as => :archives, :via => :get
   
-  match "/:year(/:month)/:id" => "posts#show", :constraints => { :year => /\d{4}/, :month => /\d{2}/ }
+  match "/:year(/:month)/:id" => "posts#show", :constraints => { :year => /\d{4}/, :month => /\d{2}/ }, :via => :get
   # match '/:id', :to => "users#show"
   
-  match "about", :to => "home#about", :as => :about
-  match "hire-me", :to => "home#hire_me", :as => :hire_me
+  match "about", :to => "home#about", :as => :about, :via => :get
+  match "hire-me", :to => "home#hire_me", :as => :hire_me, :via => :get
   
   root :to => 'home#index'
   get "home/index"
   
-  match "/tag/:a_tag", :to => "home#index" # This catches links that used to point to the word press tag pages for things like /tag/seo and /tag/review and routes them to the home page
+  match "/tag/:a_tag", :to => "home#index", :via => :get # This catches links that used to point to the word press tag pages for things like /tag/seo and /tag/review and routes them to the home page
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -90,8 +110,4 @@ Andrewgertig::Application.routes.draw do
   # root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
-
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
 end

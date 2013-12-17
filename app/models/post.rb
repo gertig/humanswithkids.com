@@ -4,12 +4,13 @@ class Post < ActiveRecord::Base
   has_attachments :photos
   
   belongs_to :user
-  attr_accessible :content, :permalink_path, :published, :published_at, :slug, :title, :protect_slug, :image_url, :meta_description
   
-  scope :publisheds, where(:published => true)
+  # attr_accessible :content, :permalink_path, :published, :published_at, :slug, :title, :protect_slug, :image_url_string, :meta_description
   
-  scope :next,     lambda {|published_at| where("published_at > ?", published_at).order("published_at ASC") }
-  scope :previous, lambda {|published_at| where("published_at < ?", published_at).order("published_at DESC") }
+  # scope :publisheds, where(:published => true)
+  
+  # scope :next,     lambda {|published_at| where("published_at > ?", published_at).order("published_at ASC") }
+  # scope :previous, lambda {|published_at| where("published_at < ?", published_at).order("published_at DESC") }
   
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history]
@@ -24,6 +25,18 @@ class Post < ActiveRecord::Base
   
   def published_on
     !published_at.nil? ? published_at.strftime("%B %e, %Y") : "Private"
+  end
+
+  def self.next(published_at)
+    where("published_at > ?", published_at).order("published_at ASC")
+  end
+
+  def self.previous(published_at)
+    where("published_at < ?", published_at).order("published_at DESC")
+  end
+
+  def self.publisheds
+    where(:published => true)
   end
   
   def should_generate_new_friendly_id?
@@ -51,7 +64,7 @@ class Post < ActiveRecord::Base
   end
   
   def image
-    image_url.nil? ? "http://f.cl.ly/items/34372102363p16220m2r/Gertig-Solo-04-Original.jpg" : image_url
+    image_url_string.nil? ? "http://f.cl.ly/items/34372102363p16220m2r/Gertig-Solo-04-Original.jpg" : image_url_string
   end
   
   def markdown(text)

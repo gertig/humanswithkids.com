@@ -67,10 +67,14 @@
         <li><%= link_to "Hire me", hire_me_path %></li>
         <% if is_andrew? %>
           <li class="admin-link"><%= link_to "Dashboard", admin_path %></li>
-          <li class="admin-link"><%= link_to "Logout", logout_path %></li>
+          <li class="admin-link"><%= link_to "Logout", destroy_user_session_path %></li>
         <% end %>
       </ul>
     </nav>
+
+    <%# DEVISE %>
+    <p class="notice-CHANGE"><%= notice %></p>
+    <p class="alert-CHANGE"><%= alert %></p>
     
     <%= link_to root_url, id: "blog-title"  do %>
       <div id="avatar"></div>Andrew Gertig

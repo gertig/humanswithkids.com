@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   before_filter :find_post, :only => :show
 
   def find_post
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
 
     # If an old id or a numeric id was used to find the record, then
     # the request path will not match the post_path, and we should do
@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   end
   
   def index
-    # @user = User.find(params[:user_id])
+    # @user = User.friendly.find(params[:user_id])
     # @posts = @user.posts
     
     @posts = Post.publisheds.order("published_at DESC")
@@ -48,9 +48,10 @@ class PostsController < ApplicationController
   # GET users/1/posts/1
   # GET users/1/posts/1.json
   def show
-    # @user = User.find(params[:user_id])
+    # @user = User.friendly.find(params[:user_id])
     # @post = @user.posts.find(params[:id])
-    @post = Post.find_by_slug(params[:id])
+    # @post = Post.find_by_slug(params[:id])
+    @post = Post.friendly.find(params[:id])
     @user = @post.user
 
     respond_to do |format|
@@ -62,7 +63,7 @@ class PostsController < ApplicationController
   # GET users/1/posts/new
   # GET users/1/posts/new.json
   def new
-    @user = User.find(params[:user_id])
+    @user = User.friendly.find(params[:user_id])
     @post = @user.posts.build
 
     respond_to do |format|
@@ -73,15 +74,17 @@ class PostsController < ApplicationController
 
   # GET users/1/posts/1/edit
   def edit
-    @user = User.find(params[:user_id])
-    @post = @user.posts.find(params[:id])
+    @user = User.friendly.find(params[:user_id])
+    @post = @user.posts.friendly.find(params[:id])
   end
 
   # POST users/1/posts
   # POST users/1/posts.json
   def create
-    @user = User.find(params[:user_id])
-    @post = @user.posts.build(params[:post])
+    @user = User.friendly.find(params[:user_id])
+    @post = @user.posts.build(clean_params)
+
+    puts clean_params.to_yaml
 
     respond_to do |format|
       if @post.save
@@ -98,11 +101,11 @@ class PostsController < ApplicationController
   # PUT users/1/posts/1
   # PUT users/1/posts/1.json
   def update
-    @user = User.find(params[:user_id])
-    @post = @user.posts.find(params[:id])
+    @user = User.friendly.find(params[:user_id])
+    @post = @user.posts.friendly.find(params[:id])
 
     respond_to do |format|
-      if @post.update_attributes(params[:post])
+      if @post.update_attributes(clean_params)
         format.html { redirect_to(blogpost_path(@post), :notice => 'Post was successfully updated.') }
         format.json { head :ok }
       else
@@ -115,14 +118,25 @@ class PostsController < ApplicationController
   # DELETE users/1/posts/1
   # DELETE users/1/posts/1.json
   def destroy
-    # @user = User.find(params[:user_id])
+    # @user = User.friendly.find(params[:user_id])
     @user = current_user
-    @post = @user.posts.find(params[:id])
+    @post = @user.posts.friendly.find(params[:id])
     @post.destroy
 
     respond_to do |format|
       format.html { redirect_to user_posts_url(@user) }
       format.json { head :ok }
     end
+  end
+
+  private
+
+  def clean_params
+    params.require(:post).permit! #(:title, :content, :image_url_string, 
+                                 # :meta_description, :published, 
+                                 # :published_at, :slug, :protect_slug, :permalink_path, 
+                                 # :users_attributes => [:id]
+                                 #  )
+
   end
 end

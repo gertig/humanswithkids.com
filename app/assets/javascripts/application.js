@@ -12,12 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require json2
-//= require underscore
-//= require backbone
-//= require icanhaz
 //= require bootstrap-tooltip
 //= require Countable
 //= require cloudinary
-//= require attachinary
 //= require_tree .
+
+// require attachinary
