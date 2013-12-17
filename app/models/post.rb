@@ -28,6 +28,7 @@ class Post < ActiveRecord::Base
   end
 
   def self.next(published_at)
+    # raise published_at.to_yaml
     where("published_at > ?", published_at).order("published_at ASC")
   end
 
@@ -51,7 +52,11 @@ class Post < ActiveRecord::Base
   
   def next
     posts = Post.next(self.published_at)
-    posts.any? ? posts.first : false
+    if posts.any?
+      return posts.first.id == self.id ? posts.to_a[1] : posts.first
+    else
+      return false
+    end
   end
 
   def previous

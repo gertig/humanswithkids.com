@@ -33,7 +33,8 @@ gem "tophat", "~> 2.1.0"
 
 gem "bourbon", "~> 3.1.1"
 gem "neat", "~> 1.2.0"
-gem "bootstrap-sass", "~> 2.3.1.0"
+# gem "bootstrap-sass", "~> 2.3.1.0"
+gem "bootstrap-sass", "~> 3.0.3.0"
 
 gem "friendly_id", "~> 5.0.2"
 

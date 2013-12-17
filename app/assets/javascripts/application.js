@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-tooltip
 //= require Countable
 
 //= require jquery.ui.widget
@@ -30,3 +29,9 @@
 //= require bootstrap-image-gallery.min
 
 //= require_tree .
+
+//DOM is Ready
+// $(function(){
+//   $("a[rel~=popover], .has-popover").popover();
+//   $("a[rel~=tooltip], .has-tooltip").tooltip();
+// });

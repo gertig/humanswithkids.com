@@ -149,7 +149,7 @@ div.post-edit-right-sidebar {
 ul#word-count.result {
   
   list-style-type: none;
-  @include border-radius(5px);
+  border-radius: 5px;
   margin: 0 0 10px;
   padding: 1.5em;
   background-color: #f5f5f5;

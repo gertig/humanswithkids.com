@@ -1,10 +1,13 @@
 Andrewgertig::Application.routes.draw do
   
+  resources :galleries do
+    resources :pictures do
+      collection do
+        post 'make_default'
+      end
+    end
+  end
   resources :pictures
-
-  resources :galleries
-
-  # mount Attachinary::Engine => "/attachinary"
   
   resources :users do
     resources :posts

@@ -21,11 +21,13 @@ class Picture < ActiveRecord::Base
   end
 
   def crop_image
-    image.recreate_versions! if crop_x.present?
-    current_version = self.image.current_path
-    large_version = "#{Rails.root}/public" + self.image.versions[:large].to_s
+    raise "Not working because using S3"
+    # image.recreate_versions! if crop_x.present?
+    # # current_version = self.image.current_path
+    # current_version = self.image.url
+    # large_version = "#{Rails.root}/public" + self.image.versions[:large].to_s
 
-    FileUtils.rm(current_version)
-    FileUtils.cp(large_version, current_version)
+    # FileUtils.rm(current_version)
+    # FileUtils.cp(large_version, current_version)
   end
 end

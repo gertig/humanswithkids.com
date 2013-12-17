@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   validates_uniqueness_of :name
   
-  scope :authors, where(role: "author")
+  # scope :authors, where(role: "author")
   
   extend FriendlyId
   friendly_id :name, use: [:slugged]
@@ -18,6 +18,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable #, :omniauthable, :omniauth_providers => [:twitter, :evernote]
 
          # :token_authenticatable has been removed from Devise 3.2.2 or greater
+
+  def self.authors
+    where(role: "author")
+  end
   
   def omniauth_identity(auth)
     self.name = auth["info"]["name"]

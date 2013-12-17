@@ -47,7 +47,10 @@ class PicturesController < ApplicationController
   # POST /pictures
   # POST /pictures.json
   def create
+    Rails.logger.debug("[debug] : PARAMS: #{params[:picture]}" );
+
     p_attr = clean_params
+
     Rails.logger.debug("[debug] : #{p_attr}" );
     p_attr[:image] = clean_params[:image].first if clean_params[:image].class == Array
     Rails.logger.debug("[debug] : #{p_attr[:image]}" );
@@ -122,6 +125,6 @@ class PicturesController < ApplicationController
   private
 
   def clean_params
-    params.require(:picture).permit(:description, :gallery_id, :image, :crop_x, :crop_y, :crop_w, :crop_h, :gallery_token)
+    params.fetch(:picture, {}).permit! #(:description, :gallery_i :crop_x, :crop_y, :crop_w, :crop_h, :gallery_token)
   end
 end

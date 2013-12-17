@@ -2,7 +2,7 @@
 
 #lbOverlay {
 	position: fixed;
-	z-index: 9999;
+	/* z-index: 9998; */
 	left: 0;
 	top: 0;
 	width: 100%;
@@ -13,17 +13,18 @@
 
 #lbCenter, #lbBottomContainer {
 	position: absolute;
-	z-index: 9999;
+	// z-index: 9999;
 	overflow: hidden;
 	background-color: #fff;
 }
 
 .lbLoading {
-	background: #fff url(loading.gif) no-repeat center;
+	background: #fff image-url("loading.gif") no-repeat center;
 }
 
 #lbImage {
 	position: absolute;
+	z-index: 1;
 	left: 0;
 	top: 0;
 	border: 10px solid #fff;
@@ -43,7 +44,7 @@
 }
 
 #lbPrevLink:hover {
-	background: transparent url(prevlabel.gif) no-repeat 0 15%;
+	background: transparent image-url("prevlabel.gif") no-repeat 0 15%;
 }
 
 #lbNextLink {
@@ -51,7 +52,7 @@
 }
 
 #lbNextLink:hover {
-	background: transparent url(nextlabel.gif) no-repeat 100% 15%;
+	background: transparent image-url("nextlabel.gif") no-repeat 100% 15%;
 }
 
 #lbBottom {
@@ -69,7 +70,7 @@
 	float: right;
 	width: 66px;
 	height: 22px;
-	background: transparent url(closelabel.gif) no-repeat center;
+	background: transparent image-url("closelabel.gif") no-repeat center;
 	margin: 5px 0;
 	outline: none;
 }

@@ -15,7 +15,8 @@ class GalleriesController < ApplicationController
   def show
     @gallery = Gallery.find(params[:id])
     @picture = @gallery.pictures.build
-    @pictures = Picture.find(:all, :conditions  => [ 'gallery_id = ?', @gallery.id ])
+    @pictures = Picture.where(gallery_id: @gallery.id)
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @gallery }
@@ -95,6 +96,6 @@ class GalleriesController < ApplicationController
   private
 
   def clean_params
-    params.require(:gallery).permit(:cover, :description, :name, :token)
+    params.require(:gallery).permit(:cover, :description, :name, :token, :pictures_attributes => [:id, :description, :gallery_id, :image, :crop_x, :crop_y, :crop_w, :crop_h, :gallery_token])
   end
 end

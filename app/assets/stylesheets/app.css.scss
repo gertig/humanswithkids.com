@@ -8,6 +8,7 @@
 
 $purple: #8562ef;
 $midnight: #2C3E50;
+$black: #333333;
 
 html {
 /*  background-image: url(/assets/grid.png); */
@@ -117,7 +118,7 @@ a#blog-title {
     background-position: -5px 0px;
     background-repeat: no-repeat;
     border: 2px solid #ddd;
-    @include border-radius($size / 2);
+    border-radius: ($size / 2);
     vertical-align: middle;
     margin-right: 10px;
     margin-bottom: 6px;

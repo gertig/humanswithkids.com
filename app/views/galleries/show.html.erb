@@ -43,11 +43,18 @@
                       <i class="icon-edit "></i>
                       Edit
                     </a>
-                    <a class="btn btn-mini btn-delete" confirm="Вы уверены?" data-method="delete" href="/galleries/<%= @gallery.id %>/pictures/<%= pic.id %>" data-remote=true>
+                    <a class="btn btn-mini btn-delete" data-confirm="Delete this guy?" data-method="delete" href="/galleries/<%= @gallery.id %>/pictures/<%= pic.id %>" data-remote=true>
                       <i class="icon-trash"></i>
                       Delete
                     </a>
                   </p>
+                </div>
+                <div id="" class="image-url">
+                  <b>Large</b>
+                  <%= text_field_tag("image-url", pic.image.large.url, class: "input-medium", onclick: "this.focus(); this.select();") %>
+
+                  <b>Preview (690x518)</b>
+                  <%= text_field_tag("image-url", pic.image.preview.url, class: "input-medium", onclick: "this.focus(); this.select();") %>
                 </div>
               </div>
             </li>
@@ -61,6 +68,6 @@
   <div class="form-actions">
     <%= link_to 'Back', galleries_path, :class => 'btn btn-mini'  %>
     <%= link_to 'Edit', edit_gallery_path(@gallery), :class => 'btn btn-mini' %>
-    <%= link_to 'Delete', gallery_path(@gallery), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-mini' %>
+    <%= link_to 'Delete', gallery_path(@gallery), :method => 'delete', :data => { confirm: 'Are you sure?'}, :class => 'btn btn-mini' %>
   </div>
 </div>
