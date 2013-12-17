@@ -27,6 +27,9 @@ class GalleriesController < ApplicationController
   def new
     @gallery = Gallery.new
     @gallery.token = @gallery.generate_token
+
+    # raise @gallery.to_yaml
+
     @picture = @gallery.pictures.build
     @pictures = []
 
@@ -46,7 +49,7 @@ class GalleriesController < ApplicationController
   # POST /galleries
   # POST /galleries.json
   def create
-    @gallery = Gallery.new(params[:gallery])
+    @gallery = Gallery.new(clean_params)
     @pictures = Picture.where(:gallery_token => @gallery.token)
     @gallery.pictures << @pictures
 
@@ -67,7 +70,7 @@ class GalleriesController < ApplicationController
     @gallery = Gallery.find(params[:id])
 
     respond_to do |format|
-      if @gallery.update_attributes(params[:gallery])
+      if @gallery.update_attributes(clean_params)
         format.html { redirect_to @gallery, notice: 'Gallery was successfully updated.' }
         format.json { head :no_content }
       else
@@ -87,5 +90,11 @@ class GalleriesController < ApplicationController
       format.html { redirect_to galleries_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def clean_params
+    params.require(:gallery).permit(:cover, :description, :name, :token)
   end
 end

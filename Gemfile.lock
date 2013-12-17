@@ -120,6 +120,7 @@ GEM
     raindrops (0.12.0)
     rake (10.1.0)
     redcarpet (2.2.2)
+    rmagick (2.13.2)
     ruby-hmac (0.4.0)
     sass (3.2.12)
     sass-rails (4.0.1)
@@ -183,6 +184,7 @@ DEPENDENCIES
   rails (= 4.0.2)
   rails_12factor
   redcarpet (~> 2.2.2)
+  rmagick (~> 2.13.2)
   sass-rails (~> 4.0.0)
   sextant (~> 0.2.3)
   sitemap_generator (~> 3.4)

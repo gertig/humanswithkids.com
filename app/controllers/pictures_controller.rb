@@ -47,9 +47,9 @@ class PicturesController < ApplicationController
   # POST /pictures
   # POST /pictures.json
   def create
-    p_attr = params[:picture]
+    p_attr = clean_params
     Rails.logger.debug("[debug] : #{p_attr}" );
-    p_attr[:image] = params[:picture][:image].first if params[:picture][:image].class == Array
+    p_attr[:image] = clean_params[:image].first if clean_params[:image].class == Array
     Rails.logger.debug("[debug] : #{p_attr[:image]}" );
 
     if params[:gallery_id]
@@ -84,7 +84,7 @@ class PicturesController < ApplicationController
     @picture = @gallery.pictures.find(params[:id])
 
     respond_to do |format|
-      if @picture.update_attributes(params[:picture])
+      if @picture.update_attributes(clean_params)
         format.html { redirect_to gallery_path(@gallery), notice: 'Picture was successfully updated.' }
         format.json { head :no_content }
       else
@@ -117,5 +117,11 @@ class PicturesController < ApplicationController
     respond_to do |format|
       format.js
     end
+  end
+
+  private
+
+  def clean_params
+    params.require(:picture).permit(:description, :gallery_id, :image, :crop_x, :crop_y, :crop_w, :crop_h, :gallery_token)
   end
 end

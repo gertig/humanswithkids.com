@@ -37,6 +37,7 @@ gem "bootstrap-sass", "~> 2.3.1.0"
 
 gem "friendly_id", "~> 5.0.2"
 
+gem 'rmagick', "~> 2.13.2"
 gem 'carrierwave', "~> 0.9.0" # "~> 0.8.0"
 
 # gem 'cloudinary', "~> 1.0.66"
