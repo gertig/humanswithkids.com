@@ -55,7 +55,7 @@ Andrewgertig::Application.routes.draw do
   match "archives", :to => "posts#index", :as => :archives, :via => :get
   
   match "/:year(/:month)/:id" => "posts#show", :constraints => { :year => /\d{4}/, :month => /\d{2}/ }, :via => :get
-  # match '/:id', :to => "users#show"
+  get '/:id' => "posts#show"
   
   match "about", :to => "home#about", :as => :about, :via => :get
   match "hire-me", :to => "home#hire_me", :as => :hire_me, :via => :get

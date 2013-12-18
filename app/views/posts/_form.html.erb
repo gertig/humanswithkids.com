@@ -27,16 +27,21 @@
 
 
     <%#= f.label :title %>
-    <%= f.text_field :title, class: "input-block-level", placeholder: "Title" %>
+    <div class="form-group">
+      <%= f.text_field :title, class: "form-control", placeholder: "Title" %>
+      <%#= f.label :content %>
+      <%#= f.text_area :content, class: "input-block-level ag-post-editing-field", placeholder: "Body" %>
+      <%= f.text_area :content, class: "form-control ag-post-editing-field", placeholder: "Body" %>
+    </div>
 
-    <%#= f.label :content %>
-    <%= f.text_area :content, class: "input-block-level ag-post-editing-field", placeholder: "Body" %>
     
     <h4>Social and SEO</h4>
-    <%= f.text_field :image_url_string, class: "input-block-level", placeholder: "URL of Image to be displayed on FB, Twitter etc." %>
+    <div class="form-group">
+      <%= f.text_field :image_url_string, class: "form-control", placeholder: "URL of Image to be displayed on FB, Twitter etc." %>
     
-    <%= f.text_area :meta_description, rows: "4", class: "input-block-level", placeholder: "Meta Description for search results, FB, and Twitter Cards. 150 Characters." %>
-  
+      <%= f.text_area :meta_description, rows: "4", class: "form-control", placeholder: "Meta Description for search results, FB, and Twitter Cards. 150 Characters." %>
+    </div>
+
     <h4>Publishing options</h4>
     <%= f.label :published, class: "checkbox" do %>
       <%= f.check_box :published %> Published
@@ -44,6 +49,10 @@
     
     <%= f.label :protect_slug, class: "checkbox" do %>
       <%= f.check_box :protect_slug %> Protect url slug from updates
+    <% end %>
+
+    <%= f.label :url_contains_date, class: "checkbox" do %>
+      <%= f.check_box :url_contains_date %> Show published date in the url
     <% end %>
     
   

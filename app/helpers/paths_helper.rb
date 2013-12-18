@@ -11,7 +11,9 @@ module PathsHelper
   def blogpost_path(post)
     if !post.published_at.nil?
       time = post.published_at.strftime("%Y/%m")
-      path = "/#{time}/#{post.slug}"
+      # path = "/#{time}/#{post.slug}"
+
+      path = post.url_contains_date? ? "/#{time}/#{post.slug}" : "/#{post.slug}"
     else
       path = post
     end
