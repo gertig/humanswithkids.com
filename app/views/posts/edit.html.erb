@@ -5,23 +5,6 @@
     
     <p><em><%= @post.published_on %></em></p>
     <p><em><%= @post.published? ? blogpost_path(@post) : "ID: #{@post.id}" %></em></p>
-
-    <hr>
-    
-    <h4>Image Uploader</h4>
-    
-    <%= form_for([@post.user, @post]) do |f| %>
-      <%= f.attachinary_file_field :photos %>
-      <%= f.submit "Save Image", class: "btn" %>
-    <% end %>
-  
-    <hr>
-
-    <h4>Attached images</h4>
-    <% @post.photos.each do |photo| %>
-        <%= cl_image_tag(photo.path, { size: '200x200', crop: :fit }) %>
-        <%= text_field_tag("image-url", cl_image_path(photo.path, { size: '620x620', crop: :fit }), class: "input-medium", onclick: "this.focus(); this.select();") %>
-    <% end %>
   
   </div>
 
