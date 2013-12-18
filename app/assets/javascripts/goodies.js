@@ -55,6 +55,6 @@ $(function() {
   
   
   // Cloudinary uploads via Attachinary
-  $('.attachinary-input').attachinary();
+  // $('.attachinary-input').attachinary();
   
 });

@@ -40,30 +40,28 @@ Andrewgertig::Application.routes.draw do
         :defaults => { :format => 'atom' },
         :via => :get
 
-  # Authentication/Login
-  get   '/auth/:provider' => 'sessions#passthru'
-  # get   '/login', :to => 'sessions#new', :as => :login
-  # match "/logout" => "sessions#destroy", :as => :logout, :via => :get
-  match '/auth/:provider/callback', :to => 'sessions#create', :via => :get
-  match '/auth/failure', :to => 'sessions#failure', :via => :get
+  # Omniauth
+  get '/auth/:provider' => 'sessions#passthru'
+  get '/auth/:provider/callback', :to => 'sessions#create'
+  get '/auth/failure', :to => 'sessions#failure'
 
-  # resources :identities
-  # resources :authentications
+  
+  get "/:year(/:month)/:id" => "posts#show", :constraints => { :year => /\d{4}/, :month => /\d{2}/ }, :via => :get
+  
+  # Pages
+  get "about" => "home#about", :as => :about
+  get "hire-me" => "home#hire_me", :as => :hire_me
+  get "dashboard" => "dashboard#show", :as => :dashboard
+  get "archives" => "posts#index", :as => :archives
 
-  get "dashboard", :to => "dashboard#show", :as => :dashboard
-  
-  match "archives", :to => "posts#index", :as => :archives, :via => :get
-  
-  match "/:year(/:month)/:id" => "posts#show", :constraints => { :year => /\d{4}/, :month => /\d{2}/ }, :via => :get
+  # Catch all for posts should be after custom page routes
   get '/:id' => "posts#show"
   
-  match "about", :to => "home#about", :as => :about, :via => :get
-  match "hire-me", :to => "home#hire_me", :as => :hire_me, :via => :get
-  
+  # ROOT
   root :to => 'home#index'
-  get "home/index"
+  # get "home/index"
   
-  match "/tag/:a_tag", :to => "home#index", :via => :get # This catches links that used to point to the word press tag pages for things like /tag/seo and /tag/review and routes them to the home page
+  get "/tag/:a_tag" => "home#index" # This catches links that used to point to the word press tag pages for things like /tag/seo and /tag/review and routes them to the home page
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
