@@ -10,7 +10,7 @@
 <%= form_for([@post.user, @post], :html => { class: "ag-post-form" }) do |f| %>
 
   <div class="post-edit-right-sidebar">
-    <%= f.submit class: "btn" %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 
   <% if @post.errors.any? %>
@@ -57,7 +57,7 @@
     
   
   <div class="form-actions">
-    <%= f.submit class: "btn" %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
   
   <p><b>Tip:</b> when changing the published_at date so the url is correct for old Posts, change it from heroku console.</p>
