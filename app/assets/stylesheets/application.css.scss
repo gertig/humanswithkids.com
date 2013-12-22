@@ -9,7 +9,12 @@ Delete the following sprocket directive in application.css.scss:
 */
 
 /*@import "bourbon";*/
+
+$navbar-default-bg:                #ffffff !default;
+
 @import "bootstrap";
+@import "variables";
+
 @import "app";
 @import "posts";
 @import "dashboard";

@@ -1,4 +1,4 @@
-/** { outline: 1px solid #369; }*/
+ // * { outline: 1px solid #369; }
 
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
@@ -25,7 +25,8 @@ h1, h2, h3, h4, h5, h6, p {
   color: $midnight;
 }
 
-.container {
+.main-container {
+  @extend .container;
   width: auto; //this fixes the problem with Bootstrap's 940px width not allowing the posts to be fluid
   max-width: 664px;
   margin: 0 auto;
@@ -52,13 +53,39 @@ h1, h2, h3, h4, h5, h6, p {
   height: 21px;
 }
 
+/* HERO IMAGE
+====================== */
+.hero-image-wrapper {
+  @extend .container; 
+
+  position: relative;
+  // width: 100%;
+  height: 280px;
+  // background-color: #336699;
+
+
+  .actual-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-position: center center;
+    // background-position-x: 50%;
+    // background-position-y: 50%;
+    // background-size: cover;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
 
 /* HOME
 ====================== */
 
-nav { margin-top: 60px; }
+nav.ag { margin-top: 60px; }
 
-nav ul {
+nav.ag ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
