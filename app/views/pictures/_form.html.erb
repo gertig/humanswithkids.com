@@ -13,10 +13,10 @@
   <% end %>
 
   <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary  btn-mini' %>
+    <%= f.submit nil, :class => 'btn btn-primary  btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                gallery_path(@gallery), :class => 'btn btn-mini' %>
-    <%= link_to 'Default', '', :class => 'btn btn-mini btn-success' , :id => 'make_default'%>
+                gallery_path(@gallery), :class => 'btn btn-primary' %>
+    <%= link_to 'Default', '', :class => 'btn btn-primary btn-success' , :id => 'make_default'%>
 
   </div>
 <% end %>

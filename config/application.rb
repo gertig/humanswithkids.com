@@ -4,7 +4,7 @@ require 'rails/all'
 
 Bundler.require(:default, Rails.env)
 
-module Andrewgertig
+module Hwk
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -67,12 +67,12 @@ module Andrewgertig
       # 302 is a temoporary redirect
       
       # redirects the sitemap URL to point to amazon S3
-      r302 %r{^/sitemap.xml}, "http://andrewgertig.com.s3-website-us-east-1.amazonaws.com/sitemaps/sitemap1.xml.gz"
+      r302 %r{^/sitemap.xml}, "http://humanswithkids.com.s3-website-us-east-1.amazonaws.com/sitemaps/sitemap1.xml.gz"
       
-      # redirects the root andrewgertig.com to www.andrewgertig.com
-      r301 %r{.*}, 'http://www.andrewgertig.com$&', :if => Proc.new {|rack_env|
+      # redirects the root humanswithkids.com to www.humanswithkids.com
+      r301 %r{.*}, 'http://www.humanswithkids.com$&', :if => Proc.new {|rack_env|
         # Rails.logger.info "PATH: #{rack_env['PATH_INFO']} matches Regex? #{rack_env['PATH_INFO'] === %r{\/tag\/.*$}}"
-        rack_env['SERVER_NAME'] == 'andrewgertig.com'
+        rack_env['SERVER_NAME'] == 'humanswithkids.com'
         # || rack_env['PATH_INFO'] === %r{\/tag\/.*$}
       }
       

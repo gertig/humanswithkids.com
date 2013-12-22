@@ -29,7 +29,7 @@ class PostsController < ApplicationController
   
   def feed
     # this will be the name of the feed displayed on the feed reader
-      @title = "AndrewGertig.com"
+      @title = "HumansWithKids.com"
 
       # the news items
       @posts = Post.publisheds.order("published_at DESC")

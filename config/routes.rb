@@ -1,4 +1,4 @@
-Andrewgertig::Application.routes.draw do
+Hwk::Application.routes.draw do
   
   resources :galleries do
     resources :pictures do

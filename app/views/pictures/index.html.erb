@@ -23,12 +23,12 @@
         <td><%=l picture.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_picture_path(picture), :class => 'btn btn-mini' %>
+                      edit_picture_path(picture), :class => 'btn btn-primary' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       picture_path(picture),
                       :method => :delete,
                       :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
-                      :class => 'btn btn-mini btn-danger' %>
+                      :class => 'btn btn-primary btn-danger' %>
         </td>
       </tr>
     <% end %>

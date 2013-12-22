@@ -117,41 +117,25 @@ nav.ag ul {
 
 }
 
-/* MY NAME
+/* AVATAR
 ====================== */
 
-a#blog-title {
-  display: block;
-  color: $purple;
-  color: $midnight;
-  color: #70c6b7;
-  margin: 60px 0 60px;
-  font-size: 4.0em;
-  line-height: 1.0em;
-  font-family: 'Viga', 'Audiowide', 'Codystar', 'Croissant One','Alegreya', serif;
-  // font-weight: 700;
-    
-  &:hover { 
-    text-decoration: none; 
-  }
-
-  #avatar {
-    $size: 100px;
-    width: $size;
-    height: $size;
-    // float: left;
-    display: inline-block;
-    background-image: image-url("avatar2.jpeg"); //image-url is a sprockets helper, could also use asset-url("", image)
-    background-position: -5px 0px;
-    background-repeat: no-repeat;
-    border: 2px solid #ddd;
-    border-radius: ($size / 2);
-    vertical-align: middle;
-    margin-right: 10px;
-    margin-bottom: 6px;
-  }
-
+#avatar {
+  $size: 100px;
+  width: $size;
+  height: $size;
+  // float: left;
+  display: inline-block;
+  background-image: image-url("avatar2.jpeg"); //image-url is a sprockets helper, could also use asset-url("", image)
+  background-position: -5px 0px;
+  background-repeat: no-repeat;
+  border: 2px solid #ddd;
+  border-radius: ($size / 2);
+  vertical-align: middle;
+  margin-right: 10px;
+  margin-bottom: 6px;
 }
+
 
 
 
@@ -188,12 +172,4 @@ article#about-me {
 
 /* FOOTER
 ====================== */
-#projects {
-  margin-bottom: 40px;
-  
-  ul { margin: 0; padding: 0;}
-  ul, li {
-    list-style: none;
-  }
 
-}

@@ -1,73 +1,80 @@
 <div class="row">
-  <h1>Gallery</h1>
+  <h2><%= @gallery.name %> Images</h2>
 
   <input type="hidden" id="galleryID" value="<%= @gallery.id %>">
-
-  <p>
-    <b>Name: </b>
-    <%= @gallery.name %>
-  </p>
 
   <p>
     <b>Description: </b>
     <%= @gallery.description %>
   </p>
 
-<h2>Pictures</h2>
+<hr>
+
 </div>
 
 <%= form_for [@gallery, @picture], :html => { :multipart => true, :id => "fileupload"  } do |f| %>
+
   <div class="row">
     <div class="fileupload-buttonbar">
       <div class="progressbar fileupload-progressbar nofade"><div style="width:0%;"></div></div>
-      <span class="btn btn-mini fileinput-button">
-        <i class="icon-plus"></i>
+      
+      <span class="btn btn-primary fileinput-button">
+        <i class="glyphicon glyphicon-plus"></i>
         <span><%= t('photos.add_files') %>...</span>
         <%= f.file_field :image, :multiple => true %>
       </span>
     </div>
   </div>
+
   <br>
+
   <div class="row">
-    <ul class="thumbnails files">
+    <div class="col-md-3">
       <% unless @pictures.empty? %>
         <% @pictures.each do |pic| %>
-            <li class="span3" id="picture_<%= pic.id %>">
-              <div class="thumbnail">
+            <!-- <li class="thumbnail" id="picture_<%= pic.id %>"> -->
+              <div class="thumbnail" id="picture_<%= pic.id %>">
                 <a href="<%= pic.image.url %>" rel="lightbox-pictures" title="<%= pic.description %>">
-                  <img src="<%= pic.image.thumb.url %>" alt="">
+                  <img src="<%= pic.image.preview.url %>" alt="">
                 </a>
                 <div class="caption">
+                  <div id="" class="image-url">
+                    <b>Large</b>
+                    <br>
+                    <%= text_field_tag("image-url", pic.image.large.url, class: "input-medium", onclick: "this.focus(); this.select();") %>
+                    <br>
+                    <b>Preview (690x518)</b>
+                    <br>
+                    <%= text_field_tag("image-url", pic.image.preview.url, class: "input-medium", onclick: "this.focus(); this.select();") %>
+                  </div>
+
                   <p style="text-align: center;">
-                    <a href="/galleries/<%= @gallery.id %>/pictures/<%= pic.id %>/edit" class="btn btn-mini">
-                      <i class="icon-edit "></i>
+                    <a href="/galleries/<%= @gallery.id %>/pictures/<%= pic.id %>/edit" class="btn btn-warning btn-sm">
+                      <i class="glyphicon glyphicon-edit"></i>
                       Edit
                     </a>
-                    <a class="btn btn-mini btn-delete" data-confirm="Delete this guy?" data-method="delete" href="/galleries/<%= @gallery.id %>/pictures/<%= pic.id %>" data-remote=true>
-                      <i class="icon-trash"></i>
+                    <a class="btn btn-danger btn-sm" data-confirm="Delete this guy?" data-method="delete" href="/galleries/<%= @gallery.id %>/pictures/<%= pic.id %>" data-remote=true>
+                      <i class="glyphicon glyphicon-trash"></i>
                       Delete
                     </a>
                   </p>
-                </div>
-                <div id="" class="image-url">
-                  <b>Large</b>
-                  <%= text_field_tag("image-url", pic.image.large.url, class: "input-medium", onclick: "this.focus(); this.select();") %>
 
-                  <b>Preview (690x518)</b>
-                  <%= text_field_tag("image-url", pic.image.preview.url, class: "input-medium", onclick: "this.focus(); this.select();") %>
                 </div>
+
               </div>
-            </li>
+            <!-- </li> -->
         <% end %>
       <% end %>
-    </ul>
+    </div>
   </div>
 <% end %>
 
+<hr/>
+
 <div class="row">
   <div class="form-actions">
-    <%= link_to 'Back', galleries_path, :class => 'btn btn-mini'  %>
-    <%= link_to 'Edit', edit_gallery_path(@gallery), :class => 'btn btn-mini' %>
-    <%= link_to 'Delete', gallery_path(@gallery), :method => 'delete', :data => { confirm: 'Are you sure?'}, :class => 'btn btn-mini' %>
+    <%#= link_to 'Back', galleries_path, :class => 'btn btn-warning'  %>
+    <%= link_to 'Edit', edit_gallery_path(@gallery), :class => 'btn btn-warning' %>
+    <%= link_to 'Delete', gallery_path(@gallery), :method => 'delete', :data => { confirm: 'Are you sure?'}, :class => 'btn btn-danger' %>
   </div>
 </div>

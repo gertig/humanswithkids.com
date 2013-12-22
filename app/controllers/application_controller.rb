@@ -9,8 +9,8 @@ class ApplicationController < ActionController::Base
     redirect_to root_url, :alert => exception.message
   end
 
-  def is_andrew?
-    user_signed_in? && current_user.name == "Andrew"
+  def is_andrew?  
+    user_signed_in? && current_user.name.include?("Andrew")
   end
   helper_method :is_andrew?
   

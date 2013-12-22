@@ -67,11 +67,11 @@ $(function () {
                         '</a>' +
                         '<div class="caption">' +
                           '<p style="text-align: center;">' +
-                            '<a href="" class="btn btn-mini btn-show" style="margin-right: 4px;">' +
+                            '<a href="" class="btn btn-primary btn-show" style="margin-right: 4px;">' +
                               '<i class="icon-edit "></i>' +
                               'Edit' +
                             '</a>' +
-                            '<a class="btn btn-mini btn-delete" confirm="Вы уверены?" data-remote=true data-method="delete" href="" >' +
+                            '<a class="btn btn-primary btn-delete" confirm="Вы уверены?" data-remote=true data-method="delete" href="" >' +
                               '<i class="icon-trash"></i>' +
                               'Delete' +
                             '</a>' +

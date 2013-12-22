@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Andrewgertig::Application.load_tasks
+Hwk::Application.load_tasks
