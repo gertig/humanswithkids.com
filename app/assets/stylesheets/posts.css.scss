@@ -8,7 +8,7 @@ $black: rgb(42, 66, 78);
 
 
 p, #projects {
-  font-family: 'Gentium Basic', serif;
+  font-family: 'Open Sans', serif;
   font-size: 22px;
   line-height: 135%;
   margin-bottom: 14px;
@@ -34,7 +34,7 @@ article.post-container {
   }
   
   p, li {
-    font-family: 'Gentium Basic', serif;
+    font-family: 'Open Sans', serif;
   }
   
   ol {
@@ -167,7 +167,7 @@ ul#word-count.result {
 
 @media (max-width: 480px) {
   pre {
-    fofont-size: 12px;
+    font-size: 12px;
     line-height: 20px;
   }
   .related h2,

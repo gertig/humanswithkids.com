@@ -21,7 +21,7 @@ Hwk::Application.routes.draw do
   as :user do
     get     "login"   => "devise/sessions#new",     :as => :new_user_session    # new_user_session_path
     post    "login"   => "devise/sessions#create",  :as => :user_session  # user_session_path
-    delete  "logout"  => "devise/sessions#destroy", :as => :destroy_user_session # destroy_user_session_path
+    get     "logout"  => "devise/sessions#destroy", :as => :destroy_user_session # destroy_user_session_path
   end
 
   # devise_scope :user do

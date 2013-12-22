@@ -35,7 +35,7 @@
   
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.3/jquery.backstretch.min.js"></script>
   
-  <link href='http://fonts.googleapis.com/css?family=Gentium+Basic:400,700,400italic|Alegreya:400,700|Croissant+One|Codystar|Audiowide|Viga' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Gentium+Basic:400,700,400italic|Alegreya:400,700|Open+Sans|Audiowide|Viga' rel='stylesheet' type='text/css'>
 
   <!-- 
     font-family: 'Lora', serif;
@@ -58,7 +58,9 @@
   <%= render "facebook" %>
 
   <div class="container">
+    <%= link_to root_url do %>
     <%= image_tag "HumansWithKids.png", class: "logo", width: 300, style: "width: 300px; margin: 20px auto 20px; display: block;" %>
+    <% end %>
   </div>
 
   <header>
@@ -122,10 +124,12 @@
 
   <%# HERO IMAGE %>
   <!-- <div class="row"> -->
+  <% if params[:controller] == "home" %>
     <div class="hero-image-wrapper hidden-apg-xs">
         <div class="actual-image" style="background-image: url('https://humanswithkids-assets.s3.amazonaws.com/uploads/picture/image/5/large_kathryn19.jpg');"></div>
         <!-- <div class="actual-image" style="background-image: url('http://humanswithkids.siftedwheat.com/wp-content/uploads/sites/3/HWK-HEader21.png');"></div> -->
     </div>
+  <% end %>
   <!-- </div> -->
 
   <div class="container">
