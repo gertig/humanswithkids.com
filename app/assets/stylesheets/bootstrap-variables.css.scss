@@ -269,8 +269,8 @@ $grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
 // Basics of a navbar
 // $navbar-height:                    50px !default;
 $navbar-height:                    80px !default;
-// $navbar-margin-bottom:             $line-height-computed !default;
-$navbar-margin-bottom:             0px !default;
+$navbar-margin-bottom:             $line-height-computed !default;
+// $navbar-margin-bottom:             0px !default;
 // $navbar-border-radius:             $border-radius-base !default;
 $navbar-border-radius:             0px !default;
 $navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;

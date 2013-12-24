@@ -30,32 +30,35 @@
   end
 %>
 
+<div class="col-md-6 col-md-offset-3">
 
-<section id="post-<%= @post.id %>">
-  <article class="post-container">
-    <div class="post-sharing-buttons"><%= render partial: "sharing_buttons", locals: { post: @post } %></div>
+  <section id="post-<%= @post.id %>">
+    <article class="post-container">
+      <div class="post-sharing-buttons"><%= render partial: "sharing_buttons", locals: { post: @post } %></div>
+      
+      <%= render partial: "admin_box", locals: { post: @post } if is_andrew? %>
+      
+      <h2 class="post-title"><%= @post.title %></h2>
+      
+      <span class="post-date">Written by <%= @post.author %> on <%= @post.published_on %></span>
     
-    <%= render partial: "admin_box", locals: { post: @post } if is_andrew? %>
-    
-    <h2 class="post-title"><%= @post.title %></h2>
-    
-    <span class="post-date">Written by <%= @post.author %> on <%= @post.published_on %></span>
-  
-    
-    <div class="post-content">      
-      <% if @post.content %>
-        <%= markdown(@post.content).to_html.html_safe %>
-      <% end %>
-    </div>
+      
+      <div class="post-content">      
+        <% if @post.content %>
+          <%= markdown(@post.content).to_html.html_safe %>
+        <% end %>
+      </div>
 
-  </article>
-        
-</section>
+    </article>
+          
+  </section>
 
-<div id="post-navigation"  class="clearfix" >
-  <%= link_to "← Previous Post", blogpost_path(@post.previous), class: "previous-post" if @post.previous %>
-  <%= link_to "Next Post →",  blogpost_path(@post.next), class: "next-post" if @post.next %>
+  <div id="post-navigation"  class="clearfix" >
+    <%= link_to "← Previous Post", blogpost_path(@post.previous), class: "previous-post" if @post.previous %>
+    <%= link_to "Next Post →",  blogpost_path(@post.next), class: "next-post" if @post.next %>
+  </div>
+
+  <div id="disqus_thread"></div>
+  <%= render "disqus" if Rails.env.production? %>
+
 </div>
-
-<div id="disqus_thread"></div>
-<%= render "disqus" if Rails.env.production? %>

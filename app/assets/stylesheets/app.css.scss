@@ -28,9 +28,10 @@ h1, h2, h3, h4, h5, h6, p {
 
 .main-container {
   @extend .container;
-  width: auto; //this fixes the problem with Bootstrap's 940px width not allowing the posts to be fluid
-  max-width: 664px;
-  margin: 0 auto;
+  // width: auto; //this fixes the problem with Bootstrap's 940px width not allowing the posts to be fluid
+  // max-width: 664px;
+  // margin: 0 auto;
+  margin-top: $navbar-height;
 }
 
 .top {
@@ -281,6 +282,9 @@ article#about-me {
   
 }
 
-/* FOOTER
+/* ARCHIVES
 ====================== */
+#archives {
+  margin-bottom: 40px;
+}
 

@@ -147,14 +147,18 @@
   <% end %>
   <!-- </div> -->
 
-  <div class="container">
+  <div class="main-container">
 
     <%# DEVISE %>
-    <p class="notice-CHANGE"><%= notice %></p>
-    <p class="alert-CHANGE"><%= alert %></p>
+    <div id="" class="row">
+      <p class="notice-CHANGE"><%= notice %></p>
+      <p class="alert-CHANGE"><%= alert %></p>
+    </div>
     
-    
-    <%= yield %>
+    <div class="row">
+      <%= yield %>
+    </div>
+
     
     <div class="row">
       <footer>
