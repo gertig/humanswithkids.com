@@ -1,5 +1,7 @@
 Hwk::Application.routes.draw do
   
+  resources :grumps
+
   resources :galleries do
     resources :pictures do
       collection do

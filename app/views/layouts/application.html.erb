@@ -57,11 +57,11 @@
   
   <%= render "facebook" %>
 
-  <div class="container">
+<!--   <div class="container">
     <%= link_to root_url do %>
     <%= image_tag "HumansWithKids.png", class: "logo", width: 300, style: "width: 300px; margin: 20px auto 20px; display: block;" %>
     <% end %>
-  </div>
+  </div> -->
 
   <header>
 
@@ -76,7 +76,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <!-- <a class="navbar-brand" href="#">Brand</a> -->
+          <%= link_to root_url, class: "navbar-brand" do %>
+            Humans With Kids
+          <% end %>
+
+          <!-- <a class="navbar-brand" href="#">Humans With Kids</a> -->
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -85,7 +89,7 @@
             <li class="active"><%= link_to "Home", root_url %></li>
             <li><%= link_to "Blog", archives_path %></li>
             <li><%= link_to "Shop", "#" %></li>
-            <li><%= link_to "About HWK", about_path %></li>
+            <li><%= link_to "About", about_path %></li>
             <li><%= link_to "Contact Us", "#", id: "email-me", title: "hello@humanswithkids.com", data: { placement: "bottom", toggle: "tooltip" } %></li>
 <!--             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
@@ -106,9 +110,9 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
               <ul class="dropdown-menu">
+                <li><%= link_to "New Post", new_user_post_path(current_user) %></li>
                 <li><%= link_to "Dashboard", admin_path %></li>
                 <li><%= link_to "Media", galleries_path %></li>
-                <li><a href="#">Something else here</a></li>
                 <li class="divider"></li>
                 <li><%= link_to "Logout", destroy_user_session_path %></li>
               </ul>
@@ -126,7 +130,8 @@
   <!-- <div class="row"> -->
   <% if params[:controller] == "home" %>
     <div class="hero-image-wrapper hidden-apg-xs">
-        <div class="actual-image" style="background-image: url('https://humanswithkids-assets.s3.amazonaws.com/uploads/picture/image/5/large_kathryn19.jpg');"></div>
+        <!-- <div class="actual-image" style="background-image: url('https://humanswithkids-assets.s3.amazonaws.com/uploads/picture/image/5/large_kathryn19.jpg');"></div> -->
+        <div class="actual-image" style="background-image: url('https://humanswithkids-assets.s3.amazonaws.com/uploads/picture/image/7/large_IMG_4324.JPG');"></div>
         <!-- <div class="actual-image" style="background-image: url('http://humanswithkids.siftedwheat.com/wp-content/uploads/sites/3/HWK-HEader21.png');"></div> -->
     </div>
   <% end %>

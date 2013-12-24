@@ -16,11 +16,19 @@ class Post < ActiveRecord::Base
   friendly_id :title, use: [:slugged, :history]
   
   before_save :published_post
+
+  def self.featured_posts
+    publisheds.where(featured: true).order("published_at DESC")
+  end
   
   def published_post
     if self.published == true && self.published_at.nil?
      self.published_at = Time.now
     end
+  end
+
+  def author
+    user.name
   end
   
   def published_on

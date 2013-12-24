@@ -46,6 +46,10 @@
     <%= f.label :published, class: "checkbox" do %>
       <%= f.check_box :published %> Published
     <% end %>
+
+    <%= f.label :featured, class: "checkbox" do %>
+      <%= f.check_box :featured %> Featured
+    <% end %>
     
     <%= f.label :protect_slug, class: "checkbox" do %>
       <%= f.check_box :protect_slug %> Protect url slug from updates
@@ -54,13 +58,13 @@
     <%= f.label :url_contains_date, class: "checkbox" do %>
       <%= f.check_box :url_contains_date %> Show published date in the url
     <% end %>
-    
+
+    <%= f.label :published_at %>
+    <%= f.date_select :published_at %>
   
   <div class="form-actions">
     <%= f.submit class: "btn btn-primary" %>
   </div>
   
-  <p><b>Tip:</b> when changing the published_at date so the url is correct for old Posts, change it from heroku console.</p>
-  <p><em>Post.find(<%= @post.id %>).update_attribute(:published_at, '2011-05-15 00:00:00')</em></p>
 <% end %>
 

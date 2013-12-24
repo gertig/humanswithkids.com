@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131218194613) do
+ActiveRecord::Schema.define(version: 20131223222357) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,13 @@ ActiveRecord::Schema.define(version: 20131218194613) do
     t.string   "description"
     t.integer  "cover"
     t.string   "token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "grumps", force: true do |t|
+    t.string   "name"
+    t.date     "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -59,6 +66,7 @@ ActiveRecord::Schema.define(version: 20131218194613) do
     t.text     "meta_description"
     t.string   "image_url_string"
     t.boolean  "url_contains_date", default: false
+    t.boolean  "featured",          default: false
   end
 
   add_index "posts", ["slug"], name: "index_posts_on_slug", using: :btree
