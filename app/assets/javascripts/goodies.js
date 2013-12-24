@@ -22,23 +22,23 @@ $(function(){
      $("div#messages").delay(5000).slideUp();
   }
   
+  // CONTACT US TOOLTIP
   $('#email-me').tooltip();
-});
 
 
+  if ($('#post_content').length) {
+    // COUNTABLE
+    var countable_elem = document.getElementById("post_content"),
+        results = {
+          paragraphs: document.getElementById('result__paragraphs'),
+          words: document.getElementById('result__words'),
+          characters: document.getElementById('result__characters'),
+          all: document.getElementById('result__all')
+        };
+        
+    new Countable(countable_elem, countableUpdater);
+  }
 
-//DOM is Ready
-$(function() {
-  var countable_elem = document.getElementById("post_content"),
-      results = {
-        paragraphs: document.getElementById('result__paragraphs'),
-        words: document.getElementById('result__words'),
-        characters: document.getElementById('result__characters'),
-        all: document.getElementById('result__all')
-      };
-      
-  new Countable(countable_elem, countableUpdater);
-  
   function countableUpdater(counter) {
     if ('textContent' in document.body) {
       results.paragraphs.textContent = counter.paragraphs;
@@ -53,8 +53,29 @@ $(function() {
     }
   };
   
+  console.log("I'm ready");
   
-  // Cloudinary uploads via Attachinary
-  // $('.attachinary-input').attachinary();
-  
+  // BLUR via VAGUE
+  // var vague = $("#blurred-logo-wrapper").Vague({
+  //   intensity: 6 //blur intensity,
+  //   // forceSVGUrl: false // force the absolute path to the svg filter
+  // });
+
+  // vague.blur();
+
+  // $("#hero-image").on({
+  //   click: function(){
+  //     $(this).addClass("active");
+  //   },
+  //   mouseenter: function(){
+  //     console.log("I need to add a con snippet");
+  //     // $(this).addClass("inside");
+  //     vague.unblur();
+  //   },
+  //   mouseleave: function(){
+  //     // $(this).removeClass("inside");
+  //     vague.blur();
+  //   }
+  // });
+
 });

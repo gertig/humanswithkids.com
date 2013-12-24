@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require Countable
+//= require Vague
 
 //= require jquery.ui.widget
 //= require jquery.Jcrop
@@ -27,7 +28,6 @@
 //= require slimbox2
 //= require bootstrap
 //= require bootstrap-image-gallery.min
-//= require Vague
 
 //= require_tree .
 

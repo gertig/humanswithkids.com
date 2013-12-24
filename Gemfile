@@ -18,6 +18,7 @@ gem "bourbon", "~> 3.1.1"
 gem "neat", "~> 1.2.0"
 # gem "bootstrap-sass", "~> 2.3.1.0"
 gem "bootstrap-sass", "~> 3.0.3.0"
+gem 'font-awesome-sass'
 
 
 gem 'jquery-rails' #, "~> 2.2.1"

@@ -65,7 +65,7 @@
 
   <header>
 
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
       
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -77,7 +77,7 @@
             <span class="icon-bar"></span>
           </button>
           <%= link_to root_url, class: "navbar-brand" do %>
-            Humans With Kids
+            Humans With Kids Logo
           <% end %>
 
           <!-- <a class="navbar-brand" href="#">Humans With Kids</a> -->
@@ -131,8 +131,18 @@
   <% if params[:controller] == "home" %>
     <div class="hero-image-wrapper hidden-apg-xs">
         <!-- <div class="actual-image" style="background-image: url('https://humanswithkids-assets.s3.amazonaws.com/uploads/picture/image/5/large_kathryn19.jpg');"></div> -->
-        <div class="actual-image" style="background-image: url('https://humanswithkids-assets.s3.amazonaws.com/uploads/picture/image/7/large_IMG_4324.JPG');"></div>
+        <div id="hero-image" class="actual-image" style="background-image: url('https://humanswithkids-assets.s3.amazonaws.com/uploads/picture/image/7/large_IMG_4324.JPG');">
+
+<!--           <div id="blurred-logo-wrapper" class="">
+            <h1 class="hwk-logo">Humans With Kids</h1>
+          </div> -->
+
+          
+
+        </div>
         <!-- <div class="actual-image" style="background-image: url('http://humanswithkids.siftedwheat.com/wp-content/uploads/sites/3/HWK-HEader21.png');"></div> -->
+        
+
     </div>
   <% end %>
   <!-- </div> -->
@@ -146,7 +156,43 @@
     
     <%= yield %>
     
-    <div id="social-buttons" class="social">
+    <div class="row">
+      <footer>
+        <ul class="icons">
+          <li>
+            <%= link_to "http://twitter.com/HumansWithKids", class: "fa fa-twitter solo", target: "_blank" do %>
+              <span>Twitter</span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "http://youtube.com/user/HumansWithKids", class: "fa fa-facebook solo", target: "_blank" do %>
+              <span>Facebook</span>
+            <% end %>
+          </li>
+
+          <li>
+            <%= link_to "https://plus.google.com/111594140093002939124?rel=author", class: "fa fa-google-plus solo", target: "_blank" do %>
+              <span>Google+</span>
+            <% end %>
+          </li>
+
+          <li>
+            <%= link_to "https://github.com/gertig/humanswithkids.com", class: "fa fa-github solo", target: "_blank" do %>
+              <span>GitHub</span>
+            <% end %>
+          </li>
+
+          <!-- <li><a href="#" class="fa fa-twitter solo"><span>Twitter</span></a></li> -->
+          <!-- <li><a href="#" class="fa fa-facebook solo"><span>Facebook</span></a></li> -->
+          <!-- <li><a href="#" class="fa fa-google-plus solo"><span>Google+</span></a></li> -->
+          <!-- <li><a href="#" class="fa fa-dribbble solo"><span>Dribbble</span></a></li> -->
+          <!-- <li><a href="#" class="fa fa-github solo"><span>GitHub</span></a></li> -->
+        </ul>
+      </footer>
+    </div>
+
+
+<!--     <div id="social-buttons" class="social">
       <%= link_to "http://twitter.com/HumansWithKids" do %>
         <%= image_tag(asset_path("twitter42.png")) %>
       <% end %>
@@ -158,8 +204,7 @@
       <%= link_to "https://plus.google.com/111594140093002939124?rel=author" do %>
         <%= image_tag(asset_path("google-plus42.png")) %>
       <% end %>
-
-    </div>
+    </div> -->
     
   </div> <!-- /container -->
 

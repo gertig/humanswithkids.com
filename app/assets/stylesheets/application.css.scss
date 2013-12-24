@@ -13,6 +13,7 @@ Delete the following sprocket directive in application.css.scss:
 // $navbar-default-bg:                #ffffff !default;
 @import "bootstrap-variables";
 @import "bootstrap";
+@import "font-awesome";
 
 
 @import "app";
