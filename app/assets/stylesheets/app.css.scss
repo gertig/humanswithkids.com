@@ -285,6 +285,26 @@ article#about-me {
 /* ARCHIVES
 ====================== */
 #archives {
+  margin-top: 40px;
   margin-bottom: 40px;
+}
+
+h2.archives-post-title {
+  margin-bottom: 0px;
+  margin-top: 46px;
+  font-size: 24.5px;
+  
+  a {
+    color: $black;
+  }
+}
+
+span.archives-post-date {
+  margin-top: 0;
+  color: #ccc;
+}
+
+.archives-post-image {
+  border: solid 4px #ebebeb !important;
 }
 

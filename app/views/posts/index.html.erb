@@ -1,20 +1,41 @@
 
-<div class="col-md-6 col-md-offset-3">
+<div class="col-md-8 col-md-offset-2">
 
   <section id="archives">
+    <div class="row">
     <% @posts.each do |post| %>
 
-      <div class="row">
-        <h2 class="archives-post-title">
+
+
+        <div class="media">
+          <%= link_to blogpost_path(post), class: "pull-left" do %>
+            <!-- <img class="media-object" src="..." alt="..."> -->
+            <%= image_tag post.image_url_string, class: "media-object archives-post-image", width: 200, alt: "Post image" %>
+
+          <% end %>
+
+          <div class="media-body">
+            <h2 class="media-heading archives-post-title"><%= link_to post.title, blogpost_path(post) %></h2>
+            <span class="archives-post-date">
+              Written by <%= post.author %> on <%= post.published_on %>
+            </span>
+          </div>
+
+        </div>
+
+
+<!--         <h2 class="archives-post-title">
           <%= link_to post.title, blogpost_path(post) %>
         </h2>
 
         <span class="archives-post-date">
           Written by <%= post.author %> on <%= post.published_on %>
-        </span>
-      </div>
+        </span> -->
+      
 
     <% end %>
+    </div>
+
   </section>
 
 </div>
