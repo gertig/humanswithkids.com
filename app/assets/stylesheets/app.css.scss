@@ -17,7 +17,8 @@ html {
 
 body { 
 /*  background-image: url(/assets/grid.png); */
- height: 100%;
+  height: 100%;
+  padding-top: $navbar-height;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -31,7 +32,6 @@ h1, h2, h3, h4, h5, h6, p {
   // width: auto; //this fixes the problem with Bootstrap's 940px width not allowing the posts to be fluid
   // max-width: 664px;
   // margin: 0 auto;
-  margin-top: $navbar-height;
 }
 
 .top {
