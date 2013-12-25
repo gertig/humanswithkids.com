@@ -4,21 +4,17 @@
   <section id="archives">
     <% @posts.each do |post| %>
 
-       <h2 class="archives-post-title">
+      <div class="row">
+        <h2 class="archives-post-title">
           <%= link_to post.title, blogpost_path(post) %>
-       </h2>
-     
-       <span class="archives-post-date">
-         Written by <%= post.author %> on <%= post.published_on %>
-       </span>
-       
-<!--        <span class="disqus-counts">
-         <%= link_to "0 Comments", "#{blogpost_path(post)}#disqus_thread" %>
-       </span> -->
+        </h2>
+
+        <span class="archives-post-date">
+          Written by <%= post.author %> on <%= post.published_on %>
+        </span>
+      </div>
 
     <% end %>
   </section>
-
-  <%#= render "disqus" if Rails.env.production? %>
 
 </div>
