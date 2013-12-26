@@ -61,6 +61,10 @@
 
     <%= f.label :published_at %>
     <%= f.date_select :published_at %>
+
+    <br>
+    <%= f.label "Author" %>
+    <%= collection_select(:post, :user_id, User.all, :id, :name) %>
   
   <div class="form-actions">
     <%= f.submit class: "btn btn-primary" %>

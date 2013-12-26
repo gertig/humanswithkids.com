@@ -1,0 +1,16 @@
+<% flash.each do |key, value| %>
+  <div class="alert <%= bootstrap_class_for(key) %> alert-dismissable" style="text-align: center;">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <strong><%= value %></strong>
+  </div>
+<% end %>
+
+<%# success, info, warning, danger %>
+
+
+    <%# DEVISE %>
+<!--     <div id="" class="row">
+      <p class="notice-CHANGE"><%= notice %></p>
+      <p class="alert-CHANGE"><%= alert %></p>
+    </div> -->
+

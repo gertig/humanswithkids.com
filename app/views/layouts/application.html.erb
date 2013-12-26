@@ -57,6 +57,8 @@
   
   <%= render "facebook" %>
 
+  <%= render "flash_messages" %>
+
 <!--   <div class="container">
     <%= link_to root_url do %>
     <%= image_tag "HumansWithKids.png", class: "logo", width: 300, style: "width: 300px; margin: 20px auto 20px; display: block;" %>
@@ -148,12 +150,6 @@
   <!-- </div> -->
 
   <div class="main-container">
-
-    <%# DEVISE %>
-    <div id="" class="row">
-      <p class="notice-CHANGE"><%= notice %></p>
-      <p class="alert-CHANGE"><%= alert %></p>
-    </div>
     
     <div class="row">
       <%= yield %>

@@ -1,6 +1,6 @@
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "http://humanswithkids.com"
-SitemapGenerator::Sitemap.sitemaps_host = "http://s3.amazonaws.com/humanswithkids.com/"
+# SitemapGenerator::Sitemap.sitemaps_host = "http://s3.amazonaws.com/humanswithkids-assets/"
 SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
 SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new
 

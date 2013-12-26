@@ -45,6 +45,7 @@ gem 'carrierwave', "~> 0.9.0" # "~> 0.8.0"
 
 # sitemap generator will store files on S3 via fog/carrierwave
 gem 'sitemap_generator', '~> 3.4'
+
 gem 'unf' # A fog depency, not sure what this does
 gem 'fog' # uploads to S3
 gem 'rack-rewrite'
