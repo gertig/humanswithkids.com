@@ -37,10 +37,10 @@ class ImageUploader < CarrierWave::Uploader::Base
     resize_to_limit(690, 518)
   end
 
-  # version :feature do
-  #   process :crop
-  #   resize_to_limit(400, 300)
-  # end
+  version :small do
+    process :crop
+    resize_to_limit(140, 105)
+  end
 
   version :thumb do
     process :crop
