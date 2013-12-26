@@ -9,7 +9,6 @@
 
         <div class="media">
           <%= link_to blogpost_path(post), class: "pull-left" do %>
-            <!-- <img class="media-object" src="..." alt="..."> -->
             <%= image_tag post.image_url_string, class: "media-object archives-post-image", width: 200, alt: "Post image" %>
 
           <% end %>
@@ -23,15 +22,6 @@
 
         </div>
 
-
-<!--         <h2 class="archives-post-title">
-          <%= link_to post.title, blogpost_path(post) %>
-        </h2>
-
-        <span class="archives-post-date">
-          Written by <%= post.author %> on <%= post.published_on %>
-        </span> -->
-      
 
     <% end %>
     </div>
