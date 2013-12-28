@@ -14,6 +14,9 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # From https://github.com/shaunakv1/Rails-Carrierwave-S3-jQuery-File-Upload/blob/master/app/uploaders/image_uploader.rb
   include CarrierWave::MimeTypes
+
+  process :fix_exif_rotation # fix the portrait vs. landscape
+
   process :set_content_type
 
   # Override the directory where uploaded files will be stored.
@@ -25,7 +28,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   resize_to_limit(1024, 768)
 
   def extension_white_list
-    %w(jpg jpeg gif png)
+    %w(jpg jpeg gif png JPG)
   end
 
   version :large do
@@ -37,15 +40,16 @@ class ImageUploader < CarrierWave::Uploader::Base
     resize_to_limit(690, 518)
   end
 
-  version :small do
-    process :crop
-    resize_to_limit(140, 105)
-  end
-
-  # version :thumb do
+  # version :small do
   #   process :crop
-  #   resize_to_fill(100, 100)
+  #   resize_to_limit(140, 105)
   # end
+
+  version :thumb do
+    process :crop
+    resize_to_fill(100, 100)
+    # resize_to_limit(140, 105)
+  end
 
 
   def crop
@@ -73,6 +77,16 @@ class ImageUploader < CarrierWave::Uploader::Base
       img.modulate(1.20, 0.5, 1.2)
     end
   end
+
+  def fix_exif_rotation
+    manipulate! do |img|
+      img = img.auto_orient
+    end
+  end
+
+    # manipulate! do |img|
+    #   img.tap(&:auto_orient)
+    # end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url

@@ -35,9 +35,11 @@ $(function () {
     // Initialize the jQuery File Upload widget:
     $('#fileupload').fileupload({
       autoUpload: true,
+
       uploadTemplate: function (o) {
         var rows = $();
         $.each(o.files, function (index, file) {
+          console.log("Upload This File");
           console.log(file);
 
             var row = $('<div class="col-md-4">' +
@@ -64,13 +66,26 @@ $(function () {
     },
 
     completed: function(e, data) {
+      console.log("It is finished uploading");
       console.log(data.result[0].url);
       $('a[href^="' + data.result[0].url + '"]').slimbox();
+    },
+
+    progressall: function (e, data) {
+      var progress = parseInt(data.loaded / data.total * 100, 10);
+      console.log("Progress: ", progress);
+      $('.progress .progress-bar').css(
+          'width',
+          progress + '%'
+      );
     },
 
     downloadTemplate: function (o) {
         var rows = $();
         $.each(o.files, function (index, file) {
+
+          console.log("File URL To diplay: ", file.url);
+          console.log("File Error: ", file.error);
 
 
             var row =  $('<div class="col-md-4">' +
@@ -110,20 +125,21 @@ $(function () {
             //           '</div>');
 
 
-            // if (file.error) {
-            //     row.find('.name').text(file.name);
-            //     row.find('.error').text(
-            //         locale.fileupload.errors[file.error] || file.error
-            //     );
-            // } else {
-            //     if (file.thumbnail_url) {
-            //         row.find('img').prop('src', file.thumbnail_url);
-            //     }
-            //     row.find('.btn-delete')
-            //         .attr('href', '/galleries/' + $("#galleryID").val() + '/pictures/' + file.picture_id);
-            //     row.find('.btn-show')
-            //         .attr('href', '/galleries/' + $("#galleryID").val() + '/pictures/' + file.picture_id + '/edit');
-            // }
+            if (file.error) {
+              console.log("ERROR UPLOADING FILE")
+                // row.find('.name').text(file.name);
+                // row.find('.error').text(
+                //     locale.fileupload.errors[file.error] || file.error
+                // );
+            } else {
+                if (file.preview_url) {
+                    row.find('img').prop('src', file.preview_url);
+                }
+                row.find('.btn-delete')
+                    .attr('href', '/galleries/' + $("#galleryID").val() + '/pictures/' + file.picture_id);
+                row.find('.btn-show')
+                    .attr('href', '/galleries/' + $("#galleryID").val() + '/pictures/' + file.picture_id + '/edit');
+            }
             rows = rows.add(row);
         });
         return rows;
