@@ -25,7 +25,15 @@ $(function(){
   // CONTACT US TOOLTIP
   $('#email-me').tooltip();
 
+  // Pin the Sidebar
+  $(".pinned").pin({
+      minWidth: 940,
+      containerSelector: ".post-form-container"
+      // containerSelector: "#post-sidebar"
+  });
 
+
+  // Only use Countable.js if you are editing/creating content
   if ($('#post_content').length) {
     // COUNTABLE
     var countable_elem = document.getElementById("post_content"),

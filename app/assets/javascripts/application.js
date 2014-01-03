@@ -26,6 +26,7 @@
 //= require locale
 //= require main
 //= require slimbox2
+//= require jquery.pin
 //= require bootstrap
 //= require bootstrap-image-gallery.min
 

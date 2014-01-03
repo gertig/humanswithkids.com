@@ -114,14 +114,14 @@ div.post-info, div.markdown-cheatsheet {
 
 div.post-info {
   position: absolute;
-  top: 92px;
-  left: -420px;
+  top: 48px;
+  right: -420px;
   width: 400px;
 }
 
 div.markdown-cheatsheet {
   position: absolute;
-  top: 240px;
+  top: 0px; //240px;
   left: -420px;
   width: 400px;
 }
