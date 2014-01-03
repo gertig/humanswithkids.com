@@ -1,0 +1,52 @@
+<section id="post-sidebar">
+
+  <div class="post-info">
+    <h4>Post Details</h4>
+    <p><em><%= @post.published_on %></em></p>
+    <p><em><%= @post.published? ? blogpost_path(@post) : "ID: #{@post.id}" %></em></p>
+  </div>
+
+  <div id="" class="markdown-cheatsheet">
+    <h4>Markdown Cheatsheet</h4>
+    <p><span class="label label-primary">Links</span> <b>[Link Text](http://link.url.com)</b></p>
+    <p><span class="label label-primary">Images</span> <b>![Image Title](http://link-to-image.jpg)</b></p>
+    <p><span class="label label-primary">Youtube</span> <b>http://youtu.be/Zp1WbEnPaNc</b></p>
+    <p>Find the youtube "Share" url and put it on its own line with a space above and a space below.</p>
+
+    <p><span class="label label-primary">Titles</span> <b># This is an h1 title</b></p>
+<pre>
+## This is an h2 title
+### This is an h3 title
+</pre>
+    <p>etc. to 6. Recommend using 2 to 4 #</p>
+
+    <p><span class="label label-primary">Bold and Italics</span></p>
+    <p>If you wrap in two asterisks it **becomes bold** but if you use one asterisk it *is italicized*.</p>
+    <p>If you wrap in two asterisks it <strong>becomes bold</strong> but if you use one asterisk it <em>is italicized</em>.</p>
+
+    <p><span class="label label-primary">Bullets</span></p>
+<pre>
+* A bullet
+  * Sub-bullet indent 2 spaces
+* Another bullet
+</pre>
+    <p>One newline above and below the bulleted list.</p>
+
+    <p><span class="label label-primary">Numbered List</span></p>
+<pre>
+1. First Item
+2. Second Item
+2. Repeating numbers is ok the code fixes it
+</pre>
+    <p>One newline above and below the list.</p>
+
+    <p><span class="label label-primary">Block Quote</span> <b><%=h "<blockquote>some text</blockquote>" %></b></p>
+
+    <p><span class="label label-primary">Highlight</span> <b><%=h "<mark>some text</mark>" %></b> = <mark>some text</mark></p>
+
+
+    <p><%= link_to "Cheatsheet", "http://nestacms.com/docs/creating-content/markdown-cheat-sheet" %></p>
+  </div>
+
+</section>
+

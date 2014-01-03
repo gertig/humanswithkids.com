@@ -39,12 +39,18 @@ article.post-container {
     }
   }
   
-  p, li {
+  p, li, blockquote {
     font-family: 'Open Sans', serif;
   }
+
+  blockquote {
+    font-size: 16px;
+    font-style: italic;
+    line-height: 26px;
+  }
   
-  ol {
-    padding-left: 20px;
+  ol, ul {
+    // padding-left: 20px;
     
     li {
         font-size: 16px;
@@ -89,25 +95,35 @@ a.next-post {
   // color: $purple;
 }
 
-/* POST EDIT SIDEBAR
+/* POST SIDEBAR
 ====================== */
 
-section.post-edit-container {
+section.post-form-container {
   position: relative;
 }
 
-div.post-edit-left-sidebar {
-  position: absolute;
-  top: 92px;
-  left: -220px;
-  width: 200px;
+div.post-info, div.markdown-cheatsheet {
   background: #EFEFEF;
   border: 1px solid #DDDDDD;
-  padding: 4px;
+  padding: 10px;
   p {
     font-size: 14px;
     font-family: arial;
   }
+}
+
+div.post-info {
+  position: absolute;
+  top: 92px;
+  left: -420px;
+  width: 400px;
+}
+
+div.markdown-cheatsheet {
+  position: absolute;
+  top: 240px;
+  left: -420px;
+  width: 400px;
 }
 
 /* EDIT/NEW A POST
@@ -133,7 +149,6 @@ div.post-edit-right-sidebar {
 /* Word Count when editing
 =========================== */
 ul#word-count.result {
-  
   list-style-type: none;
   border-radius: 5px;
   margin: 0 0 10px;
@@ -143,6 +158,13 @@ ul#word-count.result {
   list-style: none;
 
 }
+
+/* YOUTUBE
+=========================== */
+div.youtube-video {
+  margin-bottom: 10px;
+}
+
 
 
 /* Responsive
