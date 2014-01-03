@@ -18,7 +18,7 @@ class Post < ActiveRecord::Base
   before_save :published_post
 
   def self.featured_posts
-    publisheds.where(featured: true).order("published_at DESC")
+    publisheds.where(featured: true).where("image_url_string IS NOT NULL").order("published_at DESC")
   end
   
   def published_post
