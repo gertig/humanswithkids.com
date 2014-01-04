@@ -32,6 +32,10 @@ $(function(){
       // containerSelector: "#post-sidebar"
   });
 
+  // RESIZE TEXTAREA of Post Title when Editing
+  $('textarea.post-input-title').autosize(); 
+  $('textarea.ag-post-editing-field').autosize(); 
+
 
   // Only use Countable.js if you are editing/creating content
   if ($('#post_content').length) {

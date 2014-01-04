@@ -27,6 +27,7 @@
 //= require main
 //= require slimbox2
 //= require jquery.pin
+//= require jquery.autosize
 //= require bootstrap
 //= require bootstrap-image-gallery.min
 

@@ -1,13 +1,69 @@
-<section id="post-sidebar" class="">
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Markdown Cheatsheet</h4>
+      </div>
+      <div class="modal-body">
+        
+        <table class="table table-bordered">
+    <tbody><tr>
+      <td><strong>Style</strong></td>
+      <td><strong>Markdown Syntax</strong></td>
+    </tr>
+    <tr>
+      <td>H1 Header</td>
+      <td># Your Title</td>
+    </tr>
+    <tr>
+      <td>H2 Header</td>
+      <td>## Your Title (etc. up to 6)</td>
+    </tr>
+    <tr>
+      <td>Bold Text</td>
+      <td>**Your Text**</td>
+    </tr>
+    <tr>
+      <td>Italic Text</td>
+      <td>*Your Text*</td>
+    </tr>
+    <tr>
+      <td>Link</td>
+      <td>[example](http://example.com/)</td>
+    </tr>
+    <tr>
+      <td>Image</td>
+      <td>![Alt text](/path/example.jpg)</td>
+    </tr>
+    <tr>
+      <td>Bulleted List</td>
+      <td>* List item</td>
+    </tr>
+    <tr>
+      <td>Sub-Bullet</td>
+      <td>&nbsp;&nbsp; * Indent 2 spaces</td>
+    </tr>
+    <tr>
+      <td>Ordered List</td>
+      <td>1. List item</td>
+    </tr>
+    <tr>
+      <td>Blockquote</td>
+      <td><%=h "<blockquote>some text</blockquote>" %></td>
+    </tr>
+    <tr>
+      <td>Highlight</td>
+      <td><%=h "<mark>some text</mark>" %></td>
+    </tr>
+  </tbody></table>
 
-  <div class="post-info">
-    <h4>Post Details</h4>
-    <p><em><%= @post.published_on %></em></p>
-    <p><em><%= @post.published? ? blogpost_path(@post) : "ID: #{@post.id}" %></em></p>
-  </div>
+  <p>Note: Elements like titles, images, lists and code blocks need to be on their own separate lines in Markdown for them to be rendered properly</p>
 
-  <div class="markdown-cheatsheet">
-    <h4>Markdown Cheatsheet</h4>
+
+<!-- <div class="markdown-cheatsheet">
+
     <p><span class="label label-primary">Links</span> <b>[Link Text](http://link.url.com)</b></p>
     <p><span class="label label-primary">Images</span> <b>![Image Title](http://link-to-image.jpg)</b></p>
     <p><span class="label label-primary">Youtube</span> <b>http://youtu.be/Zp1WbEnPaNc</b></p>
@@ -47,6 +103,30 @@
 
     <p><%= link_to "Cheatsheet", "http://nestacms.com/docs/creating-content/markdown-cheat-sheet" %></p>
   </div>
+ -->
+
+      </div>
+<!--       <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<section id="post-sidebar" class="">
+
+  <div class="post-info">
+    <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">
+  Markdown Cheatsheet
+</button>
+
+    <h4>Post Details</h4>
+    <p><em><%= @post.published_on %></em></p>
+    <p><em><%= @post.published? ? blogpost_path(@post) : "ID: #{@post.id}" %></em></p>
+  </div>
+
 
 </section>
 

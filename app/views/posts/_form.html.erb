@@ -5,12 +5,16 @@
   <li><strong>Characters (with spaces): </strong><span id="result__all">0</span></li>
 </ul> -->
 
-<p><em>Words:</em> <strong><span id="result__words">0</span></strong>,   <em>Paragraphs:</em> <strong><span id="result__paragraphs">0</span></strong></p>
+<div class="word-count">
+  <p><span class="label label-info">Editing Mode</span>
+  <em>Words:</em> <strong><span id="result__words">0</span></strong>,   <em>Paragraphs:</em> <strong><span id="result__paragraphs">0</span></strong></p>
+</div>
+
 
 <%= form_for([@post.user, @post], :html => { class: "ag-post-form" }) do |f| %>
 
-  <div class="post-edit-right-sidebar">
-    <%= f.submit class: "btn btn-primary" %>
+  <div class="post-edit-left-sidebar">
+    <%= f.submit class: "btn btn-success" %>
   </div>
 
   <%= render "sidebar" %>
@@ -29,8 +33,8 @@
 
 
     <div class="form-group">
-      <%= f.text_field :title, class: "form-control", placeholder: "Title" %>
-      <%= f.text_area :content, class: "form-control ag-post-editing-field", placeholder: "Body" %>
+      <%= f.text_area :title, class: "form-control post-input-field post-input-title", placeholder: "Title" %>
+      <%= f.text_area :content, class: "form-control ag-post-editing-field post-input-field", placeholder: "Body" %>
     </div>
 
     
@@ -66,7 +70,7 @@
     <%= collection_select(:post, :user_id, User.all, :id, :name) %>
   
   <div class="form-actions">
-    <%= f.submit class: "btn btn-primary" %>
+    <%= f.submit class: "btn btn-success" %>
   </div>
   
 <% end %>

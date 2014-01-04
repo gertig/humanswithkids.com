@@ -72,7 +72,7 @@ article.post-container {
   
   div.post-admin-box {
     position: absolute;
-    top: 12px;
+    top: 0px;
     left: -120px;
   }
 }
@@ -102,7 +102,7 @@ section.post-form-container {
   position: relative;
 }
 
-div.post-info, div.markdown-cheatsheet {
+div.post-info {
   background: #EFEFEF;
   border: 1px solid #DDDDDD;
   padding: 10px;
@@ -114,37 +114,72 @@ div.post-info, div.markdown-cheatsheet {
 
 div.post-info {
   position: absolute;
-  top: 48px;
+  top: 12px;
   right: -420px;
   width: 400px;
 }
 
-div.markdown-cheatsheet {
-  position: absolute;
-  top: 0px; //240px;
-  left: -420px;
-  width: 400px;
-}
+// div.markdown-cheatsheet {
+//   position: absolute;
+//   top: 0px; //240px;
+//   left: -420px;
+//   width: 400px;
+// }
 
 /* EDIT/NEW A POST
 ====================== */
+div.word-count {
+  margin: 10px 0;
+}
 form.ag-post-form {
   position: relative;
 }
 
-textarea.ag-post-editing-field {
-  height: 800px;
-}
-
-div.post-edit-right-sidebar {
+div.post-edit-left-sidebar {
   position: absolute;
-  // top: 80px;
-  right: -220px;
-  width: 200px;
+  top: 12px;
+  left: -120px;
+  // width: 200px;
   // background: #EFEFEF;
   // border: 1px solid #DDDDDD;
 }
 
+.post-input-field {
+  background-color: transparent;
+  border: 0px solid;
+  outline: none;
+  // outline: 1px solid #336699;
+  border-radius: 0px;
+  box-shadow: none;
+  // width: 770px;
+}
+
+textarea.post-input-title {
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-family: 'Open Sans', sans-serif;
+  color: #2c3e50;
+  font-weight: 500;
+  line-height: 1.4em;
+  height: 1.4em;
+  padding: 0;
+  overflow: hidden;
+  word-wrap: break-word;
+  resize: none;
+
+  &:focus {
+    background: none;
+    border: none;
+  }
+}
+
+textarea.ag-post-editing-field {
+  height: 800px;
+  font-family: 'Open Sans', serif;
+  font-size: 18px;
+  line-height: 130%;
+  padding: 0;
+}
 
 /* Word Count when editing
 =========================== */
