@@ -5,9 +5,12 @@
     <div class="row">
     <% @posts.each do |post| %>
 
+    <div class="panel panel-default">
+      <div class="panel-body"> 
+
         <div class="media">
-          <%= link_to blogpost_path(post), class: "pull-left" do %>
-            <%= image_tag post.image_url_string, class: "media-object archives-post-image", width: 200, alt: "Post image" %>
+          <%= link_to blogpost_path(post), class: "pull-right" do %>
+            <%= image_tag post.image_url_string, class: "media-object archives-post-image", width: 180, alt: post.title unless post.image_url_string.empty? %>
 
           <% end %>
 
@@ -16,10 +19,23 @@
             <span class="archives-post-date">
               Written by <%= post.author %> on <%= post.published_on %>
             </span>
+
+            <p>
+            <div class="archives-post-content">
+              <p>
+                <% if !post.meta_description.blank? %>
+                  <%= sanitize(markdown(post.meta_description).to_html.html_safe, :tags => %w(p table tr td), :attributes => %w(id class style)).truncate(200, :separator => ' ') %>
+                <% else %>
+                  <%= sanitize(markdown(post.content).to_html.html_safe, :tags => %w(), :attributes => %w(id class style)).truncate(200, :separator => ' ') %>
+                <% end %>
+              </p>
+            </div>
           </div>
 
         </div>
 
+      </div>
+    </div>
 
     <% end %>
     </div>
