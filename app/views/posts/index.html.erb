@@ -9,7 +9,7 @@
       <div class="panel-body"> 
 
         <div class="media">
-          <%= link_to blogpost_path(post), class: "pull-right" do %>
+          <%= link_to blogpost_path(post), class: "pull-right hidden-xs" do %>
             <%= image_tag post.image_url_string, class: "media-object archives-post-image", width: 180, alt: post.title unless post.image_url_string.empty? %>
 
           <% end %>
