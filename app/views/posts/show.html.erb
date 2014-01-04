@@ -58,8 +58,7 @@
     <%= link_to "Next Post →",  blogpost_path(@post.next), class: "next-post" if @post.next %>
   </div>
 
-  <div id="disqus_thread"></div>
-  
-  <%= render "disqus" if Rails.env.production? %>
+  <!-- <div id="disqus_thread"></div> -->
+  <%#= render "disqus" if Rails.env.production? %>
 
 </div>
