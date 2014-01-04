@@ -119,12 +119,6 @@ div.post-info {
   width: 400px;
 }
 
-// div.markdown-cheatsheet {
-//   position: absolute;
-//   top: 0px; //240px;
-//   left: -420px;
-//   width: 400px;
-// }
 
 /* EDIT/NEW A POST
 ====================== */
@@ -139,19 +133,14 @@ div.post-edit-left-sidebar {
   position: absolute;
   top: 12px;
   left: -120px;
-  // width: 200px;
-  // background: #EFEFEF;
-  // border: 1px solid #DDDDDD;
 }
 
 .post-input-field {
   background-color: transparent;
   border: 0px solid;
   outline: none;
-  // outline: 1px solid #336699;
   border-radius: 0px;
   box-shadow: none;
-  // width: 770px;
 }
 
 textarea.post-input-title {
