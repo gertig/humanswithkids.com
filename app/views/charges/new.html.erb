@@ -5,9 +5,11 @@
     </label>
   </article>
 
+  <%= hidden_field(:product, :id, :value => params[:product_id]) %>
+
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-image="https://humanswithkids-assets.s3.amazonaws.com/uploads/picture/image/4/preview_14585_10151293040262937_621688043_n.jpg"
+          data-image="https://humanswithkids-assets.s3.amazonaws.com/uploads/picture/image/5/square_ST-4_-_Blue_-_Large_1024.jpg"
           data-name="Humans With Kids"
           <%# data-panel-label="Pay {{amount}}" %>
           data-label="Buy it!"
