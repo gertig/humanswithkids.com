@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140105215854) do
+ActiveRecord::Schema.define(version: 20140105221504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,13 +32,6 @@ ActiveRecord::Schema.define(version: 20140105215854) do
     t.string   "description"
     t.integer  "cover"
     t.string   "token"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "grumps", force: true do |t|
-    t.string   "name"
-    t.date     "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -75,7 +68,7 @@ ActiveRecord::Schema.define(version: 20140105215854) do
   create_table "products", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "amount"
+    t.integer  "price_in_cents"
     t.string   "image_url_string"
     t.boolean  "featured",         default: false
     t.datetime "created_at"

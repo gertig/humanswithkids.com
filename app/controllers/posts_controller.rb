@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
-  # GET users/1/posts
-  # GET users/1/posts.json
+  before_filter :authenticate_user!
   
   before_filter :find_post, :only => :show
 
