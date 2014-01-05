@@ -50,3 +50,5 @@ gem 'unf' # A fog depency, not sure what this does
 gem 'fog' # uploads to S3
 gem 'rack-rewrite'
 
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
