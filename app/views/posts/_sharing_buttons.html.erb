@@ -1,6 +1,6 @@
 <% if post.published? %>
 <div class="twitter-button">
-  <a href="https://twitter.com/share" class="twitter-share-button" data-via="gertig" data-counturl="<%= post.tweet_url(request.url) %>" data-count="horizontal" data-text="<%= post.title %>" data-url="<%= post.tweet_url(request.url) %>">Tweet</a>
+  <a href="https://twitter.com/share" class="twitter-share-button" data-via="" data-counturl="<%= post.tweet_url(request.url) %>" data-count="horizontal" data-text="<%= post.title %>" data-url="<%= post.tweet_url(request.url) %>">Tweet</a>
 
   <p class="hide">Tweet url:  <%= post.tweet_url(request.url) %></p>
 
