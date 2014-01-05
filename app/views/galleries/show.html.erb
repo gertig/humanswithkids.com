@@ -45,28 +45,20 @@
                   </a>
                   <div class="caption">
 
-                    <div class="image-url">
-                      <b>Feature (For Images in Posts, Featured images..)</b>
-                      <br>
-                      <%= text_field_tag("image-url", pic.image.preview.url, class: "input-medium", onclick: "this.focus(); this.select();") %>
-                      <br>
-                      <b>Large (used for Hero images)</b>
-                      <br>
-                      <%= text_field_tag("image-url", pic.image.large.url, class: "input-medium", onclick: "this.focus(); this.select();") %>
-                      <br>
+                    <div class="image-url form-group">
+                      <%= text_field_tag("image-url", pic.image.preview.url, class: "input-medium form-control", onclick: "this.focus(); this.select();") %>
                     </div>
 
-                    <div class="form-group">
-                      <%= link_to edit_gallery_picture_path(@gallery, pic), class: "btn btn-warning btn-sm" do %>
-                        <i class="glyphicon glyphicon-edit"></i>
-                        Edit
-                      <% end %>
-
-                      <%= link_to gallery_picture_path(@gallery, pic), class: "btn btn-danger btn-sm", data: { confirm: "Delete me? Nooo!", method: "delete", remote: true } do %>
+                    <div class="image-url form-group">
+                      <label><b>Large (used for Hero images)</b></label>
+                      <%= text_field_tag("image-url", pic.image.large.url, class: "input-medium form-control", onclick: "this.focus(); this.select();") %>
+                      
+                      <%= link_to gallery_picture_path(@gallery, pic), class: "btn btn-danger btn-sm pull-right", data: { confirm: "Delete me? Nooo!", method: "delete", remote: true } do %>
                         <i class="glyphicon glyphicon-trash"></i>
-                        Delete
                       <% end %>
                     </div>
+
+                      <%#= link_to "Edit", edit_gallery_picture_path(@gallery, pic) %>
 
                   </div>
 
@@ -84,6 +76,7 @@
 <div class="row">
   <div class="col-md-12">
     <div class="form-actions">
+      <small>There is no need to ever really mess with this.</small>
       <%#= link_to 'Back', galleries_path, :class => 'btn btn-warning'  %>
       <%= link_to 'Edit Gallery', edit_gallery_path(@gallery), :class => 'btn btn-warning' %>
       <%= link_to 'Delete This Gallery', gallery_path(@gallery), :method => 'delete', :data => { confirm: 'Are you sure? The WHOLE Gallery?'}, :class => 'btn btn-danger' %>

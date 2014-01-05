@@ -15,7 +15,7 @@ class GalleriesController < ApplicationController
   def show
     @gallery = Gallery.find(params[:id])
     @picture = @gallery.pictures.build
-    @pictures = Picture.where(gallery_id: @gallery.id)
+    @pictures = Picture.where(gallery_id: @gallery.id).reverse
 
     respond_to do |format|
       format.html # show.html.erb
