@@ -51,6 +51,12 @@ class ImageUploader < CarrierWave::Uploader::Base
     resize_to_limit(140, 105)
   end
 
+  version :square do
+    process :crop
+    resize_to_fill(128, 128)
+    # resize_to_limit(140, 105)
+  end
+
 
   def crop
     if model.crop_x.present?
