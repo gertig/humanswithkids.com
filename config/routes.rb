@@ -14,8 +14,9 @@ Hwk::Application.routes.draw do
   resources :users do
     resources :posts
   end
-
   resources :posts
+
+  resources :charges
 
   devise_for :users, :skip => [:sessions] #, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   
