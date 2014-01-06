@@ -169,39 +169,39 @@ article.featured-post {
 /* AVATAR
 ====================== */
 
-#avatar {
-  $size: 100px;
-  width: $size;
-  height: $size;
-  // float: left;
-  display: inline-block;
-  background-image: image-url("avatar2.jpeg"); //image-url is a sprockets helper, could also use asset-url("", image)
-  background-position: -5px 0px;
-  background-repeat: no-repeat;
-  border: 2px solid #ddd;
-  border-radius: ($size / 2);
-  vertical-align: middle;
-  margin-right: 10px;
-  margin-bottom: 6px;
-}
+// #avatar {
+//   $size: 100px;
+//   width: $size;
+//   height: $size;
+//   // float: left;
+//   display: inline-block;
+//   background-image: image-url("avatar2.jpeg"); //image-url is a sprockets helper, could also use asset-url("", image)
+//   background-position: -5px 0px;
+//   background-repeat: no-repeat;
+//   border: 2px solid #ddd;
+//   border-radius: ($size / 2);
+//   vertical-align: middle;
+//   margin-right: 10px;
+//   margin-bottom: 6px;
+// }
 
 
 
 
 /* SOCIAL BUTTONS
 ====================== */
-#social-buttons {
-  padding-bottom: 40px;
-  margin: 0 auto;
-  text-align: center;
+// #social-buttons {
+//   padding-bottom: 40px;
+//   margin: 0 auto;
+//   text-align: center;
   
-  a {
-    margin: 8px;
-    &:active, &:hover {
-      text-decoration: none;
-    }
-  }
-}
+//   a {
+//     margin: 8px;
+//     &:active, &:hover {
+//       text-decoration: none;
+//     }
+//   }
+// }
 
 /* FONTAWESOME SOCIAL BUTTONS
 ============================= */
@@ -275,13 +275,6 @@ article#about-me {
   img {
     margin-bottom: 20px;
   }
-  
-  // p {
-  //   font-size: 18px;
-  //   line-height: 26px;
-  //   margin-bottom: 14px;
-  // }
-  
 }
 
 /* ARCHIVES

@@ -1,12 +1,18 @@
 class ChargesController < ApplicationController
   
   def new
-    @amount = 500
+    @product = Product.find(1)
+
+    # html = render_to_string("products/email", {product: @product})
+    html = render_to_string(:partial => 'products/email', :layout => false, :formats=>[:html], :locals => {product: @product})
+
+
+    @product.send_purchase_email({stripeShippingAddressLine1: "1000 Main St.", html: html})
   end
 
 
   def create
-    raise params.to_yaml
+    # raise params.to_yaml
 
     @product = Product.find(params[:product][:id])
 
@@ -22,10 +28,12 @@ class ChargesController < ApplicationController
 
     charge = Stripe::Charge.create(
       :customer    => customer.id,
-      :amount      => @product.amount,
-      :description => @product.description,
+      :amount      => @product.price_in_cents,
+      :description => @product.name,
       :currency    => 'usd'
     )
+
+    @product.send_purchase_email(params)
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
