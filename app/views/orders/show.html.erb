@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @order.product_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @order.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @order.email %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @order.street %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @order.zip %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @order.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @order.state %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @order.country %>
+</p>
+
+<p>
+  <strong>Html string:</strong>
+  <%= @order.html_string %>
+</p>
+
+<p>
+  <strong>Andrews notified:</strong>
+  <%= @order.andrews_notified %>
+</p>
+
+<p>
+  <strong>Fulfilled:</strong>
+  <%= @order.fulfilled %>
+</p>
+
+<p>
+  <strong>Tracking code:</strong>
+  <%= @order.tracking_code %>
+</p>
+
+<p>
+  <strong>Customer notified of shipment:</strong>
+  <%= @order.customer_notified_of_shipment %>
+</p>
+
+<p>
+  <strong>Cancelled:</strong>
+  <%= @order.cancelled %>
+</p>
+
+<p>
+  <strong>Refunded:</strong>
+  <%= @order.refunded %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

@@ -1,13 +1,25 @@
 class ChargesController < ApplicationController
   
   def new
+
+    params = {
+       :stripeToken =>"tok_103G0s2NYY6aF7NIACwaJofC",
+       :stripeEmail =>"megan@test.com",
+       :stripeShippingName =>"Megan Jones",
+       :stripeShippingAddressLine1 =>"1020 Mulberry Dr.",
+       :stripeShippingAddressZip =>"20202",
+       :stripeShippingAddressCity =>"Washington",
+       :stripeShippingAddressState =>"DC",
+       :stripeShippingAddressCountry =>"United States"}
+
     @product = Product.find(1)
 
     # html = render_to_string("products/email", {product: @product})
-    html = render_to_string(:partial => 'products/email', :layout => false, :formats=>[:html], :locals => {product: @product})
+    html = render_to_string(:partial => 'products/email', :layout => false, :formats=>[:html], :locals => {product: @product, params: params})
 
+    Rails.logger.debug("[debug] : #{html}" );
 
-    @product.send_purchase_email({stripeShippingAddressLine1: "1000 Main St.", html: html})
+    @product.send_purchase_email(html, params)
   end
 
 
@@ -33,7 +45,14 @@ class ChargesController < ApplicationController
       :currency    => 'usd'
     )
 
-    @product.send_purchase_email(params)
+    # Render HTML String for Mailgun email
+    html = render_to_string(:partial => 'products/email', :layout => false, :formats=>[:html], :locals => {product: @product, params: params})
+    
+    # Send email to the andrews via
+    @product.send_purchase_email(html, params)
+
+    order_params = convert_stripe_to_order_params(html, params)
+    @order = Order.create!(order_params)
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
@@ -41,10 +60,16 @@ class ChargesController < ApplicationController
   end
 
 
-   # "stripeShippingName"=>"Jeff Manislaw",
-   # "stripeShippingAddressLine1"=>"1000 Main St.",
-   # "stripeShippingAddressZip"=>"28010",
-   # "stripeShippingAddressCity"=>"Charlotte",
-   # "stripeShippingAddressState"=>"NC",
-   # "stripeShippingAddressCountry"=>"United States"
+  def convert_stripe_to_order_params(html, params)
+    order_params = {
+      :email  => params[:stripeEmail],
+      :name   => params[:stripeShippingName],
+      :street => params[:stripeShippingAddressLine1],
+      :zip    => params[:stripeShippingAddressZip],
+      :city   => params[:stripeShippingAddressCity],
+      :state  => params[:stripeShippingAddressState],
+      :country => params[:stripeShippingAddressCountry],
+      :html_string => html
+    }
+  end
 end

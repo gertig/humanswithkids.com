@@ -1,0 +1,55 @@
+<h1>Listing orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Street</th>
+      <th>Zip</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Country</th>
+      <th>Html string</th>
+      <th>Andrews notified</th>
+      <th>Fulfilled</th>
+      <th>Tracking code</th>
+      <th>Customer notified of shipment</th>
+      <th>Cancelled</th>
+      <th>Refunded</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.product_id %></td>
+        <td><%= order.name %></td>
+        <td><%= order.email %></td>
+        <td><%= order.street %></td>
+        <td><%= order.zip %></td>
+        <td><%= order.city %></td>
+        <td><%= order.state %></td>
+        <td><%= order.country %></td>
+        <td><%= order.html_string %></td>
+        <td><%= order.andrews_notified %></td>
+        <td><%= order.fulfilled %></td>
+        <td><%= order.tracking_code %></td>
+        <td><%= order.customer_notified_of_shipment %></td>
+        <td><%= order.cancelled %></td>
+        <td><%= order.refunded %></td>
+        <td><%= link_to 'Show', order %></td>
+        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Order', new_order_path %>

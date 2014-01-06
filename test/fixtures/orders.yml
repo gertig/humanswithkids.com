@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product_id: 1
+  name: MyString
+  email: MyString
+  street: MyString
+  zip: MyString
+  city: MyString
+  state: MyString
+  country: MyString
+  html_string: MyText
+  andrews_notified: false
+  fulfilled: false
+  tracking_code: MyString
+  customer_notified_of_shipment: false
+  cancelled: false
+  refunded: false
+
+two:
+  product_id: 1
+  name: MyString
+  email: MyString
+  street: MyString
+  zip: MyString
+  city: MyString
+  state: MyString
+  country: MyString
+  html_string: MyText
+  andrews_notified: false
+  fulfilled: false
+  tracking_code: MyString
+  customer_notified_of_shipment: false
+  cancelled: false
+  refunded: false

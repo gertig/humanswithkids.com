@@ -1,2 +1,17 @@
-<h2><%= product.name %> (<%= product.features %>)</h2>
-<p><%= product.description %></p>
+<!--     email   = params[:stripeEmail]
+    name    = params[:stripeShippingName]
+    street  = params[:stripeShippingAddressLine1]
+    zip     = params[:stripeShippingAddressZip]
+    city    = params[:stripeShippingAddressCity]
+    state   = params[:stripeShippingAddressState]
+    country = params[:stripeShippingAddressCountry]
+    html    = params[:html] -->
+    
+<h3><%= product.name %> (<%= product.features %>)</h3>
+<p><%= params[:stripeEmail] %></p>
+<p><%= params[:stripeShippingName] %></p>
+<p><%= params[:stripeShippingAddressLine1] %></p>
+
+<p><%= params[:stripeShippingAddressCity] %>, <%= params[:stripeShippingAddressState] %> <%= params[:stripeShippingAddressZip] %></p>
+
+<p><%= params[:stripeShippingAddressCountry] %></p>
