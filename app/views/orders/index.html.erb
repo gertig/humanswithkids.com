@@ -1,6 +1,6 @@
-<h1>Listing orders</h1>
+<h1>Orders</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Product</th>
@@ -11,13 +11,13 @@
       <th>City</th>
       <th>State</th>
       <th>Country</th>
-      <th>Html string</th>
-      <th>Andrews notified</th>
+
+<!--       <th>Andrews notified</th>
       <th>Fulfilled</th>
       <th>Tracking code</th>
       <th>Customer notified of shipment</th>
       <th>Cancelled</th>
-      <th>Refunded</th>
+      <th>Refunded</th> -->
       <th></th>
       <th></th>
       <th></th>
@@ -27,7 +27,7 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.product_id %></td>
+        <td><%= link_to order.product_id, product_path(order.product_id) %></td>
         <td><%= order.name %></td>
         <td><%= order.email %></td>
         <td><%= order.street %></td>
@@ -35,13 +35,14 @@
         <td><%= order.city %></td>
         <td><%= order.state %></td>
         <td><%= order.country %></td>
-        <td><%= order.html_string %></td>
-        <td><%= order.andrews_notified %></td>
+
+<!--         <td><%= order.andrews_notified %></td>
         <td><%= order.fulfilled %></td>
         <td><%= order.tracking_code %></td>
         <td><%= order.customer_notified_of_shipment %></td>
         <td><%= order.cancelled %></td>
-        <td><%= order.refunded %></td>
+        <td><%= order.refunded %></td> -->
+
         <td><%= link_to 'Show', order %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>
         <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -52,4 +53,4 @@
 
 <br>
 
-<%= link_to 'New Order', new_order_path %>
+<%= link_to 'New Order', new_order_path, class: "btn btn-default" %>

@@ -51,7 +51,7 @@ class ChargesController < ApplicationController
     # Send email to the andrews via
     @product.send_purchase_email(html, params)
 
-    order_params = convert_stripe_to_order_params(html, params)
+    order_params = convert_stripe_to_order_params(@product.id, html, params)
     @order = Order.create!(order_params)
 
   rescue Stripe::CardError => e
@@ -60,8 +60,9 @@ class ChargesController < ApplicationController
   end
 
 
-  def convert_stripe_to_order_params(html, params)
+  def convert_stripe_to_order_params(product_id, html, params)
     order_params = {
+      :product_id => product_id,
       :email  => params[:stripeEmail],
       :name   => params[:stripeShippingName],
       :street => params[:stripeShippingAddressLine1],

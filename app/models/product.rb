@@ -59,4 +59,5 @@ class Product < ActiveRecord::Base
   #   "@api.mailgun.net/v2/samples.mailgun.org/messages", data
   # end
 
+
 end
