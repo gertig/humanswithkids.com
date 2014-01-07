@@ -1,33 +1,40 @@
-<h1>Products</h1>
+<h1 id="products-listing-header">Things We Love</h1>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Features</th>
-      <th>Amount</th>
-      <!-- <th>Featured</th> -->
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
+<!-- <table class="table">
   <tbody>
     <% @products.each do |product| %>
       <tr>
-        <td><%= product.name %></td>
+        <td><%= link_to product.name, product %></td>
         <td><%= product.features %></td>
         <td><%= number_to_currency (product.price_in_cents/100) %></td>
-        <!-- <td><%= product.featured %></td> -->
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
-</table>
+</table> -->
 
-<br>
+<div class="row products-listing">
+  
+  <% @products.in_groups_of(3) do |products| %>
+    
+    <div class="row">
+      
+      <% products.each do |product| %>
+        <% if product %>
+          <div class="col-md-4 product-listing">
+            <%= link_to product, class: "product-link" do %>
+              <div class="product-feature-image" style="background-image: url('<%= product.image_url_string %>');"></div>
+              <%#= image_tag product.image_url_string, class: "img-responsive" %>
+              <div class="caption">
+                <h4><%= product.name %> - <%= product.features %> <strong class="pull-right"><%= number_to_currency (product.price_in_cents/100) %></strong></h4>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
 
-<%= link_to 'New Product', new_product_path, class: "btn btn-default" %>
+      <% end %>
+
+    </div>
+
+  <% end %>
+  
+</div>
