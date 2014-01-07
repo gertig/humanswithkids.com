@@ -1,0 +1,33 @@
+<h1>ALL Products</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Features</th>
+      <th>Amount</th>
+      <!-- <th>Featured</th> -->
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.features %></td>
+        <td><%= number_to_currency (product.price_in_cents/100) %></td>
+        <!-- <td><%= product.featured %></td> -->
+        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product', new_product_path, class: "btn btn-default" %>

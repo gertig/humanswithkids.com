@@ -17,7 +17,11 @@ Hwk::Application.routes.draw do
   resources :posts
 
   resources :charges
-  resources :products
+  resources :products do
+    collection do
+      get :admin #, :as => :products_admin
+    end
+  end
 
   devise_for :users, :skip => [:sessions] #, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   
