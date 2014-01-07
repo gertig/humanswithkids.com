@@ -25,9 +25,10 @@ h1#products-listing-header {
 // }
 
 div.product-listing {
-  height: 520px;
+  // height: 520px;
   overflow: hidden;
   position: relative;
+  margin-bottom: 50px;
 
   div.product-feature-image {
     border: solid 6px #ebebeb !important;
