@@ -4,7 +4,7 @@ class ContactUs
     api_key = ENV["MAILGUN_API_KEY"]
     from_email = ENV["FROM_EMAIL"]
     # to_email = ENV["TO_EMAIL"]
-    to_email = "gerti@humanswithkids.com"
+    to_email = "hello@humanswithkids.com"
     api_url = "https://api.mailgun.net/v2/gertig.mailgun.org"
     # api_url = "https://api.mailgun.net/v2/mydomain.com"
      
