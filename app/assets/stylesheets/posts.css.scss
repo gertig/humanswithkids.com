@@ -286,7 +286,46 @@ div.youtube-video {
 
 }
 
+/* CONTACT US FORM
+=========================== */
+.contact-form {
+    position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  padding: 0 20px 20px 0;
+  // -webkit-box-sizing: border-box;
+  // -moz-box-sizing: border-box;
+  // box-sizing: border-box;
+  color: #666665;
+  font-family: "jaf-bernino-sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  font-style: normal;
 
+  &:before {
+    content: '';
+    display: block;
+    height: 1px;
+    background: #dededc;
+  }
+
+  .contact-form-heading {
+    padding: 12px 0 28px;
+    font-family: "jaf-bernino-sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: #b3b3b1;
+    letter-spacing: .1em;    
+  }
+
+  p {
+    word-wrap: break-word;
+  }
+}
 
 
 /* Responsive

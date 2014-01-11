@@ -60,6 +60,8 @@
 
   <%= render partial: "author", locals: { user: @post.user } %>
 
+  <%= render partial: "contact_us", locals: { user: @post.user } %>
+
   <!-- <div id="disqus_thread"></div> -->
   <%#= render "disqus" if Rails.env.production? %>
 

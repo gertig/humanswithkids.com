@@ -1,0 +1,39 @@
+<!-- <form id="contact-us" action="http://gertig.com/emails/domains" method="post" accept-charset="utf-8">
+  <input type="text" name="name" value="" id="name" placeholder="Your name">
+  <input type="text" name="email" value="" id="email" placeholder="Your email address">
+  <input type="text" name="offer" value="" id="offer" placeholder="An offer, for example $2,000">
+  
+  <textarea name="message" rows="8" cols="40" id="message" placeholder="Your message"></textarea>
+  <span id="error-message"></span>
+
+  <p><input type="submit" value="Submit"></p>
+</form> -->
+
+<div class="contact-form">
+
+  <h4 class="contact-form-heading">Contact Us</h4>
+
+  <p>We love to hear feedback about what we write! If you take the time to send us a note with the form below I promise that I will respond. - <em><%= user.name %></em></p>
+  
+  <%= form_for "contact", url: "/contact_us_page", :html => { method: :post} do |f| %>
+    <div class="form-group pull-left" style="width: 50%;">
+      <%= f.label "Name" %>
+      <%= f.text_field "name", class: "form-control" %>
+    </div>
+    <div class="form-group pull-right" style="width: 49%;">
+      <%= f.label "Email" %>
+      <%= f.email_field "email", class: "form-control" %>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="form-group">
+      <%= f.label "Your thoughts" %>
+      <%= f.text_area "body", class: "form-control" %>
+    </div>
+
+    <span id="error-message"></span>
+    <%= f.submit "Send it!", class: "btn btn-default"  %>
+  <% end %>
+
+</div>
