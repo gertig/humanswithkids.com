@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   has_many :posts, :dependent => :destroy
 
   validates_uniqueness_of :name
+
+  mount_uploader :avatar, AvatarUploader
   
   # scope :authors, where(role: "author")
   

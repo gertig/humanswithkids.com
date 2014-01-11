@@ -11,10 +11,6 @@ Hwk::Application.routes.draw do
   end
   resources :pictures
   
-  resources :users do
-    resources :posts
-  end
-  resources :posts
 
   resources :charges
   resources :products do
@@ -23,7 +19,9 @@ Hwk::Application.routes.draw do
     end
   end
 
-  devise_for :users, :skip => [:sessions] #, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, :skip => [:sessions], 
+                     :controllers => { :registrations => "registrations" }
+                     # :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   
   # https://github.com/plataformatec/devise/wiki/How-To:-Change-the-default-sign_in-and-sign_out-routes#steps-for-rails-300-forward
   as :user do
@@ -43,15 +41,21 @@ Hwk::Application.routes.draw do
     # mount Sidekiq::Web => '/sidekiq'
   end
 
+  # This has to be after "devise_for" so that the paths work
+  resources :users do
+    resources :posts
+  end
+  resources :posts
+
   match '/feed/rss' => 'posts#feed',
         :as => :feed,
         :defaults => { :format => 'atom' },
         :via => :get
 
-  # Omniauth
-  get '/auth/:provider' => 'sessions#passthru'
-  get '/auth/:provider/callback', :to => 'sessions#create'
-  get '/auth/failure', :to => 'sessions#failure'
+  # # Omniauth
+  # get '/auth/:provider' => 'sessions#passthru'
+  # get '/auth/:provider/callback', :to => 'sessions#create'
+  # get '/auth/failure', :to => 'sessions#failure'
 
   
   get "/:year(/:month)/:id" => "posts#show", :constraints => { :year => /\d{4}/, :month => /\d{2}/ }, :via => :get
