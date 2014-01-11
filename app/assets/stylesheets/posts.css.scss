@@ -190,6 +190,104 @@ div.youtube-video {
 }
 
 
+/* AUTHOR
+=========================== */
+
+.author-card {
+
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  // width: 50%;
+  padding: 0 20px 20px 0;
+  // -webkit-box-sizing: border-box;
+  // -moz-box-sizing: border-box;
+  // box-sizing: border-box;
+  color: #666665;
+  font-family: "jaf-bernino-sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  font-style: normal;
+
+  &:before {
+    content: '';
+    display: block;
+    height: 1px;
+    background: #dededc;
+  }
+
+  .author-card-heading {
+    padding: 12px 0 28px;
+    font-family: "jaf-bernino-sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: #b3b3b1;
+    letter-spacing: .1em;    
+  }
+
+  .author-card-image {
+    position: absolute;
+    left: 0;
+  }
+
+  .author-card-text {
+    word-wrap: break-word;
+    padding-left: 160px;
+    min-height: 80px;
+
+    /* FONTAWESOME SOCIAL BUTTONS
+    ============================= */
+      ul.icons li {
+        display: inline-block;
+        padding-left: 0;
+        padding-right: 0.75em;
+      }
+      
+      ul.icons a {
+        display: inline-block;
+        width: 2em;
+        height: 2em;
+        line-height: 2.5em;
+        text-align: center;
+        border: 0;
+        box-shadow: inset 0 0 0 0 #e6e6e6;
+        border-radius: 100%;
+        color: #aaa;
+        -moz-transition: background-color 0.25s ease-in-out;
+        -webkit-transition: background-color 0.25s ease-in-out;
+        -o-transition: background-color 0.25s ease-in-out;
+        -ms-transition: background-color 0.25s ease-in-out;
+        transition: background-color 0.25s ease-in-out;
+      }
+
+      ul.icons a:hover {
+        background: rgba(0,0,0,0.025);
+      }
+
+      ul.icons a {
+        // box-shadow: inset 0 0 0 1px #d6d6d6;
+      }
+
+      .fa:before {
+        display:inline-block;
+        font-family: FontAwesome;
+        font-size: 1.65em;
+        text-decoration: none;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+  }
+
+}
+
+
+
 
 /* Responsive
 -------------------------------------------------- */

@@ -58,6 +58,8 @@
     <%= link_to "Next Post →",  blogpost_path(@post.next), class: "next-post" if @post.next %>
   </div>
 
+  <%= render partial: "author", locals: { user: @post.user } %>
+
   <!-- <div id="disqus_thread"></div> -->
   <%#= render "disqus" if Rails.env.production? %>
 
