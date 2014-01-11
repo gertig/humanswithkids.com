@@ -3,7 +3,7 @@
   <h4 class="author-card-heading">Written by</h4>
 
   <div class="author-card-image">
-    <%= image_tag user.avatar.small, class: "img-circle" %>
+    <%= image_tag user.avatar.small, class: "img-circle" if user.avatar_url %>
   </div>
 
   <div class="author-card-text">
