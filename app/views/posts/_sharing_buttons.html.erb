@@ -11,4 +11,19 @@
   <div class="fb-like" data-href="<%= request.url %>" data-send="false" data-layout="button_count" data-show-faces="false"></div>
   <%# data-layout="box_count" for the vertical box %>
 </div>
+
+<style type="text/css">
+/* make the like button smaller */
+.fb_edge_widget_with_comment iframe
+{
+    width:47px !important;
+}
+
+/* but make the span that holds the comment box larger */
+span.fb_edge_comment_widget.fb_iframe_widget iframe
+{
+    width:401px !important;
+}
+</style>
+
 <% end %>
