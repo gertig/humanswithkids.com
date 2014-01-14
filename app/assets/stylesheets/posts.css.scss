@@ -231,12 +231,20 @@ div.youtube-video {
   .author-card-image {
     position: absolute;
     left: 0;
+
+    @media (max-width: 480px) {
+      position: relative;
+    }
   }
 
   .author-card-text {
     word-wrap: break-word;
     padding-left: 160px;
     min-height: 80px;
+
+    @media (max-width: 480px) {
+      padding-left: 0;
+    }
 
     /* FONTAWESOME SOCIAL BUTTONS
     ============================= */
@@ -338,23 +346,27 @@ div.youtube-video {
   }
 }
 
+@media (max-width: 768px) {
+
+}
+
 @media (max-width: 480px) {
-  pre {
-    font-size: 12px;
-    line-height: 20px;
-  }
-  .related h2,
-  .posts h3 a {
-    text-align: center;
-  }
-  .posts h3 a small {
-    display: block;
-    line-height: 20px;
-  }
+  // pre {
+  //   font-size: 12px;
+  //   line-height: 20px;
+  // }
+  // .related h2,
+  // .posts h3 a {
+  //   text-align: center;
+  // }
+  // .posts h3 a small {
+  //   display: block;
+  //   line-height: 20px;
+  // }
   
-  .post-container {
-    position: relative;
-    margin-top: 14px;
-    margin-bottom: 40px;
-  }
+  // .post-container {
+  //   position: relative;
+  //   margin-top: 14px;
+  //   margin-bottom: 40px;
+  // }
 }
