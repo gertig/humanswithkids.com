@@ -56,5 +56,7 @@ gem 'faraday'
 # gem 'rest-client'
 # gem 'multimap'
 
+# gem 'htmlentities'
+
 
 

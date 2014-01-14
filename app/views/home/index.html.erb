@@ -22,9 +22,9 @@
           <div class="post-content">
             <p>
               <% if !post.meta_description.blank? %>
-                <%= sanitize(markdown(post.meta_description).to_html.html_safe, :tags => %w(p table tr td), :attributes => %w(id class style)).truncate(300, :separator => ' ') %>
-              <% else %>
-                <%= sanitize(markdown(post.content).to_html.html_safe, :tags => %w(), :attributes => %w(id class style)).truncate(300, :separator => ' ') %>
+                <%= CGI.unescapeHTML(sanitize(markdown(post.meta_description).to_html.html_safe, :tags => %w(p table tr td), :attributes => %w(id class style)).truncate(300, :separator => ' ')) %>
+              <% else %>  
+                <%= CGI.unescapeHTML(strip_tags(markdown(post.content).to_html.html_safe).truncate(300, :separator => ' ')) %>
               <% end %>
             </p>
           </div>

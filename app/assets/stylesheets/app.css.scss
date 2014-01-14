@@ -301,7 +301,7 @@ h2.archives-post-title {
 
 div.archives-post-content {
   p {
-    @extend .post-content;
+    @extend .post-content !optional;
     font-size: 16px;
     margin-bottom: 0;
   }
