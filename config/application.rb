@@ -67,7 +67,7 @@ module Hwk
       # 302 is a temoporary redirect
       
       # redirects the sitemap URL to point to amazon S3
-      r302 %r{^/sitemap.xml}, "http://humanswithkids.com.s3-website-us-east-1.amazonaws.com/sitemaps/sitemap1.xml.gz"
+      r302 %r{^/sitemap.xml}, "http://humanswithkids-assets.s3-website-us-east-1.amazonaws.com/sitemaps/sitemap1.xml.gz"
       
       # redirects the root humanswithkids.com to www.humanswithkids.com
       r301 %r{.*}, 'http://www.humanswithkids.com$&', :if => Proc.new {|rack_env|
