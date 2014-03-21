@@ -34,20 +34,9 @@
   <!-- Placed at the end of the document so the pages load faster -->
   <%= javascript_include_tag "application" %>
   
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.3/jquery.backstretch.min.js"></script>
-  
   <link href='http://fonts.googleapis.com/css?family=Gentium+Basic:400,700,400italic|Alegreya:400,700|Open+Sans:400italic,400,700|Audiowide|Viga' rel='stylesheet' type='text/css'>
-
-  <!-- 
-    font-family: 'Lora', serif;
-    font-family: 'Open Sans', sans-serif;
-    font-family: 'Dancing Script', cursive;
-    font-family: 'Open Sans Condensed', sans-serif;
-  -->
   
   <%= render "analytics" %>
-  
-  <%#= cloudinary_js_config %>
   
   <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
   <!--[if lt IE 9]>
@@ -56,28 +45,13 @@
 </head>
 <body>
   
-  <%= render "facebook" %>
+  <%#= render "facebook" %>
 
   <%= render "flash_messages" %>
 
   <header>
-    <%= render "navbar" %>
+    <%#= render "navbar" %>
   </header>
-
-  <%# HERO IMAGE %>
-  <!-- <div class="row"> -->
-  <% if params[:controller] == "home" %>
-    <div class="hero-image-wrapper hidden-xs">
-        <div id="hero-image" class="actual-image" style="background-image: url('https://humanswithkids-assets.s3.amazonaws.com/uploads/picture/image/7/large_IMG_4324.JPG');">
-
-<!--           <div id="blurred-logo-wrapper" class="">
-            <h1 class="hwk-logo">Humans With Kids</h1>
-          </div> -->
-        </div>
-        
-    </div>
-  <% end %>
-  <!-- </div> -->
 
   <div class="main-container">
     
@@ -87,8 +61,8 @@
 
     
     <div class="row">
-      <footer class="ag-fa">
-        <%= render "footer" %>
+      <footer>
+        <%#= render "footer" %>
       </footer>
     </div>
 
