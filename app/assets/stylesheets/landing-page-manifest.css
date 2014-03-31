@@ -4,8 +4,14 @@
 *= require bootstrap-variables
 *= require bootstrap
 *= require preschool-farm-fun
-*= require_tree .
+*= require pff/specific
+*= require pff/component
 *
+*/
+
+
+/*
+don't require_tree .
 */
 
 /*// $navbar-default-bg:                #ffffff !default;

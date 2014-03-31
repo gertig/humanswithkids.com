@@ -45,28 +45,9 @@
 </head>
 <body>
   
-  <%#= render "facebook" %>
-
   <%= render "flash_messages" %>
 
-  <header>
-    <%#= render "navbar" %>
-  </header>
-
-  <div class="main-container">
-    
-    <div class="row">
-      <%= yield %>
-    </div>
-
-    
-    <div class="row">
-      <footer>
-        <%#= render "footer" %>
-      </footer>
-    </div>
-
-  </div> <!-- /container -->
+  <%= yield %>
 
   <%= render "mailchimp_modal" %>
 
