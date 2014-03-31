@@ -15,6 +15,7 @@
 //= require bootstrap
 //= require jquery.flipshow
 //= require modernizr.custom
+//= require preschool-farm-fun
 
 
 //DOM is Ready
