@@ -31,7 +31,9 @@
 //= require bootstrap
 //= require bootstrap-image-gallery.min
 
-//= require_tree .
+//= goodies
+
+//// don't use "require_tree ."  because I'm using *-manifest.js to separate things out. see application.rb for me
 
 //DOM is Ready
 // $(function(){
