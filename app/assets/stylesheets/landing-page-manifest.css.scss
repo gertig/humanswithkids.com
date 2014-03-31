@@ -1,21 +1,18 @@
-/*
- WHEN USING BOURBON MIXINS
- 1. Rename application.css to application.css.scss
- 2. Bourbon needs the sass files to be imported in a specific order to function properly. 
-Therefore, you will need to disable the require_tree sprocket directive. 
-Delete the following sprocket directive in application.css.scss: 
-  require_tree . 
- 3. Import all additional stylesheets from your app/assets/stylesheets directory underneath 
- the bourbon import:
+/* Landing Page Manifest
+*
+*= require_self
+*= require bootstrap-variables
+*= require bootstrap
+*= require preschool-farm-fun
+*= require_tree .
+*
 */
 
-/*@import "bourbon";*/
-
-// $navbar-default-bg:                #ffffff !default;
+/*// $navbar-default-bg:                #ffffff !default;
 @import "bootstrap-variables";
 @import "bootstrap";
 @import "font-awesome";
 
 //Preschool Farm Fun
-@import "preschool-farm-fun";
+@import "preschool-farm-fun";*/
 
