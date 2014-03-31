@@ -13,8 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require jquery.flipshow
 //= require modernizr.custom
+//= require jquery.flipshow
 //= require preschool-farm-fun
 
 
