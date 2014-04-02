@@ -12,28 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require Countable
-//= require Vague
-
-//= require jquery.ui.widget
-//= require jquery.Jcrop
-//= require load-image.min
-//= require canvas-to-blob.min
-//= require jquery.iframe-transport
-//= require jquery.fileupload
-//= require jquery.fileupload-ip
-//= require jquery.fileupload-ui
-//= require locale
-//= require main
-//= require slimbox2
-//= require jquery.pin
-//= require jquery.autosize
 //= require bootstrap
-//= require bootstrap-image-gallery.min
+//= require modernizr.custom
+//= require jquery.flipshow
+//= require preschool-farm-fun
 
-//= goodies
-
-//// don't use "require_tree ."  because I'm using *-manifest.js to separate things out. see application.rb for me
 
 //DOM is Ready
 // $(function(){

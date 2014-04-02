@@ -50,8 +50,13 @@ module Hwk
     # config.active_record.whitelist_attributes = false
 
     # Version of your assets, change this if you want to expire all your assets
-    config.assets.version = '1.0'  
-    
+    config.assets.version = '1.0'
+
+    # GERTIG - this allows me to have multiple manifests just like application.js / .css
+    # that I can call from other layouts. Just be sure to use a name like cool-page-manifest.js
+    config.assets.precompile += ["*-manifest.js", "*-manifest.css"]
+
+
     #GERTIG - fixes assets on Heroku
     config.assets.initialize_on_precompile = false
 

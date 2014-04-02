@@ -4,6 +4,12 @@
 
 <% description "Preschool Farm Fun is a fun iPad app for kids aged 18 months to 5 years old. On the Farm they will learn about many types of vegetables, counting, colors and much much more." %>
 
+<<<<<<< HEAD
+<div class="hero-image center-block">
+  <%= image_tag "welcome_banner.png", class:"img-responsive", alt:"Preschool Farm Fun Banner" %>
+  <!-- <img src="" class="img-responsive" alt="Preschool Farm Fun Banner"> -->
+</div>
+=======
 
 <div class="header">
   <%= image_tag "header.png", class: "", alt: "Preschool Farm Fun Header" %>
@@ -124,3 +130,4 @@
   </section>
 
 </section>
+>>>>>>> 9580355a40e82b7316fc3d66c8a86e3aeaf8de56

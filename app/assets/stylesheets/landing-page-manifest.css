@@ -1,0 +1,24 @@
+/* Landing Page Manifest
+*
+*= require_self
+*= require bootstrap-variables
+*= require bootstrap
+*= require preschool-farm-fun
+*= require pff/specific
+*= require pff/component
+*
+*/
+
+
+/*
+don't require_tree .
+*/
+
+/*// $navbar-default-bg:                #ffffff !default;
+@import "bootstrap-variables";
+@import "bootstrap";
+@import "font-awesome";
+
+//Preschool Farm Fun
+@import "preschool-farm-fun";*/
+
