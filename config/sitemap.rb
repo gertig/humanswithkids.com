@@ -39,6 +39,7 @@ SitemapGenerator::Sitemap.create do
   add about_path, :priority => 0.7, :changefreq => 'monthly'
   add hire_me_path, :priority => 0.7, :changefreq => 'monthly'
   add feed_path, :priority => 0.7, :changefreq => 'weekly' # RSS/Atom Feed
+  add "/preschool-farm-fun", :priority => 0.7, :changefreq => 'monthly'
   
   # iterate over all the posts and generate links for the published ones
   Post.find_each do |post|

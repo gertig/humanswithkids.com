@@ -70,6 +70,8 @@ module Hwk
       # r302 %r{^/sitemap.xml}, "http://#{ENV['FOG_HOST']}/sitemaps/sitemap1.xml.gz"
       # 301 is a permananet redirect (recommended)
       # 302 is a temoporary redirect
+
+      r301 '/pff',   '/preschool-farm-fun'
       
       # redirects the sitemap URL to point to amazon S3
       r302 %r{^/sitemap.xml}, "http://humanswithkids-assets.s3-website-us-east-1.amazonaws.com/sitemaps/sitemap1.xml.gz"
