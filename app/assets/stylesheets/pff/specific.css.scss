@@ -1,9 +1,11 @@
+$font-color: #c13527;
+
 /*Typography*/
 h1,h2,h4 {
   font-family: 'kreon', serif;
   font-size: 64px;
   text-align: center;
-  color: #c13527;
+  color: $font-color;
 }
 h2, h3 {
   font-size: 34px;
@@ -14,7 +16,7 @@ h3 {
   font-family: helvetica;
   font-weight: 100;
   font-size: 24px;
-  color: #c13527;
+  color: $font-color;
 }
 h4 {
   font-size: 20px;
@@ -62,6 +64,10 @@ section {
 }
 .pad-md-t {
   padding-top: 25px;
+}
+
+a.pff-twitter {
+  color: #333333;
 }
 
 
