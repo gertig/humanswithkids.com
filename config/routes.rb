@@ -49,18 +49,21 @@ Hwk::Application.routes.draw do
   end
   resources :posts
 
+  # RSS
   match '/feed/rss' => 'posts#feed',
         :as => :feed,
         :defaults => { :format => 'atom' },
         :via => :get
 
   # # Omniauth
-  # get '/auth/:provider' => 'sessions#passthru'
-  # get '/auth/:provider/callback', :to => 'sessions#create'
-  # get '/auth/failure', :to => 'sessions#failure'
+  get '/auth/:provider' => 'sessions#passthru'
+  get '/auth/:provider/callback', :to => 'sessions#create'
+  get '/auth/failure', :to => 'sessions#failure'
 
   
-  get "/:year(/:month)/:id" => "posts#show", :constraints => { :year => /\d{4}/, :month => /\d{2}/ }, :via => :get
+  # Handle Year month Urls
+  get "/:year(/:month)/:id" => "posts#show", :constraints => { :year => /\d{4}/, :month => /\d{2}/ }, 
+                                             :via => :get
   
   # Pages
   get "about" => "home#about", :as => :about
@@ -76,7 +79,7 @@ Hwk::Application.routes.draw do
   root :to => 'home#index'
   # get "home/index"
   
-  get "/tag/:a_tag" => "home#index" # This catches links that used to point to the word press tag pages for things like /tag/seo and /tag/review and routes them to the home page
+  get "/tag/:a_tag" => "home#index" # This catches links that used to point to the Wordpress tag pages for things like /tag/seo and /tag/review and routes them to the home page
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
