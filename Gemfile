@@ -26,8 +26,9 @@ gem "pg", "~> 0.14.1"
 gem "unicorn", "~> 4.6.3"
 
 # gem "bcrypt-ruby", "~> 3.0.0"
-gem "omniauth", "~> 1.0.1"
-gem "omniauth-identity", "~> 1.1.0"
+gem "omniauth" #, "~> 1.0.1"
+# gem "omniauth-identity", "~> 1.1.0"
+gem "omniauth-twitter" #, "~> 1.1.0"
 
 gem "devise"
 gem "cancan", "~> 1.6.9"
@@ -45,7 +46,7 @@ gem 'sitemap_generator', '~> 3.4'
 
 gem 'unf' # A fog depency, not sure what this does
 gem 'fog' # uploads to S3
-gem 'rack-rewrite' # redirect stuff based on urls
+gem 'rack-rewrite', "~> 1.4.01" # redirect stuff based on urls
 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 

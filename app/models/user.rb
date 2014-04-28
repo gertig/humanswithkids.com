@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   # attr_accessible :email, :name, :role
   
-  # has_many :authentications, :dependent => :destroy
+  # has_many :authentications #, :dependent => :destroy
   has_many :posts, :dependent => :destroy
 
   validates_uniqueness_of :name
