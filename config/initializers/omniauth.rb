@@ -22,7 +22,15 @@
   
   
 Rails.application.config.middleware.use OmniAuth::Builder do
- provider :twitter, ENV["TWITTER_CONSUMER_KEY"], ENV["TWITTER_CONSUMER_SECRET"]
+ provider :twitter, ENV["TWITTER_CONSUMER_KEY"], ENV["TWITTER_CONSUMER_SECRET"], 
+    {
+      # :secure_image_url => 'true',
+      # :image_size => 'original',
+      :authorize_params => {
+        :force_login => 'true'
+        # :lang => 'pt'
+      }
+    }
  # provider :facebook, FACEBOOK_APP_ID, FACEBOOK_APP_SECRET, :iframe => true, :scope => 'email, user_about_me,
  #                 user_activities,user_birthday,user_education_history,
  #                 user_likes, user_location,

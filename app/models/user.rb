@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   # attr_accessible :email, :name, :role
   
-  # has_many :authentications #, :dependent => :destroy
+  has_many :authentications #, :dependent => :destroy
   has_many :posts, :dependent => :destroy
 
   validates_uniqueness_of :name
@@ -24,16 +24,14 @@ class User < ActiveRecord::Base
   def self.authors
     where(role: "author")
   end
-  
-  def omniauth_identity(auth)
-    self.name = auth["info"]["name"]
-    self.email = auth["info"]["email"] if auth["info"]["email"] 
-    self.role = "author"
-    
-    authentications.build(
-        :provider => auth['provider'], 
-        :uid => auth['uid'].to_s,
-        :access_token => auth['credentials']['token']
-        )
+
+  def add_twitter_account(auth)    
+    authentications.build(:provider => auth["provider"], 
+                          :uid => auth["uid"],
+                          :access_token => auth["credentials"]["token"],
+                          :access_secret => auth["credentials"].secret)
+    save
   end
+
+
 end

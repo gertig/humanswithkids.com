@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  authentication_id: 1
+  body: MyString
+  sent: false
+  send_at: 2014-04-27 23:00:56
+
+two:
+  authentication_id: 1
+  body: MyString
+  sent: false
+  send_at: 2014-04-27 23:00:56

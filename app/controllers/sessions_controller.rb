@@ -20,38 +20,23 @@ class SessionsController < ApplicationController
     if @authentication
       puts "This means the USER has already connected this account before."
       @authentication.update_attribute(:access_token, oa["credentials"]["token"])
-      session[:user_id] = @authentication.user.id
+      # session[:user_id] = @authentication.user.id
       redirect_to dashboard_path, notice: "Welcome!"
     elsif current_user
       puts "User is already logged in so add this method to their list of authentications"
-      current_user.authentications.create!(provider: oa['provider'], 
-                      uid: oa['uid'].to_s,
-                      access_secret: oa['credentials']['secret'],
-                      access_token: oa['credentials']['token']
-                      )
+      current_user.add_twitter_account(oa)
       redirect_to root_url, notice: "New Connection Successful."
     else
       
-      user = User.new
-      user.omniauth_identity(oa)
-      
-      if user.save
-        session[:user_id] = user.id
-        flash_notice = "Signed in!"
-      else
-        session[:user_id] = nil
-        flash_notice = "You aren't allowed"
-      end
-      
-      redirect_to root_url, notice: flash_notice
+      redirect_to root_url, notice: "Something didn't go as planned"
 
     end
   end
   
-  def destroy
-    session[:user_id] = nil
-    redirect_to root_url, notice: "Signed out!"
-  end
+  # def destroy
+  #   session[:user_id] = nil
+  #   redirect_to root_url, notice: "Signed out!"
+  # end
 
   def failure
     redirect_to root_url, alert: "Authentication failed, please try again."

@@ -1,5 +1,7 @@
 Hwk::Application.routes.draw do
   
+  resources :tweets
+
   post "contact_us_page" => "contact#contact_us_page"
 
   resources :orders
