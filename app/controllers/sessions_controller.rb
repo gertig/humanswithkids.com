@@ -25,7 +25,7 @@ class SessionsController < ApplicationController
     elsif current_user
       puts "User is already logged in so add this method to their list of authentications"
       current_user.add_twitter_account(oa)
-      redirect_to root_url, notice: "New Connection Successful."
+      redirect_to tweets_path, notice: "New Connection Successful."
     else
       
       redirect_to root_url, notice: "Something didn't go as planned"

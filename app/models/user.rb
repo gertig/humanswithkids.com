@@ -28,6 +28,7 @@ class User < ActiveRecord::Base
   def add_twitter_account(auth)    
     authentications.build(:provider => auth["provider"], 
                           :uid => auth["uid"],
+                          :name => auth["info"]["nickname"],
                           :access_token => auth["credentials"]["token"],
                           :access_secret => auth["credentials"].secret)
     save

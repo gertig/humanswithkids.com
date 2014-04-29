@@ -1,24 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-6 col-md-offset-3">
+  <!-- <p id="notice"><%= notice %></p> -->
 
-<p>
-  <strong>Authentication:</strong>
-  <%= @tweet.authentication_id %>
-</p>
+  <h2>@<%= @tweet.authentication.name %></h2>
 
-<p>
-  <strong>Body:</strong>
-  <%= @tweet.body %>
-</p>
+  <div class="well">
+    <%= @tweet.body %>
+  </div>
 
-<p>
-  <strong>Sent:</strong>
-  <%= @tweet.sent %>
-</p>
+  <div class="form-group">
+    <strong>Send at:</strong>
+    <%= @tweet.send_at_english %>
+  </div>
 
-<p>
-  <strong>Send at:</strong>
-  <%= @tweet.send_at %>
-</p>
+  <div class="form-group">
+    <strong>Sent?</strong>
+    <%= @tweet.sent %>
+  </div>
 
-<%= link_to 'Edit', edit_tweet_path(@tweet) %> |
-<%= link_to 'Back', tweets_path %>
+
+  <%= form_for(@tweet, :url => send_now_tweet_path(@tweet.id)) do |f| %>
+
+    <%= f.hidden_field :sent, value: true %>
+
+    <div class="form-group">
+      <%= f.submit "Tweet This Now", class: "btn btn-primary" %>
+    </div>
+
+  <% end %>
+
+  <div class="form-group">
+    <%= link_to 'Edit', edit_tweet_path(@tweet) %> |
+    <%= link_to 'Back', tweets_path %>
+  </div>
+
+</div>

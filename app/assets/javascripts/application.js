@@ -30,9 +30,11 @@
 //= require jquery.autosize
 //= require bootstrap
 //= require bootstrap-image-gallery.min
+//= require bootstrap-datetimepicker
 
 //= goodies
 
+//// https://github.com/smalot/bootstrap-datetimepicker
 //// don't use "require_tree ."  because I'm using *-manifest.js to separate things out. see application.rb for me
 
 //DOM is Ready

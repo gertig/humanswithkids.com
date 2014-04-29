@@ -1,12 +1,12 @@
-<h1>Listing tweets</h1>
+<h1>Scheduled Tweets</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Authentication</th>
+      <th></th>
       <th>Body</th>
       <th>Sent</th>
-      <th>Send at</th>
+      <th>Scheduled</th>
       <th></th>
       <th></th>
       <th></th>
@@ -16,10 +16,10 @@
   <tbody>
     <% @tweets.each do |tweet| %>
       <tr>
-        <td><%= tweet.authentication_id %></td>
+        <td><%= tweet.authentication.name %></td>
         <td><%= tweet.body %></td>
         <td><%= tweet.sent %></td>
-        <td><%= tweet.send_at %></td>
+        <td><%= tweet.send_at_english %></td>
         <td><%= link_to 'Show', tweet %></td>
         <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
         <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -30,4 +30,5 @@
 
 <br>
 
-<%= link_to 'New Tweet', new_tweet_path %>
+<%= link_to 'New Tweet', new_tweet_path, class: "btn btn-success" %>
+<%= link_to 'Add Account', "/auth/twitter", class: "btn btn-primary" %>

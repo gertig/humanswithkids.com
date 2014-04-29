@@ -1,6 +1,10 @@
 Hwk::Application.routes.draw do
   
-  resources :tweets
+  resources :tweets do
+    member do
+      patch "send_now"
+    end
+  end
 
   post "contact_us_page" => "contact#contact_us_page"
 

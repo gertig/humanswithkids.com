@@ -9,6 +9,7 @@ gem 'rails_12factor', group: :production # For Rails 4 to work on Heroku
 group :development do
   gem "quiet_assets", "~> 1.0.2" #Gets the junk out of the console
   gem "sextant", "~> 0.2.3" #Rails routes at /rails/routes without rake routes
+  gem "annotate", "~> 2.6.0" # Annotate ActiveRecord models with schema
 end
 
 gem 'sass-rails',   '~> 4.0.0'
@@ -29,6 +30,7 @@ gem "unicorn", "~> 4.6.3"
 gem "omniauth" #, "~> 1.0.1"
 # gem "omniauth-identity", "~> 1.1.0"
 gem "omniauth-twitter" #, "~> 1.1.0"
+gem "twitter", "~> 5.0.0"
 
 gem "devise"
 gem "cancan", "~> 1.6.9"

@@ -1,11 +1,24 @@
 class TweetsController < ApplicationController
   before_filter :authenticate_user!
-  
-  before_action :set_tweet, only: [:show, :edit, :update, :destroy]
+
+  before_action :set_tweet, only: [:show, :edit, :update, :destroy, :send_now]
+
+  def send_now
+    sent = tweet_params[:sent] == "true"
+
+    if !@tweet.sent
+      @tweet.publish
+      notice = "Tweet was Sent!"
+    else
+      notice = "Oops, you already Tweeted That"
+    end
+
+    redirect_to @tweet, notice: notice
+  end
 
   # GET /tweets
   def index
-    @tweets = Tweet.all
+    @tweets = Tweet.all.order(send_at: :asc)
   end
 
   # GET /tweets/1
@@ -25,6 +38,9 @@ class TweetsController < ApplicationController
   def create
     @tweet = Tweet.new(tweet_params)
 
+    puts "SEND AT"
+    puts tweet_params
+
     if @tweet.save
       redirect_to @tweet, notice: 'Tweet was successfully created.'
     else
@@ -34,6 +50,9 @@ class TweetsController < ApplicationController
 
   # PATCH/PUT /tweets/1
   def update
+    puts "SEND AT"
+    puts tweet_params
+
     if @tweet.update(tweet_params)
       redirect_to @tweet, notice: 'Tweet was successfully updated.'
     else
