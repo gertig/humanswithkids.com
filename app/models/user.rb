@@ -34,5 +34,14 @@ class User < ActiveRecord::Base
     save
   end
 
+  def twitter_accounts
+    # This adds @humanswithkids to the list for both Weiler and Gertig no matter who adds it
+    hwk = Authentication.where(name: "humanswithkids").first
+
+    accounts = authentications.to_a
+    accounts.push(hwk) if !accounts.include?(hwk) && !hwk.nil?
+    accounts
+  end
+
 
 end
