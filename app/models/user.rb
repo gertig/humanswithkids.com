@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
   def visible_tweets
     hwk_auth = Authentication.where(name: "humanswithkids").first
 
-    hwk_auth.nil? ? tweets : tweets + hwk_auth.tweets
+    hwk_auth.nil? ? tweets : tweets.merge(hwk_auth.tweets)
   end
 
   def twitter_accounts
