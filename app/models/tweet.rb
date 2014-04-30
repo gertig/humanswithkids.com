@@ -11,8 +11,9 @@ class Tweet < ActiveRecord::Base
   end
 
   def send_at_english
-    date = send_at.strftime("%l:%M %p on %b %e, %Y")
-    date ? date : send_at
+    # date = send_at.strftime("%l:%M %p on %b %e, %Y")
+    # date ? date : send_at
+    send_at
   end
 
   def in_the_past
