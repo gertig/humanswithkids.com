@@ -1,6 +1,10 @@
 class Tweet < ActiveRecord::Base
   belongs_to :authentication
 
+  validates :authentication_id, presence: true
+  validates :body, presence: true
+  validates :send_at, presence: true
+
   def publish
     t = client.update(body)
 
@@ -13,7 +17,7 @@ class Tweet < ActiveRecord::Base
   def send_at_english
     # date = send_at.strftime("%l:%M %p on %b %e, %Y")
     # date ? date : send_at
-    send_at
+    send_at.strftime("%l:%M %p on %b %e, %Y")
   end
 
   def in_the_past
