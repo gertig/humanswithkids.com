@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
 
   def my_tweets
     collection = []
-    tweets.order(send_at: :asc).each do |tweet|
+    tweets.order(send_at: :desc).each do |tweet|
       collection.push(tweet) if tweet.author != "humanswithkids"
     end
 
