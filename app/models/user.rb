@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   
   has_many :authentications #, :dependent => :destroy
   has_many :posts, :dependent => :destroy
+  has_many :tweets, :through => :authentications
 
   validates_uniqueness_of :name
 
@@ -32,6 +33,16 @@ class User < ActiveRecord::Base
                           :access_token => auth["credentials"]["token"],
                           :access_secret => auth["credentials"].secret)
     save
+  end
+
+  def owns_tweet(tweet)
+    self == tweet.authentication.user || tweet.authentication.name == "humanswithkids"
+  end
+
+  def visible_tweets
+    hwk_auth = Authentication.where(name: "humanswithkids").first
+
+    hwk_auth.nil? ? tweets : tweets + hwk_auth.tweets
   end
 
   def twitter_accounts

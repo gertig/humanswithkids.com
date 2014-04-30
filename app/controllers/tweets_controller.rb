@@ -18,7 +18,9 @@ class TweetsController < ApplicationController
 
   # GET /tweets
   def index
-    @tweets = Tweet.all.order(send_at: :asc)
+    # @tweets = Tweet.all.order(send_at: :asc)
+    @tweets = current_user.visible_tweets.order(send_at: :asc)
+    # @tweets = Tweet.where(authentication: current_user.authentications)
   end
 
   # GET /tweets/1

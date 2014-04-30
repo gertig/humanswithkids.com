@@ -32,6 +32,10 @@ class Tweet < ActiveRecord::Base
     authentication.name
   end
 
+  def self.mine(user)
+    # where(: user)
+  end
+
   def client
 
     @client ||= Twitter::REST::Client.new do |config|
