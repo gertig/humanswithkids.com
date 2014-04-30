@@ -39,10 +39,17 @@ class User < ActiveRecord::Base
     self == tweet.authentication.user || tweet.authentication.name == "humanswithkids"
   end
 
-  def visible_tweets
-    hwk_auth = Authentication.where(name: "humanswithkids").first
+  def my_tweets
+    collection = []
+    tweets.order(send_at: :asc).each do |tweet|
+      collection.push(tweet) if tweet.author != "humanswithkids"
+    end
 
-    hwk_auth.nil? ? tweets : tweets.merge(hwk_auth.tweets)
+    # hwk_auth = Authentication.where("name NOT ?", "humanswithkids").first
+    # hwk_tweets = hwk_auth.user.authentications.where(name: "humanswithkids").first.tweets
+
+    # hwk_auth.nil? ? tweets : tweets.merge(hwk_tweets)
+    collection
   end
 
   def twitter_accounts
