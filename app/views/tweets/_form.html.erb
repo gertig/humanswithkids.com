@@ -26,10 +26,14 @@
   </div> -->
   <div class="form-group">
     <%= f.label :send_at %>
-    <%#= f.datetime_select :send_at %>
     <%#= f.date_select :send_at, {:prompt => { :day => 'Select day', :month => 'Select month', :year => 'Select year' }}, {:class => 'date-select'}  %>
     <%#= f.datetime_select :send_at, :ampm => true, :start_minute => 0, :order => [:month, :day, :year] %>
-    <%= f.text_field :send_at, id: "datetimepicker", class: "form-control" %>
+    <% if params[:action] == "edit" %>
+      <%#= f.text_field :send_at, id: "datetimepicker", class: "form-control", value: "#{(@tweet.send_at.to_time - 4.hours).to_datetime}"  %>
+      <%= f.text_field :send_at, id: "datetimepicker", class: "form-control", value: "#{@tweet.send_at.strftime('%Y-%m-%d %H:%M')}"  %>
+    <% else %>
+      <%= f.text_field :send_at, id: "datetimepicker", class: "form-control" %>
+    <% end %>
 
 
   </div>
