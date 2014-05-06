@@ -98,9 +98,20 @@ a.dont-decorate {
 }
 
 article.featured-post {
-  height: 520px;
+  height: 580px;
   overflow: hidden;
   position: relative;
+  // background: red;
+
+  h3.post-title {
+    // a {
+    color: $black;
+    // padding-bottom: 23px;
+    letter-spacing: -1px;
+    font-weight: 500;
+    font-size: 40px;
+    // }
+  }
 
   .post-feature-image {
     border: solid 6px #ebebeb !important;
