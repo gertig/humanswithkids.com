@@ -26,25 +26,29 @@
 
     <p>Our goal is to help parents (Dads especially, because that's who we are) become a part of their child's story of Salvation. There is no higher calling than to see your children create personal relationships with their Lord and Saviour Jesus Christ.</p>
 
-    <h3>Connect With Us</h3>
+  </article>
 
-    <h4><b>Andrew Weiler</b></h4>
-    <p>
+  <div class="contact-form">
+    <!-- <h4 class="contact-form-heading">Connect With Us</h4> -->
+    <br>
+    <%= render "follow_button" %>
+
+    <div class="bs-callout bs-callout-info">
+      <h4><b>Andrew Weiler</b></h4>
       Co-founder<br/>
       <%= mail_to "weiler@humanswithkids.com" %><br/>
       <%= link_to "@andreweiler", "http://twitter.com/andreweiler", class: "pff-twitter" %>
-    </p>
+    </div>
     
-    <br/>
-
-    <h4><b>Andrew Gertig</b></h4>
-    <p>
+    <div class="bs-callout bs-callout-info">
+      <h4><b>Andrew Gertig</b></h4>
       Co-founder<br/>
       <%= mail_to "gertig@humanswithkids.com" %><br/>
       <%= link_to "@gertig", "http://twitter.com/gertig", class: "pff-twitter" %>
-    </p>
+    </div>
+  </div>
 
+  <%= render partial: "contact_us", locals: { post: @post } %>
 
-  </article>
 
 </div>

@@ -34,11 +34,17 @@
 
   <section id="post-<%= @post.id %>">
     <article class="post-container">
-      <div class="post-sharing-buttons"><%= render partial: "sharing_buttons", locals: { post: @post } %></div>
+      <!-- <div class="post-sharing-buttons"><%#= render partial: "sharing_buttons", locals: { post: @post } %></div> -->
       
       <%= render partial: "admin_box", locals: { post: @post } if is_andrew? %>
       
-      <h2 class="post-title"><%= @post.title %></h2>
+      <% if !@post.published %>
+        <div class="bs-callout bs-callout-warning">
+          <p>THIS POST IS A DRAFT, PLEASE DO NOT SHARE</p>
+        </div>
+      <% end -%>
+
+      <h1 class="post-title"><%= @post.title %></h1>
       
       <span class="post-date">Written by <%= @post.author %> on <%= @post.published_on %></span>
     
@@ -50,17 +56,23 @@
       </div>
 
     </article>
-          
+    
+    <div class="follow-button">
+      <%= render "follow_button" %>
+    </div>
+
   </section>
 
-  <div id="post-navigation"  class="clearfix" >
+<!--   <div id="post-navigation"  class="clearfix" >
     <%= link_to "← Previous Post", blogpost_path(@post.previous), class: "previous-post" if @post.previous %>
     <%= link_to "Next Post →",  blogpost_path(@post.next), class: "next-post" if @post.next %>
-  </div>
+  </div> -->
 
   <%= render partial: "author", locals: { user: @post.user } %>
 
-  <%= render partial: "contact_us", locals: { post: @post } %>
+  <%#= render partial: "contact_us", locals: { post: @post } %>
+
+  <%= render partial: "mailchimp_simple" %>
 
   <!-- <div id="disqus_thread"></div> -->
   <%#= render "disqus" if Rails.env.production? %>

@@ -13,31 +13,31 @@
     <p class="author-card-bio"><%= user.bio %></p>
 
     <p>
-        <ul class="icons">
-          <% if !user.twitter_handle.blank? %>
-            <li>
-              <%= link_to "http://twitter.com/#{user.twitter_handle}", class: "fa fa-twitter solo", target: "_blank" do %>
-                <span>Twitter</span>
-              <% end %>
-            </li>
-          <% end %>
+      <ul class="icons">
+        <% if !user.twitter_handle.blank? %>
+          <li>
+            <%= link_to "http://twitter.com/#{user.twitter_handle}", class: "fa fa-twitter solo", target: "_blank" do %>
+              <span>Twitter</span>
+            <% end %>
+          </li>
+        <% end %>
 
-          <% if !user.google_plus.blank? %>
-            <li>
-              <%= link_to "#{user.google_plus}?rel=author", class: "fa fa-google-plus solo", target: "_blank" do %>
-                <span>Google+</span>
-              <% end %>
-            </li>
-          <% end %>
+        <% if !user.google_plus.blank? %>
+          <li>
+            <%= link_to "#{user.google_plus}?rel=author", class: "fa fa-google-plus solo", target: "_blank" do %>
+              <span>Google+</span>
+            <% end %>
+          </li>
+        <% end %>
 
-          <% if !user.website.blank? %>
-            <li>
-              <%= link_to user.website, class: "fa fa-link solo", target: "_blank" do %>
-                <span>GitHub</span>
-              <% end %>
-            </li>
-          <% end %>
-        </ul>
+        <% if !user.website.blank? %>
+          <li>
+            <%= link_to user.website, class: "fa fa-link solo", target: "_blank" do %>
+              <span>GitHub</span>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
     </p>
 
   </div>

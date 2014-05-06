@@ -4,7 +4,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$black: rgb(42, 66, 78);
+// $black: rgb(42, 66, 78);
+$black: #00a6ff;
 
 
 p, #projects {
@@ -33,10 +34,16 @@ article.post-container {
     margin-bottom: 14px;
   }
   
-  h2.post-title {
-    a {
-      color: $black;
-    }
+  .post-title {
+    padding-bottom: 23px;
+    letter-spacing: -1px;
+    font-weight: 700;
+    font-size: 76px;
+    color: #00a6ff;
+
+    // a {
+    //   color: $black;
+    // }
   }
   
   p, li, blockquote {
@@ -297,10 +304,11 @@ div.youtube-video {
 /* CONTACT US FORM
 =========================== */
 .contact-form {
-    position: relative;
+  position: relative;
   display: inline-block;
   vertical-align: top;
   width: 100%;
+  margin-top: 20px;
   padding: 0 20px 20px 0;
   // -webkit-box-sizing: border-box;
   // -moz-box-sizing: border-box;
@@ -335,6 +343,31 @@ div.youtube-video {
   }
 }
 
+
+/* FOLLOW BUTTON
+================================================== */
+
+div.follow-button {
+  width: 196px;
+  margin: 0 auto 20px;
+  // background: #343434;
+}
+
+div.you-should-join-because {
+
+  h2 {
+    // color: #260399;
+    color: $black;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    height: 1px;
+    background: #dededc;
+  }
+
+}
 
 /* Responsive
 -------------------------------------------------- */

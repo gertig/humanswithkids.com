@@ -13,7 +13,7 @@
 
   <h4 class="contact-form-heading">Contact Us</h4>
 
-  <p>I love to hear feedback about what I write! If you take the time to send me a note with the form below I promise that I will respond. - <em><%= post.user.name %></em></p>
+  <p>If you don't want to go anywhere else to reach us you can just use this handy form.</p>
   
   <%= form_for "contact", url: "/contact_us_page", :html => { method: :post} do |f| %>
     <div class="form-group pull-left" style="width: 50%;">
@@ -32,9 +32,10 @@
       <%= f.text_area "body", class: "form-control" %>
     </div>
 
-    <%= f.hidden_field "post_author", value: post.user.name %>
-    <%= f.hidden_field "post_title", value: post.title %>
-    <%= f.hidden_field "post_url", value: post_url(post) %>
+    <%= f.hidden_field "post_author", value: "About Page" %>
+    <%#= f.hidden_field "post_author", value: post.user.name %>
+    <%#= f.hidden_field "post_title", value: post.title %>
+    <%#= f.hidden_field "post_url", value: post_url(post) %>
 
     <span id="error-message"></span>
     <%= f.submit "Send it!", class: "btn btn-default"  %>
