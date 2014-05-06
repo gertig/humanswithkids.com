@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require Countable
 //= require Vague
-
 //= require jquery.ui.widget
 //= require jquery.Jcrop
 //= require load-image.min
@@ -31,14 +30,4 @@
 //= require bootstrap
 //= require bootstrap-image-gallery.min
 //= require bootstrap-datetimepicker
-
 //= goodies
-
-//// https://github.com/smalot/bootstrap-datetimepicker
-//// don't use "require_tree ."  because I'm using *-manifest.js to separate things out. see application.rb for me
-
-//DOM is Ready
-// $(function(){
-//   $("a[rel~=popover], .has-popover").popover();
-//   $("a[rel~=tooltip], .has-tooltip").tooltip();
-// });
