@@ -11,8 +11,6 @@ $.fn.serializeObject = function() {
 
 //DOM is Ready
 $(function(){
-
-  console.log("HELLOOOOO");
   
   //PUSHDOWN MESSAGES
   if ($(".flashy").length) {
@@ -40,7 +38,7 @@ $(function(){
 
 
   // Only use Countable.js if you are editing/creating content
-  if ($('#post_content').length) {
+  if ($('#post_content').length || $('#tweet_body').length) {
     // COUNTABLE
     var countable_elem;
 
@@ -65,13 +63,20 @@ $(function(){
 
   function countableUpdater(counter) {
     if ('textContent' in document.body) {
-      results.paragraphs.textContent = counter.paragraphs;
-      results.words.textContent = counter.words;
+      if (results.paragraphs) {
+        results.paragraphs.textContent = counter.paragraphs;
+        results.words.textContent = counter.words;
+      }
+
+      if (results.all) {
+        results.all.textContent = counter.all;
+      }
+
       // results.characters.textContent = counter.characters
       // results.all.textContent = counter.all
     } else {
-      results.paragraphs.innerText = counter.paragraphs;
-      results.words.innerText = counter.words;
+      // results.paragraphs.innerText = counter.paragraphs;
+      // results.words.innerText = counter.words;
       // results.characters.innerText = counter.characters
       // results.all.textContent = counter.all
     }

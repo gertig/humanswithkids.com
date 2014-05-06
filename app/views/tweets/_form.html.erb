@@ -1,8 +1,3 @@
-<div class="word-count">
-  <p>
-  <em>Characters:</em> <strong><span id="result__characters">0</span></strong>
-  </p>
-</div>
 
 
 <%= form_for(@tweet) do |f| %>
@@ -26,6 +21,9 @@
   <div class="form-group">
     <%= f.label :body %>
     <%= f.text_area :body, class: "form-control" %>
+    <span class="word-count">
+      <em>Characters:</em> <strong><span id="result__all">0</span></strong>
+    </span>
   </div>
 <!--   <div class="form-group">
     <%= f.label :sent %>

@@ -30,4 +30,4 @@
 //= require bootstrap
 //= require bootstrap-image-gallery.min
 //= require bootstrap-datetimepicker
-//= goodies
+//= require goodies
