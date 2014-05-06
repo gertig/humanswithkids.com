@@ -48,10 +48,18 @@ article.post-container {
   
   p, li, blockquote {
     font-family: 'Open Sans', serif;
+    // font-size: 22px;
+    // margin-bottom: 16px;
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 150%;
+    margin-bottom: 16px;
   }
 
   blockquote {
-    font-size: 16px;
+    font-size: 20px;
     font-style: italic;
     line-height: 26px;
   }
@@ -60,7 +68,7 @@ article.post-container {
     // padding-left: 20px;
     
     li {
-        font-size: 16px;
+        font-size: 20px;
         line-height: 26px;
       }
   }
