@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140428031600) do
+ActiveRecord::Schema.define(version: 20140508192257) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 20140428031600) do
     t.boolean  "url_contains_date", default: false
     t.boolean  "featured",          default: false
     t.boolean  "guest",             default: false
+    t.boolean  "simple_layout",     default: false
   end
 
   add_index "posts", ["slug"], name: "index_posts_on_slug", using: :btree

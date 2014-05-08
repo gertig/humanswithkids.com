@@ -30,6 +30,12 @@
   end
 %>
 
+<% if @post.simple_layout %>
+  <% content_for :landing_page_head do %>
+    <%#= render :partial => 'shared/le_setup' %>
+  <% end %>
+<% end %>
+
 <div class="col-md-6 col-md-offset-3">
 
   <section id="post-<%= @post.id %>">

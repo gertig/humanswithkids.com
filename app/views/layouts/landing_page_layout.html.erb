@@ -23,20 +23,15 @@
   <%= auto_discovery_link_tag :atom, "/feed/rss" %>
   <%= auto_discovery_link_tag :rss, "/feed/rss.rss" %>
   
-  <%= stylesheet_link_tag    "landing-page-manifest", :media => "all" %>
-  <%= csrf_meta_tags %>
-  
-  <!-- // <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> -->
-  
-  <!-- Javascripts
+    
+  <!-- Javascripts, Styles, and Fonts
   ================================================== -->
-  <%= javascript_include_tag "landing-page-manifest" %>
-  
-  <link href='http://fonts.googleapis.com/css?family=Gentium+Basic:400,700,400italic|Alegreya:400,700|Open+Sans:400italic,400,700|Audiowide|Viga' rel='stylesheet' type='text/css'>
-
-  <link href='http://fonts.googleapis.com/css?family=Kreon:300,400,700' rel='stylesheet' type='text/css'>
+  <%= yield :landing_page_head %>
   
   <%= render "analytics" %>
+
+  <%= csrf_meta_tags %>
+
   
   <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
   <!--[if lt IE 9]>

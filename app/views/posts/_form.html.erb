@@ -55,12 +55,16 @@
     <% end %>
     
     <%= f.label :protect_slug, class: "checkbox" do %>
-      <%= f.check_box :protect_slug %> Protect url slug from updates
+      <%= f.check_box :protect_slug %> Protect url slug from updates (mostly for legacy posts)
     <% end %>
 
-    <%= f.label :url_contains_date, class: "checkbox" do %>
-      <%= f.check_box :url_contains_date %> Show published date in the url
+    <%= f.label :simple_layout, class: "checkbox" do %>
+      <%= f.check_box :simple_layout %> Use simplified layout
     <% end %>
+
+<!--     <%= f.label :url_contains_date, class: "checkbox" do %>
+      <%= f.check_box :url_contains_date %> Show published date in the url
+    <% end %> -->
 
     <%= f.label :published_at %>
     <%= f.date_select :published_at %>
