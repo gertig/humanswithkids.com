@@ -23,6 +23,7 @@ $gray-lighter:           lighten(#000, 93.5%) !default; // #eee
 // -------------------------
 
 $brand-primary:         #428bca !default;
+// $brand-primary:         #336699 !default;
 $brand-success:         #5cb85c !default;
 $brand-warning:         #f0ad4e !default;
 $brand-danger:          #d9534f !default;
@@ -72,7 +73,7 @@ $headings-color:          inherit !default;
 // -------------------------
 
 $icon-font-path: "bootstrap/" !default;
-$icon-font-name:          "glyphicons-halflings-regular" !default;
+$icon-font-name: "glyphicons-halflings-regular" !default;
 
 
 // Components
@@ -269,6 +270,11 @@ $grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
 // Basics of a navbar
 // $navbar-height:                    50px !default;
 $navbar-height:                    80px !default;
+
+// @media (max-width: 480px) {
+//   $navbar-height: 50px !important;
+// }
+
 $navbar-margin-bottom:             $line-height-computed !default;
 // $navbar-margin-bottom:             0px !default;
 // $navbar-border-radius:             $border-radius-base !default;

@@ -53,7 +53,7 @@ class PostsController < ApplicationController
     @post = Post.friendly.find(params[:id])
     @user = @post.user
 
-    layout = @post.simple_layout ? "landing_page_layout" : "application"
+    layout = @post.simple_layout ? "simple_layout" : "application"
 
     respond_to do |format|
       format.html { render :layout => layout }# show.html.erb

@@ -34,21 +34,21 @@ article.post-container {
     margin-bottom: 14px;
   }
   
-  .post-title {
-    padding-bottom: 23px;
-    letter-spacing: -1px;
-    font-weight: 700;
-    font-size: 76px;
-    color: #00a6ff;
+  // .post-title {
+  //   padding-bottom: 23px;
+  //   letter-spacing: -1px;
+  //   font-weight: 700;
+  //   font-size: 76px;
+  //   color: #00a6ff;
 
-    // a {
-    //   color: $black;
-    //   // padding-bottom: 23px;
-    //   letter-spacing: -1px;
-    //   font-weight: 500;
-    //   font-size: 40px;
-    // }
-  }
+  //   // a {
+  //   //   color: $black;
+  //   //   // padding-bottom: 23px;
+  //   //   letter-spacing: -1px;
+  //   //   font-weight: 500;
+  //   //   font-size: 40px;
+  //   // }
+  // }
   
   p, li, blockquote {
     font-family: 'Open Sans', serif;
@@ -384,6 +384,16 @@ div.you-should-join-because {
 /* Responsive
 -------------------------------------------------- */
 
+@media (max-width: 2000px) {
+  .post-title {
+    padding-bottom: 23px;
+    letter-spacing: -1px;
+    font-weight: 700;
+    font-size: 76px;
+    color: #00a6ff;
+  }
+}
+
 @media (max-width: 980px) {
   .container {
     padding-left: 20px;
@@ -391,27 +401,43 @@ div.you-should-join-because {
   }
 }
 
-@media (max-width: 768px) {
+
+@media (max-width: 767px) {
 
 }
 
 @media (max-width: 480px) {
-  // pre {
-  //   font-size: 12px;
-  //   line-height: 20px;
-  // }
-  // .related h2,
-  // .posts h3 a {
-  //   text-align: center;
-  // }
-  // .posts h3 a small {
-  //   display: block;
-  //   line-height: 20px;
-  // }
-  
-  // .post-container {
-  //   position: relative;
-  //   margin-top: 14px;
-  //   margin-bottom: 40px;
-  // }
+
+.navbar-fixed-top {
+    min-height: 50px;
+    // max-height: 50px;
+}
+
+.navbar-fixed-top .navbar-collapse {
+    // max-height: 50px;
+}
+
+.navbar-nav > li > a {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    line-height: 50px;
+}
+
+.navbar-brand {
+  padding: 15px 15px;
+}
+
+.navbar-toggle {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.post-title {
+    padding-bottom: 16px;
+    letter-spacing: -1px;
+    font-weight: 500;
+    font-size: 40px;
+    color: #00a6ff;
+  }
+
 }
