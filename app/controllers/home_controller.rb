@@ -14,5 +14,9 @@ class HomeController < ApplicationController
   def preschool_farm_fun
 
   end
+
+  def privacy_policy
+
+  end
   
 end

@@ -77,6 +77,7 @@ Hwk::Application.routes.draw do
   get "dashboard" => "dashboard#show", :as => :dashboard
   get "archives" => "posts#index", :as => :archives
   get "preschool-farm-fun" => "home#preschool_farm_fun", :as => :preschool_farm_fun
+  get "privacy-policy" => "home#privacy_policy", :as => :privacy_policy
 
   # Catch all for posts should be after custom page routes
   get '/:id' => "posts#show"
