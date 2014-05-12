@@ -1,0 +1,10 @@
+/* Simple Manifest
+*
+*= require_self
+*= require bootstrap-variables
+*= require bootstrap
+*= require font-awesome
+*= require app
+*= require posts
+*
+*/
