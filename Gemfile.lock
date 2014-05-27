@@ -239,7 +239,7 @@ DEPENDENCIES
   rails_12factor
   redcarpet (~> 2.2.2)
   rmagick (~> 2.13.2)
-  sass-rails (~> 4.0.0)
+  sass-rails (~> 4.0.2)
   sextant (~> 0.2.3)
   sitemap_generator (~> 3.4)
   stripe!

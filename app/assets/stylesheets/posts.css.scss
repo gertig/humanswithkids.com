@@ -9,7 +9,7 @@ $black: #00a6ff;
 
 
 p, #projects {
-  font-family: 'Open Sans', serif;
+  // font-family: 'Open Sans', serif;
   font-size: 18px;
   line-height: 130%;
   margin-bottom: 14px;
@@ -51,7 +51,7 @@ article.post-container {
   // }
   
   p, li, blockquote {
-    font-family: 'Open Sans', serif;
+    // font-family: 'Open Sans', serif;
     // font-size: 22px;
     // margin-bottom: 16px;
   }
@@ -80,7 +80,8 @@ article.post-container {
   span.post-date {
     display: block;
     margin: -5px 0 10px;
-    color: #ccc;
+    // color: #ccc;
+    color: $hwk-green;
   }
   
   div.post-sharing-buttons {
@@ -165,7 +166,7 @@ div.post-edit-left-sidebar {
 textarea.post-input-title {
   margin-bottom: 10px;
   font-size: 30px;
-  font-family: 'Open Sans', sans-serif;
+  // font-family: 'Open Sans', sans-serif;
   color: #2c3e50;
   font-weight: 500;
   line-height: 1.4em;
@@ -183,7 +184,7 @@ textarea.post-input-title {
 
 textarea.ag-post-editing-field {
   height: 800px;
-  font-family: 'Open Sans', serif;
+  // font-family: 'Open Sans', serif;
   font-size: 18px;
   line-height: 130%;
   padding: 0;
@@ -369,7 +370,8 @@ div.you-should-join-because {
 
   h2 {
     // color: #260399;
-    color: $black;
+    // color: $black;
+    color: $hwk-blue;
   }
 
   &:before {
@@ -390,7 +392,8 @@ div.you-should-join-because {
     letter-spacing: -1px;
     font-weight: 700;
     font-size: 76px;
-    color: #00a6ff;
+    // color: #00a6ff;
+    color: $hwk-blue;
   }
 }
 
@@ -437,7 +440,8 @@ div.you-should-join-because {
     letter-spacing: -1px;
     font-weight: 500;
     font-size: 40px;
-    color: #00a6ff;
+    // color: #00a6ff;
+    color: $hwk-blue;
   }
 
 }

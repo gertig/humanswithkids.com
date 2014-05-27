@@ -10,17 +10,18 @@
             <span class="icon-bar"></span>
           </button>
           <%= link_to root_url, class: "navbar-brand" do %>
-            Humans With Kids
+            <!-- Humans With Kids -->
+            <%= image_tag "HWK-blue-logo.jpg", class: "hwk-logo" %>
           <% end %>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="<%= is_active?(root_url) %>"><%= link_to "Home", root_url %></li>
+            <!-- <li class="<%= is_active?(root_url) %>"><%= link_to "Home", root_url %></li> -->
             <li class="<%= is_active?(archives_path) %>"><%= link_to "Blog", archives_path %></li>
-            <li class="<%= is_active?(products_path) %>"><%= link_to "Products We Love", products_path %></li>
-            <li class="<%= is_active?(about_path) %>"><%= link_to "About Us", about_path %></li>
+            <li class="<%= is_active?(products_path) %>"><%= link_to "Shop", products_path %></li>
+            <li class="<%= is_active?(about_path) %>"><%= link_to "About", about_path %></li>
             <li class="<%= "" %>"><%= link_to "Preschool Farm Fun", "/preschool-farm-fun" %></li>
             <!-- <li class="<%= is_active?("#") %>"><%= link_to "Contact", "#", id: "email-me", title: "hello@humanswithkids.com", data: { placement: "bottom", toggle: "tooltip" } %></li> -->
 <!--             <li class="dropdown">

@@ -38,6 +38,8 @@
   
   <link href='http://fonts.googleapis.com/css?family=Gentium+Basic:400,700,400italic|Alegreya:400,700|Open+Sans:400italic,400,700|Audiowide|Viga' rel='stylesheet' type='text/css'>
 
+  <link href='http://fonts.googleapis.com/css?family=Istok+Web:400,700,400italic|Droid+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
   <!-- 
     font-family: 'Lora', serif;
     font-family: 'Open Sans', sans-serif;
@@ -66,7 +68,7 @@
 
   <%# HERO IMAGE %>
   <!-- <div class="row"> -->
-  <% if params[:controller] == "home" %>
+  <% if params[:controller] == "home" && params[:action] == "about" %>
     <div class="hero-image-wrapper hidden-xs">
         <div id="hero-image" class="actual-image" style="background-image: url('https://humanswithkids-assets.s3.amazonaws.com/uploads/picture/image/7/large_IMG_4324.JPG');">
 
@@ -85,12 +87,14 @@
       <%= yield %>
     </div>
 
-    
+
+  <% unless params[:controller] == "home" && params[:action] == "index" %>    
     <div class="row">
       <footer class="ag-fa">
         <%= render "footer" %>
       </footer>
     </div>
+  <% end %>
 
   </div> <!-- /container -->
 

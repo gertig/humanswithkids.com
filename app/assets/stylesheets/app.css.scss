@@ -9,6 +9,9 @@
 $purple: #8562ef;
 $midnight: #2C3E50;
 $black: #333333;
+
+$hwk-blue: #366FC1;
+$hwk-green: #6AD374;
 // $navbar-height:  80px !default;
 
 html {
@@ -22,9 +25,16 @@ body {
   padding-top: $navbar-height;
 }
 
-h1, h2, h3, h4, h5, h6, p {
-  font-family: 'Open Sans', sans-serif;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Istok Web', sans-serif;
+  // font-family: 'Open Sans', sans-serif;
   // font-family: 'Alegreya', serif;
+  color: $midnight;
+  // color: $hwk-blue;
+}
+
+p {
+  font-family: 'Droid Serif', sans-serif;
   color: $midnight;
 }
 
@@ -54,6 +64,14 @@ h1, h2, h3, h4, h5, h6, p {
   left: 5px;
   width: 30px;
   height: 21px;
+}
+
+.hwk-logo {
+  height: 80px;
+}
+
+a.navbar-brand {
+  padding: 0;
 }
 
 /* HERO IMAGE
@@ -89,7 +107,10 @@ h1, h2, h3, h4, h5, h6, p {
 
 .hero-subhead {
   text-align: center;
-  margin: 40px 0 0;
+  // width: 400px;
+  margin: 40px auto 0;
+  line-height: 150%;
+  font-size: 44px;
 }
 
 a.dont-decorate {
@@ -104,13 +125,14 @@ article.featured-post {
   position: relative;
   // background: red;
 
-  h3.post-title {
+  h3.featured-post-title {
     // a {
-    color: $black;
+    // color: $black;
+    color: $hwk-blue;
     // padding-bottom: 23px;
     letter-spacing: -1px;
-    font-weight: 500;
-    font-size: 40px;
+    // font-weight: 500;
+    // font-size: 40px;
     // }
   }
 
@@ -228,6 +250,14 @@ article.featured-post {
     text-align: center;
     padding: 4em 0 8em 0;
     box-shadow: inset 0 1px 0 0 #e6e6e6;
+
+    &.home-page-social {
+      box-shadow: none;
+      // margin-top: 2em;
+      padding-bottom: 2em;
+      // padding: 0;
+      // padding: 4em 0 8em 0;
+    }
   }
   ul.icons {
     cursor: default;
@@ -246,9 +276,12 @@ article.featured-post {
     line-height: 3.9em;
     text-align: center;
     border: 0;
-    box-shadow: inset 0 0 0 1px #e6e6e6;
+    // box-shadow: inset 0 0 0 1px #e6e6e6;
+    box-shadow: inset 0 0 0 1px #d6d6d6;
+    // box-shadow: inset 0 0 0 1px $hwk-green;
     border-radius: 100%;
     color: #aaa;
+    // color: $hwk-green;
     -moz-transition: background-color 0.25s ease-in-out;
     -webkit-transition: background-color 0.25s ease-in-out;
     -o-transition: background-color 0.25s ease-in-out;
@@ -258,11 +291,14 @@ article.featured-post {
 
   ul.icons a:hover {
     background: rgba(0,0,0,0.025);
+    // background: $hwk-green;
+    box-shadow: inset 0 0 0 1px $hwk-green;
+    color: $hwk-green;
   }
 
-  ul.icons a {
-    box-shadow: inset 0 0 0 1px #d6d6d6;
-  }
+  // ul.icons a {
+  //   box-shadow: inset 0 0 0 1px #d6d6d6;
+  // }
 
   .fa.solo span {
     display: none;

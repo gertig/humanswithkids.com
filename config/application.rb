@@ -60,6 +60,10 @@ module Hwk
     #GERTIG - fixes assets on Heroku
     config.assets.initialize_on_precompile = false
 
+    # GERTIG - Don't generate the javascript and css files with generators
+    config.generators.stylesheets = false
+    config.generators.javascripts = false
+
     # I18n.enforce_available_locales = false
     config.i18n.enforce_available_locales = false
     
