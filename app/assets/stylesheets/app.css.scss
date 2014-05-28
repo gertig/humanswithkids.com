@@ -67,7 +67,8 @@ p {
 }
 
 .hwk-logo {
-  height: 80px;
+  height: 60px;
+  margin: 10px 10px 10px 0px;
 }
 
 a.navbar-brand {
@@ -112,12 +113,13 @@ a.navbar-brand {
   width: 100%;
   background-color: $hwk-green; /* Try a random background color */
   background-image: image-url("truchet@2x.png");
+  background-size: 150%;
 }
 
 .hero-subhead {
   text-align: center;
   // width: 400px;
-  margin: 40px auto 40px;
+  margin: 60px auto;
   line-height: 150%;
   // font-size: 44px;
   font-size: 50px;
