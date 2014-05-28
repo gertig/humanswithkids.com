@@ -79,7 +79,12 @@
         
     </div>
   <% end %>
-  <!-- </div> -->
+  
+    <% if params[:controller] == "home" && params[:action] == "index" %>
+    <div class="hero-mission-wrapper hidden-xs">
+        <h1 class="hero-subhead">We make really cool stuff<br/>for parents who want to be a part<br/>of their child's story</h1>
+    </div>
+  <% end %>
 
   <div class="main-container">
     

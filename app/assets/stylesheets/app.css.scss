@@ -105,12 +105,25 @@ a.navbar-brand {
   }
 }
 
+.hero-mission-wrapper {
+  @extend .container; 
+
+  position: relative;
+  width: 100%;
+  background-color: $hwk-green; /* Try a random background color */
+  background-image: image-url("truchet@2x.png");
+}
+
 .hero-subhead {
   text-align: center;
   // width: 400px;
-  margin: 40px auto 0;
+  margin: 40px auto 40px;
   line-height: 150%;
-  font-size: 44px;
+  // font-size: 44px;
+  font-size: 50px;
+  // color: #F8F8F8;
+  color: #FFF;
+  text-transform: uppercase;
 }
 
 a.dont-decorate {
