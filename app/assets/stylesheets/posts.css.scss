@@ -411,6 +411,32 @@ div.you-should-join-because {
 
 @media (max-width: 480px) {
 
+.hwk-logo {
+  height: 30px;
+  margin: 10px 10px 10px 0px;
+}
+
+body {
+  padding-top: 50px;
+}
+
+.hero-mission-wrapper {
+  margin-bottom: 20px;
+}
+
+.hero-subhead {
+  text-align: center;
+  margin: 24px auto 20px;
+  line-height: 120%;
+  font-size: 18px;
+  color: #FFF;
+  text-transform: uppercase;
+}
+
+footer.ag-fa.home-page-social {
+  padding: 1.8em 0 0 0;
+}
+
 .navbar-fixed-top {
     min-height: 50px;
     // max-height: 50px;
