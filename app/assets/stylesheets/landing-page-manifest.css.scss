@@ -1,11 +1,22 @@
+/* Simple Manifest
+*/
+
+/*@import "self";*/
+@import "bootstrap-variables";
+@import "bootstrap";
+@import "preschool-farm-fun";
+@import "appstore-button";
+@import "pff/specific";
+@import "pff/component";
+
+
+
 /* Landing Page Manifest
 *
 *= require_self
 *= require bootstrap-variables
-*= require bootstrap
-*= require preschool-farm-fun
-*= require pff/specific
-*= require pff/component
+@import "bootstrap
+
 *
 */
 

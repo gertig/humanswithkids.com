@@ -1,0 +1,138 @@
+$button-color: $hwk-blue;
+
+
+.appstore-iphone {
+  width: 33px;
+  height: 57px;
+  float: left;
+  background: #fff;
+  border-radius: 4px;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0,0,0,.3);
+}
+.appstore-iphone:before {
+  content: '';
+  width: 8px;
+  z-index: 1;
+  height: 2px;
+  background: $button-color;
+  position: absolute;
+  left: 50%;
+  margin-left: -4px;
+  top: 4px;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.3);
+  box-sizing: inherit;
+}
+.appstore-iphone:after {
+  content: '';
+  width: 27px;
+  z-index: 1;
+  height: 37px;
+  background: $button-color;
+  position: absolute;
+  left: 50%;
+  margin-left: -14px;
+  margin-top: 10px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.3);
+  box-sizing: inherit;
+}
+.appstore-knob {
+  width: 5px;
+  z-index: 2;
+  height: 5px;
+  background: $button-color;
+  position: absolute;
+  left: 50%;
+  margin-top: 49px;
+  margin-left: -3px;
+  border-radius: 50px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.3);
+}
+.appstore-button {
+  width: 200px;
+  background: $button-color;
+  padding: 18px 30px;
+  height: 58px;
+  border-radius: 10px;
+  // display: inline-block;
+  box-sizing: inherit;
+  margin: 0 auto;
+}
+.appstore-button span {
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,.4);
+  font: 17px 'Open Sans';
+  float: right;
+}
+span.appstore h2 {
+  margin: 0;
+  font-size: 30px;
+  padding: 0;
+  line-height: 0.9;
+  font-family: 'Open Sans';
+  color: #fff;
+  font-weight: bold;
+}
+h1.appstore-price {
+  margin-left: 15px;
+  padding: 0;
+  display: inline-block;
+  vertical-align: 35px;
+  color: $button-color;
+  font-size:38px;
+  font-family: 'Open Sans';
+}
+
+.appstore-pack {
+  margin-bottom: 40px;
+  // margin: 0 auto;
+  // width: 378px;
+  box-sizing: content-box;
+}
+.appstore-banner {
+  width: 100%;
+  height: 85px;
+  background: $button-color;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 100;
+  display: inline;
+  font-weight: 700;
+}
+.appstore-banner {
+  color: #fff;
+  text-align: center;
+  font-size: 37px;
+  line-height: 1.9em;
+}
+thin.appstore {
+  font-weight: 400;
+}
+.appstore-banner span {
+  font-size: 19px;
+}
+button.appstore-det {
+  background: #fff;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 18px;
+  font-family: 'Open Sans';
+  color: $button-color;
+  margin-left: 15px;
+  box-shadow: 0 5px 0 -3px #dcdcdc, 0 3px 0 -1px #dcdcdc;
+  cursor: pointer;
+  padding: 12px 15px;
+}
+.appstore-close {
+  width: 25px;
+  height: 25px;
+  top: 35px;
+  right: 5px;
+  background-position: 0 0;
+  display: block;
+  position: absolute;
+  opacity:0.3;
+}
