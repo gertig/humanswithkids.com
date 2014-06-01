@@ -66,8 +66,8 @@ module Hwk
 
     # I18n.enforce_available_locales = false
     config.i18n.enforce_available_locales = false
-    
-  
+
+
     #GERTIG - uses rack-rewrite gem to rewrite the sitemap URL to point to amazon S3
     config.middleware.insert_before(Rack::Runtime, Rack::Rewrite) do
       # rewrite rules here
@@ -76,36 +76,37 @@ module Hwk
       # 302 is a temoporary redirect
 
       r301 '/pff',   '/preschool-farm-fun'
-      
+      r302 '/pff-app',  'https://itunes.apple.com/us/app/preschool-farm-fun/id875654180?mt=8'
+
       # redirects the sitemap URL to point to amazon S3
       r302 %r{^/sitemap.xml}, "http://humanswithkids-assets.s3-website-us-east-1.amazonaws.com/sitemaps/sitemap1.xml.gz"
-      
+
       # redirects the root humanswithkids.com to www.humanswithkids.com
       r301 %r{.*}, 'http://www.humanswithkids.com$&', :if => Proc.new {|rack_env|
         # Rails.logger.info "PATH: #{rack_env['PATH_INFO']} matches Regex? #{rack_env['PATH_INFO'] === %r{\/tag\/.*$}}"
         rack_env['SERVER_NAME'] == 'humanswithkids.com'
         # || rack_env['PATH_INFO'] === %r{\/tag\/.*$}
       }
-      
+
       # redirects any url that ends in a / (forward slash) to the clean url without it
       # http://rubular.com/r/rfCmOBjays
       r301 %r{(.+)\/$}, '$1', :if => Proc.new { |rack_env|
         rack_env['SERVER_NAME'] != "localhost"
       }
-      
+
       # redirects any url that ends in a /comment-page-1 (forward slash) to the clean url without it
       # http://rubular.com/r/rfCmOBjays
       r301 %r{(.+)\/comment-page-1$}, '$1', :if => Proc.new { |rack_env|
         rack_env['SERVER_NAME'] != "localhost"
       }
-      
+
       # redirects any url that ends in a /tag/something (forward slash) to the clean url with ?tag=something
       # http://rubular.com/r/rfCmOBjays
       # r301 %r{(.+)\/tag\/(.*)$}, '$1', :if => Proc.new { |rack_env|
       #   rack_env['SERVER_NAME'] != "localhost"
       # }
-      
-      
+
+
       #Rails Request.env Variables
       # SERVER_NAME
       # PATH_INFO
@@ -130,7 +131,7 @@ module Hwk
       # HTTP_ACCEPT
       # REQUEST_METHOD
       # HTTP_CONNECTION
-      
+
     end
 
 
