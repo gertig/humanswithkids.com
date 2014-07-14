@@ -46,10 +46,9 @@ module ApplicationHelper
     { success: "alert-success", error: "alert-error", alert: "alert-warning", notice: "alert-info" }[flash_type] || flash_type.to_s
   end
 
-
   def is_active?(link_path)
     current_page?(link_path) ? "active" : ""
-   end
+  end
   
   
 end

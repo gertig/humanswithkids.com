@@ -1,4 +1,4 @@
-<h1 id="products-listing-header">Things We Love</h1>
+<h1 id="products-listing-header">Shop</h1>
 
 <!-- <table class="table">
   <tbody>
@@ -12,12 +12,23 @@
   </tbody>
 </table> -->
 
+<div class="row">
+  <div class="col-md-4 col-md-offset-2-APG">
+    <div class="product-category category-image" style="background-image: url('https://humanswithkids-assets.s3.amazonaws.com/uploads/picture/image/5/preview_ST-4_-_Blue_-_Large_1024.jpg');">
+
+    </div>
+    <div class="product-category">
+      <span>Balance Bikes</span>
+    </div>
+  </div>
+</div>
+
 <div class="row products-listing">
-  
+
   <% @products.in_groups_of(3) do |products| %>
-    
+
     <div class="row">
-      
+
       <% products.each do |product| %>
         <% if product %>
           <div class="col-md-4 product-listing">
@@ -36,5 +47,5 @@
     </div>
 
   <% end %>
-  
+
 </div>

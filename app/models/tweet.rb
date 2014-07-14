@@ -25,7 +25,7 @@ class Tweet < ActiveRecord::Base
   end
 
   def self.due
-    where("send_at < ? AND sent IS false", DateTime.now) #.where(sent: false)
+    where("send_at < ? AND send_at > ? AND sent IS false", DateTime.now, 30.minutes.ago) #.where(sent: false)
   end
 
   def author

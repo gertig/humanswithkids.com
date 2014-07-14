@@ -19,7 +19,7 @@ html {
   height: 100%;
 }
 
-body { 
+body {
 /*  background-image: url(/assets/grid.png); */
   height: 100%;
   padding-top: $navbar-height;
@@ -78,7 +78,7 @@ a.navbar-brand {
 /* HERO IMAGE
 ====================== */
 .hero-image-wrapper {
-  @extend .container; 
+  @extend .container;
 
   position: relative;
   width: 100%;
@@ -107,7 +107,7 @@ a.navbar-brand {
 }
 
 .hero-mission-wrapper {
-  @extend .container; 
+  @extend .container;
 
   position: relative;
   width: 100%;
@@ -174,6 +174,17 @@ article.featured-post {
   }
 }
 
+a.read-our-blog {
+  @extend .btn;
+  @extend .btn-success;
+  @extend .btn-lg;
+  @extend .btn-block;
+  width: 280px;
+  margin: 0 auto;
+  font-size: 20px;
+
+}
+
 /* FEATURED HEADER IMAGE
 ============================= */
 .has-featured-image {
@@ -211,10 +222,10 @@ article.featured-post {
   &:before {
     content: '';
     position: absolute;
-    top: 0; left:0; right:0; bottom:0; 
+    top: 0; left:0; right:0; bottom:0;
     background: inherit;
-    filter: blur(5px); 
-    -webkit-filter: blur(6px); 
+    filter: blur(5px);
+    -webkit-filter: blur(6px);
     -moz-filter: blur(6px);
     -o-filter: blur(6px);
     -ms-filter: blur(6px);
@@ -224,7 +235,7 @@ article.featured-post {
   h1 {
     position: relative; //Needs to be relative to work
     color: #FFF;
-    line-height: $logo-height; 
+    line-height: $logo-height;
     margin: 0;
     // z-index: 100;
   }
@@ -259,7 +270,7 @@ article.featured-post {
 //   padding-bottom: 40px;
 //   margin: 0 auto;
 //   text-align: center;
-  
+
 //   a {
 //     margin: 8px;
 //     &:active, &:hover {
@@ -290,13 +301,13 @@ article.featured-post {
     cursor: default;
     padding: 0;
     margin-bottom: 0;
-  } 
-    
+  }
+
   ul.icons li {
     display: inline-block;
     padding-left: 0.75em;
   }
-  
+
   ul.icons a {
     display: inline-block;
     width: 3.5em;
@@ -352,7 +363,7 @@ article.featured-post {
 /* ABOUT
 ====================== */
 article#about-me {
-  
+
   img {
     margin-bottom: 20px;
   }
@@ -369,7 +380,7 @@ h2.archives-post-title {
   margin-bottom: 0px;
   // margin-top: 46px;
   font-size: 24.5px;
-  
+
   a {
     color: $black;
   }
@@ -432,7 +443,7 @@ span.archives-post-date {
 .bs-callout .highlight {
   background-color: #fff;
 }
- 
+
 /* Themes for different contexts */
 .bs-callout-danger {
   background-color: #fcf2f2;

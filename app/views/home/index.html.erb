@@ -22,7 +22,7 @@
 
   <link href='http://fonts.googleapis.com/css?family=Cantora+One' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
-</div>  
+</div>
 
 <%# SOCIAL %>
 <div class="row">
@@ -35,10 +35,10 @@
 <div class="row">
 
   <% @posts.each do |post| %>
-    
-    
+
+
     <div class="col-md-6">
-      
+
       <%= link_to blogpost_path(post), class: "dont-decorate" do %>
         <article class="post-container featured-post">
           <div class="post-feature-image" style="background-image: url('<%= post.image_url_string %>');"></div>
@@ -51,7 +51,7 @@
             <p>
               <% if !post.meta_description.blank? %>
                 <%= CGI.unescapeHTML(strip_tags(markdown(post.meta_description).to_html.html_safe).truncate(300, :separator => ' ')) %>
-              <% else %>  
+              <% else %>
                 <%= CGI.unescapeHTML(strip_tags(markdown(post.content).to_html.html_safe).truncate(300, :separator => ' ')) %>
               <% end %>
             </p>
@@ -66,7 +66,7 @@
 
   <div id="post-navigation" class="clearfix" >
     <%#= link_to "← More Posts", archives_path, class: "previous-post" %>
-    <%= link_to "Read what we write", archives_path, class: "read-our-blog" %>
+    <%= link_to "Read our Blog", archives_path, class: "read-our-blog", role: "button" %>
   </div>
 
 </div>
