@@ -34,7 +34,7 @@ class Tweet < ActiveRecord::Base
 
   def self.hwk_tweets
     hwk = Authentication.where(name: "humanswithkids").first
-    hwk.nil? ? [] : hwk.tweets.order(send_at: :desc)
+    hwk.nil? ? [] : hwk.tweets.order(send_at: :desc).limit(10)
   end
 
   def self.mine(user)

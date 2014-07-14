@@ -6,70 +6,76 @@
   </div>
 </div>
 
+<div class="row">
 
-<div class="col-md-6">
+  <div class="col-md-6">
 
-  <h2>HWK</h2>
-  <table class="table">
-    <thead>
-      <tr>
-        <!-- <th></th> -->
-        <th>Tweet</th>
-        <th>Sent</th>
-        <th>Send At</th>
-<!--         <th></th>
-        <th></th>
-        <th></th> -->
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @tweets.each do |tweet| %>
+    <h2>HWK</h2>
+    <table class="table">
+      <thead>
         <tr>
-          <td><%= link_to "@#{tweet.authentication.name}", "http://twitter.com/#{tweet.authentication.name}", target: "_blank" %><br>
-          <%= tweet.body %></td>
-          <td><span class="glyphicon glyphicon-<%= tweet.sent ? 'ok' : 'time' %>"></span></td>
-          <td class="col-md-4"><%= link_to tweet.send_at_english, tweet %></td>
-          <!-- <td><%= link_to 'Show', tweet %></td> -->
-          <!-- <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td> -->
-          <!-- <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+          <!-- <th></th> -->
+          <th>Tweet</th>
+          <th>Sent</th>
+          <!-- <th>Send At</th> -->
+  <!--         <th></th>
+          <th></th>
+          <th></th> -->
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
 
-</div>
-
-<div class="col-md-6">
-
-  <h2>Personal</h2>
-  <table class="table">
-    <thead>
-      <tr>
-        <!-- <th></th> -->
-        <th>Tweet</th>
-        <th>Sent</th>
-        <th>Send At</th>
-<!--         <th></th>
-        <th></th>
-        <th></th> -->
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @personal_tweets.each do |tweet| %>
-        <tr>
-          <td><%= link_to "@#{tweet.authentication.name}", "http://twitter.com/#{tweet.authentication.name}", target: "_blank" %><br>
-          <%= tweet.body %></td>
-          <td><span class="glyphicon glyphicon-<%= tweet.sent ? 'ok' : 'time' %>"></span></td>
-          <td class="col-md-4"><%= link_to tweet.send_at_english, tweet %></td>
+      <tbody>
+        <% @tweets.each do |tweet| %>
+          <tr>
+            <td>
+            <p><%= tweet.body %></p>
+            <span><%= link_to tweet.send_at_english, tweet %> from <%= link_to "@#{tweet.authentication.name}", "http://twitter.com/#{tweet.authentication.name}", target: "_blank" %></span></td>
+            <td><span class="glyphicon glyphicon-<%= tweet.sent ? 'ok' : 'time' %>"></span></td>
+            <!-- <td class="col-md-4"></td> -->
             <!-- <td><%= link_to 'Show', tweet %></td> -->
             <!-- <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td> -->
-          <!-- <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+            <!-- <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="col-md-6">
+
+    <h2>Personal</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <!-- <th></th> -->
+          <th>Tweet</th>
+          <th>Sent</th>
+          <!-- <th>Send At</th> -->
+  <!--         <th></th>
+          <th></th>
+          <th></th> -->
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+
+      <tbody>
+        <% @personal_tweets.each do |tweet| %>
+          <tr>
+            <td>
+            <p><%= tweet.body %></p>
+            <span><%= link_to tweet.send_at_english, tweet %> from <%= link_to "@#{tweet.authentication.name}", "http://twitter.com/#{tweet.authentication.name}", target: "_blank" %></span>
+            </td>
+            <td><span class="glyphicon glyphicon-<%= tweet.sent ? 'ok' : 'time' %>"></span></td>
+            <!-- <td class="col-md-4"></td> -->
+              <!-- <td><%= link_to 'Show', tweet %></td> -->
+              <!-- <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td> -->
+            <!-- <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
 
 </div>
 

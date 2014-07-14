@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   # attr_accessible :email, :name, :role
-  
+
   has_many :authentications #, :dependent => :destroy
   has_many :posts, :dependent => :destroy
   has_many :tweets, :through => :authentications
@@ -8,9 +8,9 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :name
 
   mount_uploader :avatar, AvatarUploader
-  
+
   # scope :authors, where(role: "author")
-  
+
   extend FriendlyId
   friendly_id :name, use: [:slugged]
 
@@ -26,8 +26,8 @@ class User < ActiveRecord::Base
     where(role: "author")
   end
 
-  def add_twitter_account(auth)    
-    authentications.build(:provider => auth["provider"], 
+  def add_twitter_account(auth)
+    authentications.build(:provider => auth["provider"],
                           :uid => auth["uid"],
                           :name => auth["info"]["nickname"],
                           :access_token => auth["credentials"]["token"],
@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
 
   def my_tweets
     collection = []
-    tweets.order(send_at: :desc).each do |tweet|
+    tweets.order(send_at: :desc).limit(10).each do |tweet|
       collection.push(tweet) if tweet.author != "humanswithkids"
     end
 
