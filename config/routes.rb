@@ -1,5 +1,5 @@
 Hwk::Application.routes.draw do
-  
+
   resources :tweets do
     member do
       patch "send_now"
@@ -18,7 +18,7 @@ Hwk::Application.routes.draw do
     end
   end
   resources :pictures
-  
+
 
   resources :charges
   resources :products do
@@ -27,10 +27,10 @@ Hwk::Application.routes.draw do
     end
   end
 
-  devise_for :users, :skip => [:sessions], 
+  devise_for :users, :skip => [:sessions],
                      :controllers => { :registrations => "registrations" }
                      # :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  
+
   # https://github.com/plataformatec/devise/wiki/How-To:-Change-the-default-sign_in-and-sign_out-routes#steps-for-rails-300-forward
   as :user do
     get     "login"   => "devise/sessions#new",     :as => :new_user_session    # new_user_session_path
@@ -66,11 +66,11 @@ Hwk::Application.routes.draw do
   get '/auth/:provider/callback', :to => 'sessions#create'
   get '/auth/failure', :to => 'sessions#failure'
 
-  
+
   # Handle Year month Urls
-  get "/:year(/:month)/:id" => "posts#show", :constraints => { :year => /\d{4}/, :month => /\d{2}/ }, 
+  get "/:year(/:month)/:id" => "posts#show", :constraints => { :year => /\d{4}/, :month => /\d{2}/ },
                                              :via => :get
-  
+
   # Pages
   get "about" => "home#about", :as => :about
   get "hire-me" => "home#hire_me", :as => :hire_me
@@ -78,14 +78,15 @@ Hwk::Application.routes.draw do
   get "archives" => "posts#index", :as => :archives
   get "preschool-farm-fun" => "home#preschool_farm_fun", :as => :preschool_farm_fun
   get "privacy-policy" => "home#privacy_policy", :as => :privacy_policy
+  get "ios-for-parents-guide-to-iphone-ipad-ipod-security-and-safety" => "home#ios_for_parents", :as => :ios_for_parents
 
   # Catch all for posts should be after custom page routes
   get '/:id' => "posts#show"
-  
+
   # ROOT
   root :to => 'home#index'
   # get "home/index"
-  
+
   get "/tag/:a_tag" => "home#index" # This catches links that used to point to the Wordpress tag pages for things like /tag/seo and /tag/review and routes them to the home page
 
   # The priority is based upon order of creation:

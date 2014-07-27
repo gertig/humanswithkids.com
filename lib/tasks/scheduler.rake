@@ -6,7 +6,7 @@ task :publish_tweets => :environment do
   Tweet.due.each do |tweet|
     tweet.publish
   end
-  puts "done." 
+  puts "done."
 end
 
 # task :send_reminders => :environment do
@@ -24,5 +24,5 @@ end
 #     puts "Begin sending HN Alerts..."
 #     # call this with $ rake alert_hn
 #     HnAlertWorker.enqueue
-#     puts "done." 
+#     puts "done."
 # end

@@ -34,7 +34,7 @@
   <% content_for :landing_page_head do %>
     <%= stylesheet_link_tag    "simple-manifest", :media => "all" %>
     <%= javascript_include_tag "simple-manifest" %>
-    
+
     <link href='http://fonts.googleapis.com/css?family=Gentium+Basic:400,700,400italic|Alegreya:400,700|Open+Sans:400italic,400,700|Audiowide|Viga' rel='stylesheet' type='text/css'>
   <% end %>
 <% end %>
@@ -44,7 +44,7 @@
   <section id="post-<%= @post.id %>">
     <article class="post-container">
       <!-- <div class="post-sharing-buttons"><%#= render partial: "sharing_buttons", locals: { post: @post } %></div> -->
-      
+
       <%#= render partial: "admin_box", locals: { post: @post } if is_andrew? %>
       
       <% if !@post.published %>
@@ -56,18 +56,18 @@
       <%= link_to "← humanswithkids.com", root_url if @post.simple_layout %>
 
       <h1 class="post-title"><%= @post.title %></h1>
-      
+
       <span class="post-date">Written by <%= @post.author %> on <%= @post.published_on %> <%= link_to "| Edit Post", edit_user_post_path(@post.user, @post) if is_andrew? %></span>
-    
-      
-      <div class="post-content">      
+
+
+      <div class="post-content">
         <% if @post.content %>
           <%= markdown(@post.content).to_html.html_safe %>
         <% end %>
       </div>
 
     </article>
-    
+
     <div class="follow-button">
       <%= render "follow_button" %>
     </div>

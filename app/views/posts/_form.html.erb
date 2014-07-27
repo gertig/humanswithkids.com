@@ -37,7 +37,7 @@
       <%= f.text_area :content, class: "form-control ag-post-editing-field post-input-field", placeholder: "Body" %>
     </div>
 
-    
+
     <div class="form-group">
       <h4>Featured Image</h4>
       <%= f.text_field :image_url_string, class: "form-control", placeholder: "Use the 'Featured' image from the Media Gallery" %>
@@ -53,7 +53,7 @@
     <%= f.label :featured, class: "checkbox" do %>
       <%= f.check_box :featured %> Featured
     <% end %>
-    
+
     <%= f.label :protect_slug, class: "checkbox" do %>
       <%= f.check_box :protect_slug %> Protect url slug from updates (mostly for legacy posts)
     <% end %>
@@ -72,11 +72,11 @@
     <br>
     <%= f.label "Author" %>
     <%= collection_select(:post, :user_id, User.all, :id, :name) %>
-  
+
   <div class="form-actions">
     <%= f.submit class: "btn btn-success" %>
   </div>
-  
+
 <% end %>
 
 <br>
