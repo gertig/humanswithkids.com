@@ -81,10 +81,10 @@ h3.content-sublead {
 
 #pre-order-button {
   display: block;
-  width: 400px;
+  width: 200px;
   height: 60px;
   margin: 0 auto 50px;
-  font-size: 2.0em;
+  font-size: 1.2em;
 }
 
 // .hero-mission-wrapper {
@@ -110,6 +110,15 @@ h3.content-sublead {
 @media (min-width: 767px) {
   .content-bookcover {
     padding: 30px 80px 30px 80px;
+  }
+
+
+  #pre-order-button {
+    display: block;
+    width: 400px;
+    height: 60px;
+    margin: 0 auto 50px;
+    font-size: 2.0em;
   }
 }
 
