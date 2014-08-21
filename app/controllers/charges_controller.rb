@@ -1,26 +1,26 @@
 class ChargesController < ApplicationController
-  
-  def new
 
-    params = {
-       :stripeToken =>"tok_103G0s2NYY6aF7NIACwaJofC",
-       :stripeEmail =>"megan@test.com",
-       :stripeShippingName =>"Megan Jones",
-       :stripeShippingAddressLine1 =>"1020 Mulberry Dr.",
-       :stripeShippingAddressZip =>"20202",
-       :stripeShippingAddressCity =>"Washington",
-       :stripeShippingAddressState =>"DC",
-       :stripeShippingAddressCountry =>"United States"}
-
-    @product = Product.find(1)
-
-    # html = render_to_string("products/email", {product: @product})
-    html = render_to_string(:partial => 'products/email', :layout => false, :formats=>[:html], :locals => {product: @product, params: params})
-
-    Rails.logger.debug("[debug] : #{html}" );
-
-    @product.send_purchase_email(html, params)
-  end
+  # def new
+  #
+  #   params = {
+  #      :stripeToken =>"tok_103G0s2NYY6aF7NIACwaJofC",
+  #      :stripeEmail =>"megan@test.com",
+  #      :stripeShippingName =>"Megan Jones",
+  #      :stripeShippingAddressLine1 =>"1020 Mulberry Dr.",
+  #      :stripeShippingAddressZip =>"20202",
+  #      :stripeShippingAddressCity =>"Washington",
+  #      :stripeShippingAddressState =>"DC",
+  #      :stripeShippingAddressCountry =>"United States"}
+  #
+  #   @product = Product.find(1)
+  #
+  #   # html = render_to_string("products/email", {product: @product})
+  #   html = render_to_string(:partial => 'products/email', :layout => false, :formats=>[:html], :locals => {product: @product, params: params})
+  #
+  #   Rails.logger.debug("[debug] : #{html}" );
+  #
+  #   @product.send_purchase_email(html, params)
+  # end
 
 
   def create
@@ -47,8 +47,8 @@ class ChargesController < ApplicationController
 
     # Render HTML String for Mailgun email
     html = render_to_string(:partial => 'products/email', :layout => false, :formats=>[:html], :locals => {product: @product, params: params})
-    
-    # Send email to the andrews via
+
+    # Send email to the andrews
     @product.send_purchase_email(html, params)
 
     order_params = convert_stripe_to_order_params(@product.id, html, params)

@@ -43,6 +43,11 @@ h3.content-sublead {
   letter-spacing: 1px;
 }
 
+// .container-fixed {
+//   margin: 0 auto;
+//   max-width: 1000px;
+// }
+
 #page-container {
   // width: 1000px;
   margin: 50px 0;
@@ -55,12 +60,31 @@ h3.content-sublead {
   // width: 300px;
   // height: 100%;
   // background-size: 100%;
-  background: image-url("iOS-for-Parents.png") no-repeat 540px 40px;
-  background-size: 40%;
-  padding: 40px 650px 60px 120px;
+
+  // background: image-url("iOS-for-Parents.png") no-repeat 540px 40px;
+  // background-size: 40%;
+  // padding: 40px 650px 60px 120px;
+
   // border-bottom: 1px solid #eee;
   margin-top: 20px;
   margin-bottom: 50px;
+}
+
+.content-bookcover {
+  // background: image-url("iOS-for-Parents.png") no-repeat 60px 40px;
+  // background-size: 70%;
+  // height: 800px;
+  // padding: 40px 40px 10px 10px;
+  padding: 20px 20px 20px 20px;
+
+}
+
+#pre-order-button {
+  display: block;
+  width: 400px;
+  height: 60px;
+  margin: 0 auto 50px;
+  font-size: 2.0em;
 }
 
 // .hero-mission-wrapper {
@@ -73,3 +97,30 @@ h3.content-sublead {
 //   background-size: 150%;
 //   margin-bottom: 40px;
 // }
+
+
+/* MEDIA QUERIES
+***********************************************************/
+
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 767px) {
+  .content-bookcover {
+    padding: 30px 80px 30px 80px;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .content-bookcover {
+    padding: 30px 0px 30px 80px;
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}

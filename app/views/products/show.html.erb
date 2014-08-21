@@ -6,10 +6,10 @@
   </div>
 
   <div class="col-md-6">
-    
+
     <h2><%= @product.name %> <small><%= @product.features %></small></h2>
 
-    <p><strong><%= number_to_currency (@product.price_in_cents/100) %></strong></p>
+    <p><strong><%= number_to_currency (@product.price_in_cents/100.0) %></strong></p>
 
     <%# STRIPE BUTTON AND FORM %>
 
@@ -43,7 +43,7 @@
       </div>
       </p>
     <% end %>
-      
+
 
   </div>
 
