@@ -1,4 +1,6 @@
 class PicturesController < ApplicationController
+  skip_before_filter :verify_authenticity_token, :only => :create
+  
   # GET /pictures
   # GET /pictures.json
   def index
@@ -53,7 +55,7 @@ class PicturesController < ApplicationController
 
     Rails.logger.debug("[debug] : #{p_attr}" );
     p_attr[:image] = clean_params[:image].first if clean_params[:image].class == Array
-    Rails.logger.debug("[debug] : #{p_attr[:image]}" );
+    Rails.logger.debug("[debug] : #{p_attr[:image]}");
 
     if params[:gallery_id]
       @gallery = Gallery.find(params[:gallery_id])
