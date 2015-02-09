@@ -73,7 +73,7 @@ Hwk::Application.routes.draw do
 
   # Pages
   get "about" => "home#about", :as => :about
-  get "hire-me" => "home#hire_me", :as => :hire_me
+  # get "hire-me" => "home#hire_me", :as => :hire_me
   get "dashboard" => "dashboard#show", :as => :dashboard
   get "archives" => "posts#index", :as => :archives
   get "preschool-farm-fun" => "home#preschool_farm_fun", :as => :preschool_farm_fun

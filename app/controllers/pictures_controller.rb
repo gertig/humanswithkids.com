@@ -1,6 +1,6 @@
 class PicturesController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => :create
-  
+
   # GET /pictures
   # GET /pictures.json
   def index
@@ -49,19 +49,28 @@ class PicturesController < ApplicationController
   # POST /pictures
   # POST /pictures.json
   def create
-    Rails.logger.debug("[debug] : PARAMS: #{params[:picture]}" );
 
-    p_attr = clean_params
+    if params[:ios_app] == "1" # using the iOS app to upload a Picture
+      # puts "HEEEEY"
+      # puts ios_params
+      Rails.logger.debug("[debug] : PARAMS: #{ios_params}" );
 
-    Rails.logger.debug("[debug] : #{p_attr}" );
-    p_attr[:image] = clean_params[:image].first if clean_params[:image].class == Array
-    Rails.logger.debug("[debug] : #{p_attr[:image]}");
+      @gallery = Gallery.find(ios_params[:gallery_id])
+      @picture = @gallery.pictures.build(ios_params)
+    else # do things the old way
+      Rails.logger.debug("[debug] : PARAMS: #{params[:picture]}" );
 
-    if params[:gallery_id]
-      @gallery = Gallery.find(params[:gallery_id])
-      @picture = @gallery.pictures.build(p_attr)
-    else
-      @picture = Picture.new(p_attr)
+      p_attr = clean_params
+      Rails.logger.debug("[debug] : #{p_attr}" );
+      p_attr[:image] = clean_params[:image].first if clean_params[:image].class == Array
+      Rails.logger.debug("[debug] : #{p_attr[:image]}");
+
+      if params[:gallery_id]
+        @gallery = Gallery.find(params[:gallery_id])
+        @picture = @gallery.pictures.build(p_attr)
+      else
+        @picture = Picture.new(clean_params)
+      end
     end
 
     if @picture.save
@@ -125,6 +134,10 @@ class PicturesController < ApplicationController
   end
 
   private
+
+  def ios_params
+    params.require(:picture).permit!
+  end
 
   def clean_params
     params.fetch(:picture, {}).permit! #(:description, :gallery_i :crop_x, :crop_y, :crop_w, :crop_h, :gallery_token)
