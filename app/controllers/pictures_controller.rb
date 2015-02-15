@@ -133,6 +133,21 @@ class PicturesController < ApplicationController
     end
   end
 
+  def iosupload
+    if params[:ios_app] == "1" # using the iOS app to upload a Picture
+      # puts "HEEEEY"
+      # puts ios_params
+      Rails.logger.debug("[debug] : PARAMS: #{ios_params}" );
+
+      @gallery = Gallery.find(ios_params[:gallery_id])
+      @picture = @gallery.pictures.build(ios_params)
+    else
+      Rails.logger.debug("[debug] : FAILURE TO UPLOAD" );
+    end
+
+    render :json => [{:success => "Successful Upload"}], :status => 200
+  end
+
   private
 
   def ios_params

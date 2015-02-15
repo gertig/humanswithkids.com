@@ -156,6 +156,11 @@ GEM
       thor (>= 0.18.1, < 2.0)
     raindrops (0.13.0)
     rake (10.3.1)
+    react-rails (0.12.2.0)
+      execjs
+      rails (>= 3.1)
+      react-source (= 0.12.2)
+    react-source (0.12.2)
     redcarpet (2.2.2)
     rest-client (1.6.7)
       mime-types (>= 1.16)
@@ -237,6 +242,7 @@ DEPENDENCIES
   rack-rewrite (~> 1.4.01)
   rails (= 4.0.2)
   rails_12factor
+  react-rails
   redcarpet (~> 2.2.2)
   rmagick (~> 2.13.2)
   sass-rails (~> 4.0.2)

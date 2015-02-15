@@ -5,7 +5,7 @@ ruby '2.0.0'
 gem 'rails', '4.0.2'
 
 gem 'rails_12factor', group: :production # For Rails 4 to work on Heroku
-  
+
 group :development do
   gem "quiet_assets", "~> 1.0.2" #Gets the junk out of the console
   gem "sextant", "~> 0.2.3" #Rails routes at /rails/routes without rake routes
@@ -53,6 +53,8 @@ gem 'rack-rewrite', "~> 1.4.01" # redirect stuff based on urls
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 gem 'faraday'
+
+gem 'react-rails'
 # gem 'faraday-middleware'
 
 # Mailgun suggested libraries
@@ -60,6 +62,3 @@ gem 'faraday'
 # gem 'multimap'
 
 # gem 'htmlentities'
-
-
-

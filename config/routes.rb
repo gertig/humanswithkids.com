@@ -17,7 +17,11 @@ Hwk::Application.routes.draw do
       end
     end
   end
-  resources :pictures
+  resources :pictures do
+    collection do
+      post 'iosupload'
+    end
+  end
 
 
   resources :charges
