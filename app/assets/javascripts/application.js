@@ -31,3 +31,4 @@
 //= require bootstrap-image-gallery.min
 //= require bootstrap-datetimepicker
 //= require goodies
+//= require react
