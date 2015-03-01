@@ -2,7 +2,7 @@
   <h1 style="text-align: center;">Image Galleries</h1>
 
   <div class="col-md-6 col-md-offset-3">
-    
+
 
       <% @galleries.each do |gallery| %>
 
@@ -32,6 +32,13 @@
       <%= link_to 'New Gallery', new_gallery_path, :class => 'btn btn-default pull-right' %>
     </div>
 
+
   </div> <!-- col-md-6 -->
 
 </div> <!-- row -->
+
+<div class="row">
+  <h1>Cool stuff</h1>
+  <div id="comments-content" class="col-md-6"></div>
+
+</div>

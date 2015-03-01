@@ -39,28 +39,34 @@
           <% @pictures.each do |pic| %>
               <div class="col-md-4">
               <!-- <li class="thumbnail" id="picture_<%= pic.id %>"> -->
-                <div class="thumbnail" id="picture_<%= pic.id %>">
-                  <a href="<%= pic.image.url %>" rel="lightbox-pictures" title="<%= pic.description %>">
-                    <img src="<%= pic.image.preview.url %>" alt="">
-                  </a>
-                  <div class="caption">
+                <div class="hwk-thumbnail" id="picture_<%= pic.id %>">
+                  <div class="hwk-thumbnail-crop">
+                    <img class="hwk-thumbnail-img" src="<%= pic.image.preview.url %>" alt="">
+                  </div>
+
+                  <div class="hwk-caption">
 
                     <div class="image-url form-group">
                       <%= text_field_tag("image-url", pic.image.preview.url, class: "input-medium form-control", onclick: "this.focus(); this.select();") %>
                     </div>
 
                     <div class="image-url form-group">
-                      <label><b>Large (used for Hero images)</b></label>
+                      <label><b>Large (for Hero images)</b></label>
                       <%= text_field_tag("image-url", pic.image.large.url, class: "input-medium form-control", onclick: "this.focus(); this.select();") %>
-                      
+
                       <%= link_to gallery_picture_path(@gallery, pic), class: "btn btn-danger btn-sm pull-right", data: { confirm: "Delete me? Nooo!", method: "delete", remote: true } do %>
                         <i class="glyphicon glyphicon-trash"></i>
                       <% end %>
+
+                      <a class="btn btn-success btn-sm pull-left" href="<%= pic.image.url %>" rel="lightbox-pictures" title="<%= pic.description %>">
+                        <i class="glyphicon glyphicon-eye-open"></i>
+                      </a>
                     </div>
 
                       <%#= link_to "Edit", edit_gallery_picture_path(@gallery, pic) %>
 
                   </div>
+
 
                 </div>
               </div> <!-- col-md- -->
@@ -83,3 +89,31 @@
     </div>
   </div>
 </div>
+
+<script charset="utf-8">
+  //DOM is Ready
+  $(function(){
+    // Iterate over all images, detect which ones are portrait and add a .portrait class so that it looks good
+    $(".hwk-thumbnail-img").each(function(index, element) {
+      if (element.width < element.height) {
+        //It's a portrait Image
+        $(this).addClass("portrait");
+      }
+    });
+
+    $(".hwk-caption").hide();
+
+    // Detect Hover and hide and show the links
+    // $( selector ).mouseenter( handlerIn ).mouseleave( handlerOut );
+    $(".hwk-thumbnail-crop").mouseenter(function() {
+      console.log("Entering!!!");
+      $(this).siblings(".hwk-caption").show();
+      // $(this).hide();
+    });
+
+    $(".hwk-caption").mouseleave(function() {
+      console.log("Leaving!!!");
+      $(this).hide();
+    });
+  });
+</script>

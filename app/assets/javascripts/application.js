@@ -32,4 +32,5 @@
 //= require bootstrap-datetimepicker
 //= require goodies
 //= require react
-//= require media-gallery
+//= require react_ujs
+//= require components

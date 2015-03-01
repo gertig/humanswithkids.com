@@ -54,7 +54,7 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 gem 'faraday'
 
-gem 'react-rails'
+gem 'react-rails', '~> 1.0.0.pre', github: 'reactjs/react-rails'
 # gem 'faraday-middleware'
 
 # Mailgun suggested libraries
