@@ -44,6 +44,7 @@ class PicturesController < ApplicationController
 
     @picture = @gallery.pictures.find(params[:id])
     # @picture = Picture.find(params[:id])
+    @gallery_select_list = Gallery.all.collect { |g| [g.name, g.id] }
   end
 
   # POST /pictures

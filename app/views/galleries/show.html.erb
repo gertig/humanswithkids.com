@@ -36,7 +36,7 @@
       <div class="files">
         <%# Where the jQuery File Uploader puts files %>
       </div>
-      
+
       <div class="thumbnails">
 
         <% unless @pictures.empty? %>
@@ -44,7 +44,7 @@
               <div class="col-md-4 hwk-thumbnail-wrapper">
               <!-- <li class="thumbnail" id="picture_<%= pic.id %>"> -->
                 <div class="hwk-thumbnail" id="picture_<%= pic.id %>">
-                  <div class="hwk-thumbnail-crop">
+                  <div class="hwk-thumbnail-crop  <%= " #{pic.image_type}" %>">
                     <img class="hwk-thumbnail-img" src="<%= pic.image.preview.url %>" alt="">
                   </div>
 
@@ -65,9 +65,12 @@
                       <a class="btn btn-success btn-sm pull-left" href="<%= pic.image.url %>" rel="lightbox-pictures" title="<%= pic.description %>">
                         <i class="glyphicon glyphicon-eye-open"></i>
                       </a>
+
+                      <%= link_to edit_gallery_picture_path(@gallery, pic), class: "btn btn-info btn-sm"  do %>
+                        <i class="glyphicon glyphicon-pencil"></i>
+                      <% end %>
                     </div>
 
-                      <%#= link_to "Edit", edit_gallery_picture_path(@gallery, pic) %>
 
                   </div>
 

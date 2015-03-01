@@ -5,9 +5,27 @@
       <%= f.text_field :description, :class => 'text_field' %>
     </div>
   </div>
-  
+
+  <div class="control-group">
+
+    <%= f.fields_for :settings do |p| %>
+      <div class="controls">
+         <%= p.label :image_type, class: "control-label" %>
+         <%= p.select :image_type, options_for_select(Picture::IMAGE_TYPES, @picture.image_type),
+           { include_blank: false } %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="control-group">
+
+    <%= f.select :gallery_id, options_for_select(@gallery_select_list, @picture.gallery_id),
+      { include_blank: false } %>
+
+  </div>
+
     <%= image_tag @picture.image.large.url, :id => 'cropbox' %>
-  
+
   <% %w[x y w h].each do |attribute| %>
     <%= f.hidden_field "crop_#{attribute}" %>
   <% end %>
@@ -16,7 +34,7 @@
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 gallery_path(@gallery), :class => 'btn btn-primary' %>
-    <%= link_to 'Default', '', :class => 'btn btn-success' , :id => 'make_default'%>
+    <%= link_to 'Make Default', '', :class => 'btn btn-success' , :id => 'make_default'%>
 
   </div>
 <% end %>

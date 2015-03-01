@@ -8,6 +8,29 @@ class Picture < ActiveRecord::Base
 
   after_update :crop_image
 
+  store_accessor :settings # examples of attributes :notify_statuses, :notify_friends, etc.
+
+  IMAGE_TYPES = [:screenshot, :portrait, :landscape, :large_header, :unassigned]
+
+  def set_default_settings
+    opts = {}
+    opts["settings"] =  {
+                          image_type:  "unassigned"
+                        }
+
+    update_attributes(opts)
+    save
+  end
+
+  def image_type
+    if settings.nil?
+      set_default_settings
+      return "unassigned"
+    end
+
+    settings["image_type"]
+  end
+
   def to_jq_upload
     {
       "name" => read_attribute(:image),
@@ -21,7 +44,8 @@ class Picture < ActiveRecord::Base
   end
 
   def crop_image
-    raise "Not working because using S3"
+    # raise "Not working because using S3"
+
     # image.recreate_versions! if crop_x.present?
     # # current_version = self.image.current_path
     # current_version = self.image.url
