@@ -15,7 +15,7 @@ class GalleriesController < ApplicationController
   def show
     @gallery = Gallery.find(params[:id])
     @picture = @gallery.pictures.build
-    @pictures = Picture.where(gallery_id: @gallery.id).reverse
+    @pictures = Picture.where(gallery_id: @gallery.id).order('created_at DESC') #.reverse
 
     respond_to do |format|
       format.html # show.html.erb

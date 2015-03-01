@@ -1,1 +1,3 @@
-$('#picture_<%= @picture.id %>').fadeOut();
+$('#picture_<%= @picture.id %>').fadeOut(1000, function() {
+  $(this).parent(".hwk-thumbnail-wrapper").remove();
+});

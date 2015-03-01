@@ -4,14 +4,14 @@ $.fn.serializeObject = function() {
   $("form input, form select, form textarea").each( function(){
     values[this.name] = $(this).val();
   });
-  
+
   return values;
 }
 
 
 //DOM is Ready
 $(function(){
-  
+
   //PUSHDOWN MESSAGES
   if ($(".flashy").length) {
      $(".close_me").live("click", function(){
@@ -21,7 +21,7 @@ $(function(){
      $("div#messages").slideDown();
      $("div#messages").delay(5000).slideUp();
   }
-  
+
   // CONTACT US TOOLTIP
   $('#email-me').tooltip();
 
@@ -33,8 +33,8 @@ $(function(){
   });
 
   // RESIZE TEXTAREA of Post Title when Editing
-  $('textarea.post-input-title').autosize(); 
-  $('textarea.ag-post-editing-field').autosize(); 
+  $('textarea.post-input-title').autosize();
+  $('textarea.ag-post-editing-field').autosize();
 
 
   // Only use Countable.js if you are editing/creating content
@@ -43,7 +43,7 @@ $(function(){
     var countable_elem;
 
     console.log("LETS COUNT");
-    
+
     if ($('#post_content').length) {
       countable_elem = document.getElementById("post_content");
     } else if ($('#tweet_body').length) {
@@ -57,7 +57,7 @@ $(function(){
           characters: document.getElementById('result__characters'),
           all: document.getElementById('result__all')
         };
-        
+
     new Countable(countable_elem, countableUpdater);
   }
 
@@ -81,9 +81,9 @@ $(function(){
       // results.all.textContent = counter.all
     }
   };
-  
+
   console.log("I'm ready");
-  
+
   // BLUR via VAGUE
   // var vague = $("#blurred-logo-wrapper").Vague({
   //   intensity: 6 //blur intensity,

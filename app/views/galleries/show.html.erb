@@ -33,11 +33,15 @@
 
   <div class="row">
     <div class="col-md-12">
-      <div class="thumbnails files">
+      <div class="files">
+        <%# Where the jQuery File Uploader puts files %>
+      </div>
+      
+      <div class="thumbnails">
 
         <% unless @pictures.empty? %>
           <% @pictures.each do |pic| %>
-              <div class="col-md-4">
+              <div class="col-md-4 hwk-thumbnail-wrapper">
               <!-- <li class="thumbnail" id="picture_<%= pic.id %>"> -->
                 <div class="hwk-thumbnail" id="picture_<%= pic.id %>">
                   <div class="hwk-thumbnail-crop">
@@ -94,25 +98,24 @@
   //DOM is Ready
   $(function(){
     // Iterate over all images, detect which ones are portrait and add a .portrait class so that it looks good
-    $(".hwk-thumbnail-img").each(function(index, element) {
-      if (element.width < element.height) {
-        //It's a portrait Image
-        $(this).addClass("portrait");
-      }
-    });
+    // $(".hwk-thumbnail-img").each(function(index, element) {
+    //   if (element.width < element.height) {
+    //     //It's a portrait Image
+    //     $(this).addClass("portrait");
+    //   }
+    // });
 
     $(".hwk-caption").hide();
 
     // Detect Hover and hide and show the links
     // $( selector ).mouseenter( handlerIn ).mouseleave( handlerOut );
     $(".hwk-thumbnail-crop").mouseenter(function() {
-      console.log("Entering!!!");
+      // console.log("Entering!!!");
       $(this).siblings(".hwk-caption").show();
-      // $(this).hide();
     });
 
     $(".hwk-caption").mouseleave(function() {
-      console.log("Leaving!!!");
+      // console.log("Leaving!!!");
       $(this).hide();
     });
   });
