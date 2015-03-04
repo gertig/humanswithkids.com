@@ -32,8 +32,9 @@ article.post-container {
     @extend .img-responsive;
     width: 100%;
     margin-bottom: 14px;
+    border: 1px solid #ededed;
   }
-  
+
   // .post-title {
   //   padding-bottom: 23px;
   //   letter-spacing: -1px;
@@ -49,7 +50,7 @@ article.post-container {
   //   //   font-size: 40px;
   //   // }
   // }
-  
+
   p, li, blockquote {
     // font-family: 'Open Sans', serif;
     // font-size: 22px;
@@ -67,29 +68,29 @@ article.post-container {
     font-style: italic;
     line-height: 26px;
   }
-  
+
   ol, ul {
     // padding-left: 20px;
-    
+
     li {
         font-size: 20px;
         line-height: 26px;
       }
   }
-  
+
   span.post-date {
     display: block;
     margin: -5px 0 10px;
     // color: #ccc;
     color: $hwk-green;
   }
-  
+
   div.post-sharing-buttons {
     position: absolute;
     top: 12px;
     right: -120px;
   }
-  
+
   div.post-admin-box {
     position: absolute;
     top: 0px;
@@ -245,7 +246,7 @@ div.youtube-video {
     text-transform: uppercase;
     font-size: 11px;
     color: #b3b3b1;
-    letter-spacing: .1em;    
+    letter-spacing: .1em;
   }
 
   .author-card-image {
@@ -273,7 +274,7 @@ div.youtube-video {
         padding-left: 0;
         padding-right: 0.75em;
       }
-      
+
       ul.icons a {
         display: inline-block;
         width: 2em;
@@ -348,7 +349,7 @@ div.youtube-video {
     text-transform: uppercase;
     font-size: 11px;
     color: #b3b3b1;
-    letter-spacing: .1em;    
+    letter-spacing: .1em;
   }
 
   p {
@@ -395,6 +396,11 @@ div.you-should-join-because {
     // color: #00a6ff;
     color: $hwk-blue;
   }
+
+  article.post-container img.screenshot {
+    width: 60%;
+    margin: 0 auto 20px;
+  }
 }
 
 @media (max-width: 980px) {
@@ -402,14 +408,27 @@ div.you-should-join-because {
     padding-left: 20px;
     padding-right: 20px;
   }
+
+  article.post-container img.screenshot {
+    width: 60%;
+    margin: 0 auto 20px;
+  }
 }
 
 
 @media (max-width: 767px) {
-
+  article.post-container img.screenshot {
+    border: 2px solid #ededed;
+    width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
+
+  article.post-container img.screenshot {
+    border: 2px solid #ededed;
+    width: 100%;
+  }
 
 .hwk-logo {
   height: 30px;

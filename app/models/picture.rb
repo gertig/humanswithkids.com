@@ -10,7 +10,7 @@ class Picture < ActiveRecord::Base
 
   store_accessor :settings # examples of attributes :notify_statuses, :notify_friends, etc.
 
-  IMAGE_TYPES = [:screenshot, :portrait, :landscape, :large_header, :unassigned]
+  IMAGE_TYPES = [:screenshot, :portrait, :landscape, :large_header, :random, :unassigned]
 
   def set_default_settings
     opts = {}
