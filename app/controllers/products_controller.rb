@@ -1,15 +1,15 @@
 class ProductsController < ApplicationController
   before_filter :authenticate_user!, except: [:show, :index]
-  
+
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # GET /products
   def index
-    @products = Product.all
+    @products = Product.all.order(updated_at: :desc)
   end
 
   def admin
-    @products = Product.all
+    @products = Product.all.order(updated_at: :desc)
   end
 
   # GET /products/1
