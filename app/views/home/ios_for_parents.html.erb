@@ -1,8 +1,8 @@
-<% title "iOS for Parents - The guide to iPhone, iPad and iPod touch security and safety" %>
+<% title "Parent's Guide to iPhone and iPad - The ultimate guide to iPhone, iPad and iPod touch security and safety" %>
 
-<% keywords "iPhone, Parenting, Pornography, iPad, iPod touch, iOS, Apple, App Store, Safety, Security" %>
+<% keywords "iPhone, Parenting, iPad, iPod touch, iOS, Apple, App Store, Safety, Security" %>
 
-<% description "iOS for Parents is a book by Andrew Gertig and Andrew Weiler that teaches parents how to talk with their children and how to ensure their children are safe when using iPhones, iPads or iPod touches." %>
+<% description "The Parent's Guide to the iPhone & iPad is a book by Andrew Gertig and Andrew Weiler that teaches parents how to talk with their children and how to ensure they are safe when using iPhones, iPads or iPod touches." %>
 
 <%# CUSTOM STYLES, JAVASCRIPT, FONTS %>
 <% content_for :landing_page_head do %>
@@ -22,27 +22,33 @@
     <!-- <div id="page-container" class="col-md-8 col-md-offset-2"> -->
 
       <div class="content-header">
-        <h1 class="content-lead">PROTECT YOUR FAMILY AND YOUR DEVICES</h1>
-        <h3 class="content-sublead">The ultimate guide to securing your iPhone, iPad or iPod touch.</h3>
+        <h1 class="content-lead">The Parent's Guide to the iPhone & iPad</h1>
+        <h3 class="content-sublead">by Andrew Gertig and Andrew Weiler</h3>
+      </div>
+
+      <div class="purchase">
+        <div class="col-md-12">
+          <button id="pre-order-button" class="btn btn-large btn-success">Pre-order for <%= @preorder_ebook_only.convert_to_dollars %></button>
+        </div>
       </div>
 
       <div class="row">
 
           <div class="content-bookcover col-md-6 col-md-push-5">
-            <%= image_tag "iOS-for-Parents.png", class: "img-responsive", alt: "iOS for Parents" %>
+            <%= image_tag "Parents-Guide-to-iPhone-and-iPad.png", class: "img-responsive", alt: "Parent's Guide to iPhone and iPad" %>
           </div>
 
           <div class="content-intro col-md-4 col-md-offset-1 col-md-pull-6">
             <p>
-              Samantha describes herself as "tech savvy", has a 10 year old son, and was devastated when she discovered he had accidentally, at first, been viewing pornographic material on his iPod touch. Samantha is not alone, she is in fact very normal. This book is for her and for you.
+              Do you wish you knew more about you iPhone and iPad? Have you ever felt as though your child knows more about your device than you do? Have you ever wondered if it were possible to do something with your device that you thought would make your child safer? If you are still reading then this book is for you! We provide detailed step-by-step recipes on everything you can do and control on the iPhone and iPad.
             </p>
 
             <p>
-              We have heard numerous stories that are similar to Samantha's and know that many of them could have been prevented. This book covers topics and techniques for parents of 2 year olds all the way to parents dealing with a <em>techie teenager</em>. Our tutorials are detailed and simple to follow but our goal is for you to learn the concepts so that you can feel confident that you are in control.
+              This book covers topics and techniques for parents of 2 year olds all the way to parents dealing with a <em>techie teenager</em>. Our tutorials are detailed and simple to follow but our goal is for you to learn the concepts so that you can feel confident that you are in control.
             </p>
 
             <p>
-              We are the perfect duo to write this book. Andrew Gertig is a registered iOS developer and knows the inner workings of the operating system. Andrew Weiler is a children's minister and knows the inner workings of young minds. Our hope for you is that you will feel equipped, confident, and knowledgable about all the ways that you can indeed be in control of the technology that you use every day.
+              We are the perfect duo to write this book. We are both parents to young children. Andrew Gertig is a former iPhone and iPad app developer and knows the inner workings of the operating system. Andrew Weiler is a former children's minister and knows the inner workings of young minds. Our hope for you is that you will feel equipped, confident, and knowledgable about all the ways that you can indeed be in control of the technology that you use every day.
             </p>
           </div>
 
@@ -51,65 +57,80 @@
 
       <div class="purchase">
         <div class="col-md-12">
-          <script src="https://checkout.stripe.com/checkout.js"></script>
-
-          <button id="pre-order-button" class="btn btn-large btn-success">Pre-order for $19.99</button>
-
-          <%= form_tag charges_path, id: "charge-form" do %>
-            <%= hidden_field(:product, :id, :value => @preorder_ebook_only.id) %>
-
-          <% end %>
-
-          <script>
-            var handler = StripeCheckout.configure({
-              key: "<%= Rails.configuration.stripe[:publishable_key] %>",
-              image: 'https://humanswithkids-assets.s3.amazonaws.com/uploads/picture/image/6/square_HumansWithKids.png',
-              token: function(token) {
-                // Use the token to create the charge with a server-side script.
-                // You can access the token ID with `token.id`
-                console.log("Stripe Token", token);
-
-                // It is very strange that when you do a custom button that you can't get shipping address data back
-
-                var $id = $('<input type=hidden name=stripeToken />').val(token.id);
-                var $email = $('<input type=hidden name=stripeEmail />').val(token.email);
-                var $email = $('<input type=hidden name=stripeShippingName />').val(token.card.name);
-                var $line1 = $('<input type=hidden name=stripeShippingAddressLine1 />').val(token.card.address_line1);
-                var $zip = $('<input type=hidden name=stripeShippingAddressZip />').val(token.card.address_zip);
-                var $city = $('<input type=hidden name=stripeShippingAddressCity />').val(token.card.address_city);
-                var $state = $('<input type=hidden name=stripeShippingAddressState />').val(token.card.address_state);
-                var $country = $('<input type=hidden name=stripeShippingAddressCountry />').val(token.card.address_country);
-
-                $('form#charge-form').append($id);
-                $('form#charge-form').append($email);
-                $('form#charge-form').append($line1);
-                $('form#charge-form').append($zip);
-                $('form#charge-form').append($city);
-                $('form#charge-form').append($state);
-                $('form#charge-form').append($country);
-                $('form#charge-form').submit();
-              }
-            });
-
-            document.getElementById('pre-order-button').addEventListener('click', function(e) {
-              // Open Checkout with further options
-              handler.open({
-                name: "iOS for Parents eBook",
-                description: "by Andrew Gertig and Andrew Weiler",
-                // description: "<%= @preorder_ebook_only.description %>",
-                amount: "<%= @preorder_ebook_only.price_in_cents %>",
-                shippingAddress: true,
-                panelLabel: "Pre-order"
-              });
-              e.preventDefault();
-            });
-          </script>
+          <button id="pre-order-button" class="btn btn-large btn-success">Pre-order for <%= @preorder_ebook_only.convert_to_dollars %></button>
         </div>
       </div>
 
-
     </div> <!-- col-md-12 -->
+
+    <div class="row">
+      <div class="col-md-5 col-md-offset-1 col-sm-5">
+        <%= render partial: "author", locals: { user: @gertig} %>
+      </div>
+
+      <div class="col-md-5 col-sm-5">
+        <%= render partial: "author", locals: { user: @weiler} %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <%= render partial: "mailchimp_ebook" %>
+      </div>
+    </div>
+
   </div> <!-- row -->
-
-
 </div>
+
+
+<%= form_tag charges_path, id: "charge-form" do %>
+  <%= hidden_field(:product, :id, :value => @preorder_ebook_only.id) %>
+
+<% end %>
+
+<script src="https://checkout.stripe.com/checkout.js"></script>
+
+<script>
+  var handler = StripeCheckout.configure({
+    key: "<%= Rails.configuration.stripe[:publishable_key] %>",
+    image: 'https://humanswithkids-assets.s3.amazonaws.com/uploads/picture/image/6/square_HumansWithKids.png',
+    token: function(token) {
+      // Use the token to create the charge with a server-side script.
+      // You can access the token ID with `token.id`
+      console.log("Stripe Token", token);
+
+      // It is very strange that when you do a custom button that you can't get shipping address data back
+
+      var $id = $('<input type=hidden name=stripeToken />').val(token.id);
+      var $email = $('<input type=hidden name=stripeEmail />').val(token.email);
+      var $email = $('<input type=hidden name=stripeShippingName />').val(token.card.name);
+      var $line1 = $('<input type=hidden name=stripeShippingAddressLine1 />').val(token.card.address_line1);
+      var $zip = $('<input type=hidden name=stripeShippingAddressZip />').val(token.card.address_zip);
+      var $city = $('<input type=hidden name=stripeShippingAddressCity />').val(token.card.address_city);
+      var $state = $('<input type=hidden name=stripeShippingAddressState />').val(token.card.address_state);
+      var $country = $('<input type=hidden name=stripeShippingAddressCountry />').val(token.card.address_country);
+
+      $('form#charge-form').append($id);
+      $('form#charge-form').append($email);
+      $('form#charge-form').append($line1);
+      $('form#charge-form').append($zip);
+      $('form#charge-form').append($city);
+      $('form#charge-form').append($state);
+      $('form#charge-form').append($country);
+      $('form#charge-form').submit();
+    }
+  });
+
+  document.getElementById('pre-order-button').addEventListener('click', function(e) {
+    // Open Checkout with further options
+    handler.open({
+      name: "Parent's Guide to iPhone & iPad",
+      description: "by Andrew Gertig and Andrew Weiler",
+      // description: "<%= @preorder_ebook_only.description %>",
+      amount: "<%= @preorder_ebook_only.price_in_cents %>",
+      shippingAddress: true,
+      panelLabel: "Pre-order"
+    });
+    e.preventDefault();
+  });
+</script>

@@ -1,5 +1,7 @@
 class Product < ActiveRecord::Base
 
+  include ActionView::Helpers::NumberHelper
+
   def send_purchase_email(html, params = {})
     customer_email   = params[:stripeEmail]
     customer_name    = params[:stripeShippingName]
@@ -14,7 +16,7 @@ class Product < ActiveRecord::Base
     to_email = ENV["TO_EMAIL"]
     api_url = "https://api.mailgun.net/v2/gertig.mailgun.org"
     # api_url = "https://api.mailgun.net/v2/mydomain.com"
-     
+
     # Using the Faraday gem
     connection = Faraday.new(:url => api_url) do |faraday|
       faraday.request :url_encoded
@@ -22,16 +24,16 @@ class Product < ActiveRecord::Base
       # faraday.response :json, :content_type => /\bjson$/
       faraday.adapter Faraday.default_adapter
     end
-     
+
     connection.basic_auth("api", api_key)
-     
+
     data = {}
     data[:from] = "HWK Purchase <#{from_email}>"
     data[:to] = "#{to_email}"
     data[:subject] = "[HWK] Store Purchase - #{customer_name}"
     data[:text] = "#{name}, #{features} - #{description}"
     data[:html] = html
-     
+
     response = connection.post do |req|
       req.url "messages"
       req.params = data
@@ -42,6 +44,11 @@ class Product < ActiveRecord::Base
     # Rails.logger.debug("[debug] : #{response.body}" );
 
 
+  end
+
+  def convert_to_dollars
+    dollars = price_in_cents / 100.0
+    number_to_currency(dollars)
   end
 
   # def send_complex_message
