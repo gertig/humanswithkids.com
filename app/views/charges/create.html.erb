@@ -1,5 +1,5 @@
 <div id="thankyou-page" class="col-md-12">
   <h2>Thank you for your purchase!</h2>
 
-  <h5>You will see a charge for <strong><%= number_to_currency (@product.price_in_cents/100) %></strong> from HUMANSWITHKIDS.COM on your Credit Card.</h5>
+  <h5>You will see a charge for <strong><%= @product.convert_to_dollars %></strong> from HUMANSWITHKIDS.COM on your Credit Card.</h5>
 </div>
