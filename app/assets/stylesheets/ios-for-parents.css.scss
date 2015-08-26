@@ -85,6 +85,11 @@ h3.content-sublead {
   height: 60px;
   margin: 0 auto 50px;
   font-size: 1.2em;
+
+  span {
+    text-decoration: line-through;
+
+  }
 }
 
 // .hero-mission-wrapper {
@@ -118,7 +123,7 @@ h3.content-sublead {
     width: 400px;
     height: 60px;
     margin: 0 auto 50px;
-    font-size: 2.0em;
+    font-size: 1.7em;
   }
 }
 
