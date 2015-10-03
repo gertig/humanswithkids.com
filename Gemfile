@@ -40,7 +40,7 @@ gem "tophat", "~> 2.1.0"
 gem "friendly_id", "~> 5.0.2" # Cool URL slugs
 gem "redcarpet", "~> 2.2.2" # Markdown
 
-gem 'rmagick', "~> 2.13.2" # Image manipulation
+gem 'rmagick', "~> 2.13.4" # Image manipulation
 gem 'carrierwave', "~> 0.9.0" # "~> 0.8.0"
 
 # sitemap generator will store files on S3 via fog/carrierwave
