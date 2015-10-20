@@ -34,13 +34,13 @@ SitemapGenerator::Sitemap.create do
   #   Article.find_each do |article|
   #     add article_path(article), :lastmod => article.updated_at
   #   end
-  
+
   add archives_path, :priority => 0.7, :changefreq => 'weekly'
   add about_path, :priority => 0.7, :changefreq => 'monthly'
-  add hire_me_path, :priority => 0.7, :changefreq => 'monthly'
+  # add hire_me_path, :priority => 0.7, :changefreq => 'monthly'
   add feed_path, :priority => 0.7, :changefreq => 'weekly' # RSS/Atom Feed
   add "/preschool-farm-fun", :priority => 0.7, :changefreq => 'monthly'
-  
+
   # iterate over all the posts and generate links for the published ones
   Post.find_each do |post|
     if !post.published_at.nil?
@@ -49,6 +49,5 @@ SitemapGenerator::Sitemap.create do
       add path, :lastmod => post.updated_at
     end
   end
-  
-end
 
+end

@@ -7,22 +7,19 @@
 
 
 <div class="row">
-  <div class="col-md-12">
-    <%= link_to preschool_farm_fun_path, class: "has-featured-image" do %>
-      <%= image_tag "pff-banner.png", class: "featured-image" %>
-    <% end %>
+  <div class="col-md-7">
+    <%= image_tag "Parents Guide Cover - 3D.png", class: "img-responsive", alt: "Parent's Guide to iPhone and iPad" %>
+    <%#= render "coming_soon_badge2" %>
+  </div>
+  <div class="col-md-5">
+    <%= render "coming_soon_badge2" %>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-12">
-    <%= render "appstore_button" %>
-  </div>
 
 
-  <link href='http://fonts.googleapis.com/css?family=Cantora+One' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
-</div>
+<%# PRESCHOOL FARM FUN HOME PAGE %>
+<%#= render "pff" %>
 
 <%# SOCIAL %>
 <div class="row">
@@ -33,9 +30,7 @@
 
 <%# FEATURED PAGES %>
 <div class="row">
-
   <% @posts.each do |post| %>
-
 
     <div class="col-md-6">
 
@@ -63,15 +58,13 @@
     </div>
 
   <% end %>
-
-
 </div>
 
 <div class="row">
   <div class="col-md-12">
     <div id="post-navigation" class="clearfix" >
       <%#= link_to "← More Posts", archives_path, class: "previous-post" %>
-      <%= link_to "Read More!", archives_path, class: "read-our-blog", role: "button" %>
+      <%= link_to "More Great Articles", archives_path, class: "read-our-blog", role: "button" %>
     </div>
   </div>
 </div>

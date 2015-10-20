@@ -21,16 +21,29 @@
     <div class="col-md-12">
     <!-- <div id="page-container" class="col-md-8 col-md-offset-2"> -->
 
+      <div class="navigation-header">
+        <%= link_to "← Humans With Kids", root_url %>
+
+      </div>
+
       <div class="content-header">
         <h1 class="content-lead">The Parent's Guide to the iPhone & iPad</h1>
         <h3 class="content-sublead">by Andrew Gertig and Andrew Weiler</h3>
       </div>
 
       <div class="purchase">
+        <div class="col-md-12 cold-sm-12">
+          <button id="pre-order-button" class="btn btn-large btn-success">Available on November 1st</button>
+        </div>
+      </div>
+
+      <!--
+      <div class="purchase">
         <div class="col-md-12">
           <button id="pre-order-button" class="btn btn-large btn-success">Pre-order eBook for <span>$9.99</span> <%= @preorder_ebook_only.convert_to_dollars %></button>
         </div>
       </div>
+      -->
 
       <div class="row">
 
@@ -55,11 +68,20 @@
 
       </div> <!-- row -->
 
+
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+          <%= render partial: "mailchimp_ebook" %>
+        </div>
+      </div>
+
+      <!--
       <div class="purchase">
         <div class="col-md-12">
           <button id="pre-order-button" class="btn btn-large btn-success">Pre-order eBook for <span>$9.99</span> <%= @preorder_ebook_only.convert_to_dollars %></button>
         </div>
       </div>
+    -->
 
     </div> <!-- col-md-12 -->
 

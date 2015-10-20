@@ -1,0 +1,205 @@
+
+$badge-color: #6ad374; //#552F87;
+
+.book-badge-container {
+  display: block;
+  width: 300px;
+  margin: 10px auto 0px;
+  position: relative;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  .book-badge {
+    fill: $badge-color;
+  }
+
+  .pricing-info {
+    position: absolute;
+    top: 130px;
+    left: 40px;
+    color: #FFF;
+    font-size: 2.4em;
+  }
+
+}
+
+@media (min-width: 767px) {
+  .book-badge-container {
+    margin-top: 200px;
+  }
+}
+
+
+a.coming-soon-badge {
+  text-decoration:none;
+
+  .firstLine {
+      font-size: 24px;
+      font-weight: 300;
+  }.secondLine {
+      font-size: 36px;
+      line-height: 36px;
+      font-weight: 600;
+  } .thirdLine {
+      font-size: 26px;
+      line-height: 32px;
+      font-weight: 300;
+  }.fourthLine {
+      font-size: 12px;
+      font-weight: 300;
+      position: relative;
+      top: -10px;
+  }
+
+  p {
+    color: #FFF;
+  }
+
+  .badges {
+      position:relative;
+      margin:140px auto;
+      width:200px;
+      height:200px;
+
+      background:$badge-color;
+      background:#336699;
+
+      border-radius:100%;
+      color: #FFF;
+      line-height: 25px;
+      text-align: center;
+      text-transform: uppercase;
+      font-family: "Open Sans",sans-serif;
+
+      -webkit-animation: 3s ease-in-out 0s normal none infinite running swing;
+      -moz-animation: 3s ease-in-out 0s normal none infinite running swing;
+      -o-animation: 3s ease-in-out 0s normal none infinite running swing;
+      animation: 3s ease-in-out 0s normal none infinite running swing;
+
+      -webkit-transform-origin: 100px -71px;
+      -moz-transform-origin: 100px -71px;
+      -o-transform-origin: 100px -71px;
+      transform-origin: 100px -71px;
+  }
+  .badges:before{
+      content:'';
+      position:absolute;
+      top:90px;
+      left:90px;
+      width:20px;
+      height:20px;
+      border-radius:100%;
+
+      -webkit-box-shadow: 0px -100px $badge-color,
+                          20px -98px $badge-color,
+                          39px -94px $badge-color,
+                          56px -85px $badge-color,
+                          71px -72px $badge-color,
+                          83px -57px $badge-color,
+                          93px -40px $badge-color,
+                          98px -20px $badge-color,
+                          100px 0px $badge-color,
+
+                          -20px -98px $badge-color,
+                          -39px -94px $badge-color,
+                          -71px -72px $badge-color,
+                          -56px -85px $badge-color,
+                          -83px -57px $badge-color,
+                          -93px -40px $badge-color,
+                          -98px -20px $badge-color,
+                          -100px 0px $badge-color,
+
+                          0px 100px $badge-color,
+                          -20px 98px $badge-color,
+                          -39px 94px $badge-color,
+                          -56px 85px $badge-color,
+                          -71px 72px $badge-color,
+                          -83px 57px $badge-color,
+                          -93px -40px $badge-color,
+                          -98px 20px $badge-color,
+                          -93px 40px $badge-color,
+
+                          20px 98px $badge-color,
+                          39px 94px $badge-color,
+                          56px 85px $badge-color,
+                          71px 72px $badge-color,
+                          83px 57px $badge-color,
+                          93px 40px $badge-color,
+                          98px 20px $badge-color;
+
+
+      -moz-box-shadow: 0px -100px $badge-color,20px -98px $badge-color,39px -94px $badge-color,56px -85px $badge-color,71px -72px $badge-color,
+                  83px -57px $badge-color,93px -40px $badge-color,98px -20px $badge-color,100px 0px $badge-color,
+
+                  -20px -98px $badge-color,-39px -94px $badge-color,-71px -72px $badge-color,
+                  -56px -85px $badge-color,-83px -57px $badge-color,-93px -40px $badge-color,-98px -20px $badge-color,-100px 0px $badge-color,
+
+                  0px 100px $badge-color,-20px 98px $badge-color,-39px 94px $badge-color,-56px 85px $badge-color,
+                  -71px 72px $badge-color,-83px 57px $badge-color,-93px -40px $badge-color,-98px 20px $badge-color,-93px 40px $badge-color,
+
+                  20px 98px $badge-color,39px 94px $badge-color,56px 85px $badge-color,
+                  71px 72px $badge-color,83px 57px $badge-color,93px 40px $badge-color,98px 20px $badge-color;
+
+
+      -o-box-shadow: 0px -100px $badge-color,20px -98px $badge-color,39px -94px $badge-color,56px -85px $badge-color,71px -72px $badge-color,
+                  83px -57px $badge-color,93px -40px $badge-color,98px -20px $badge-color,100px 0px $badge-color,
+
+                  -20px -98px $badge-color,-39px -94px $badge-color,-71px -72px $badge-color,
+                  -56px -85px $badge-color,-83px -57px $badge-color,-93px -40px $badge-color,-98px -20px $badge-color,-100px 0px $badge-color,
+
+                  0px 100px $badge-color,-20px 98px $badge-color,-39px 94px $badge-color,-56px 85px $badge-color,
+                  -71px 72px $badge-color,-83px 57px $badge-color,-93px -40px $badge-color,-98px 20px $badge-color,-93px 40px $badge-color,
+
+                  20px 98px $badge-color,39px 94px $badge-color,56px 85px $badge-color,
+                  71px 72px $badge-color,83px 57px $badge-color,93px 40px $badge-color,98px 20px $badge-color;
+
+
+      box-shadow: 0px -100px $badge-color,20px -98px $badge-color,39px -94px $badge-color,56px -85px $badge-color,71px -72px $badge-color,
+                  83px -57px $badge-color,93px -40px $badge-color,98px -20px $badge-color,100px 0px $badge-color,
+
+                  -20px -98px $badge-color,-39px -94px $badge-color,-71px -72px $badge-color,
+                  -56px -85px $badge-color,-83px -57px $badge-color,-93px -40px $badge-color,-98px -20px $badge-color,-100px 0px $badge-color,
+
+                  0px 100px $badge-color,-20px 98px $badge-color,-39px 94px $badge-color,-56px 85px $badge-color,
+                  -71px 72px $badge-color,-83px 57px $badge-color,-93px -40px $badge-color,-98px 20px $badge-color,-93px 40px $badge-color,
+
+                  20px 98px $badge-color,39px 94px $badge-color,56px 85px $badge-color,
+                  71px 72px $badge-color,83px 57px $badge-color,93px 40px $badge-color,98px 20px $badge-color;
+  }
+
+  // BLACK LINE
+  // .badges:after{
+  //     content:'';
+  //     position:absolute;
+  //     top:-70px;
+  //     left:99px;
+  //     width:2px;
+  //     height:81px;
+  //     border-radius:0%;
+  //     background:#000;
+  // }
+
+}
+
+// @-webkit-keyframes swing{
+//     0%{-webkit-transform:rotate(5deg);}
+//     50%{-webkit-transform:rotate(-5deg);}
+//     100%{-webkit-transform:rotate(5deg);}
+// }
+// @-moz-keyframes swing{
+//     0%{-moz-transform:rotate(5deg);}
+//     50%{-moz-transform:rotate(-5deg);}
+//     100%{-moz-transform:rotate(5deg);}
+// }
+// @-o-keyframes swing{
+//     0%{-o-transform:rotate(5deg);}
+//     50%{-o-transform:rotate(-5deg);}
+//     100%{-o-transform:rotate(5deg);}
+// }
+// @keyframes swing{
+//     0%{transform:rotate(5deg);}
+//     50%{transform:rotate(-5deg);}
+//     100%{transform:rotate(5deg);}
+// }
