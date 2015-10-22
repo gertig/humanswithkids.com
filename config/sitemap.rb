@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "http://humanswithkids.com"
+SitemapGenerator::Sitemap.default_host = "http://www.humanswithkids.com"
 # SitemapGenerator::Sitemap.sitemaps_host = "http://s3.amazonaws.com/humanswithkids-assets/"
 SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
 SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new
@@ -35,11 +35,13 @@ SitemapGenerator::Sitemap.create do
   #     add article_path(article), :lastmod => article.updated_at
   #   end
 
-  add archives_path, :priority => 0.7, :changefreq => 'weekly'
-  add about_path, :priority => 0.7, :changefreq => 'monthly'
+  add archives_path, :priority => 0.9, :changefreq => 'daily'
+  add about_path, :priority => 0.9, :changefreq => 'monthly'
+  add products_path, :priority => 0.9, :changefreq => 'monthly'
   # add hire_me_path, :priority => 0.7, :changefreq => 'monthly'
-  add feed_path, :priority => 0.7, :changefreq => 'weekly' # RSS/Atom Feed
-  add "/preschool-farm-fun", :priority => 0.7, :changefreq => 'monthly'
+  add feed_path, :priority => 0.7, :changefreq => 'daily' # RSS/Atom Feed
+  add "/preschool-farm-fun", :priority => 0.7, :changefreq => 'weekly'
+  add "/ios-for-parents-guide-to-iphone-ipad-ipod-security-and-safety", :priority => 1.0, :changefreq => 'daily'
 
   # iterate over all the posts and generate links for the published ones
   Post.find_each do |post|

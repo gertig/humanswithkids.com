@@ -78,6 +78,7 @@ module Hwk
       r301 '/pff',   '/preschool-farm-fun'
       r302 '/pff-app',  'https://itunes.apple.com/us/app/preschool-farm-fun/id875654180?mt=8'
       r301 '/ios-for-parents', '/ios-for-parents-guide-to-iphone-ipad-ipod-security-and-safety'
+      r301 '/guide', '/ios-for-parents-guide-to-iphone-ipad-ipod-security-and-safety'
 
       # redirects the sitemap URL to point to amazon S3
       r302 %r{^/sitemap.xml}, "http://humanswithkids-assets.s3-website-us-east-1.amazonaws.com/sitemaps/sitemap1.xml.gz"
