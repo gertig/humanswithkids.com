@@ -80,6 +80,7 @@ h3.content-sublead {
   // height: 800px;
   // padding: 40px 40px 10px 10px;
   padding: 20px 20px 20px 20px;
+  // height: 400px;
 
 }
 
@@ -89,6 +90,20 @@ h3.content-sublead {
   height: 60px;
   margin: 0 auto 50px;
   font-size: 1.2em;
+
+  span {
+    text-decoration: line-through;
+
+  }
+}
+
+.amazon-button {
+  display: block;
+  width: 300px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0 auto 50px;
+  font-size: 1.6em;
 
   span {
     text-decoration: line-through;
