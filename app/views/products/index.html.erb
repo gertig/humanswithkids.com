@@ -12,6 +12,7 @@
   </tbody>
 </table> -->
 
+<%#
 <div class="row hidden">
   <div class="col-md-4 col-md-offset-2-APG">
     <div class="product-category category-image" style="background-image: url('https://humanswithkids-assets.s3.amazonaws.com/uploads/picture/image/5/preview_ST-4_-_Blue_-_Large_1024.jpg');">
@@ -22,6 +23,7 @@
     </div>
   </div>
 </div>
+%>
 
 <div class="row products-listing">
 
@@ -36,7 +38,7 @@
               <div class="product-feature-image" style="background-image: url('<%= product.image_url_string %>');"></div>
               <%#= image_tag product.image_url_string, class: "img-responsive" %>
               <div class="caption">
-                <h4><%= product.name %> - <%= product.features %> <strong class="pull-right"><%= number_to_currency (product.price_in_cents/100) %></strong></h4>
+                <h4><%= product.name %> - <%= product.features %> <strong class="pull-right"><%= number_to_currency (product.price_in_cents/100.0) %></strong></h4>
               </div>
             <% end %>
           </div>
