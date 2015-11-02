@@ -51,6 +51,14 @@ class Product < ActiveRecord::Base
     number_to_currency(dollars)
   end
 
+  def link_url
+    url = affiliate_url.nil? ? self : affiliate_url
+    puts "LINK URL"
+    puts url
+    puts affiliate_url
+    url
+  end
+
   # def send_complex_message
   #   data = Multimap.new
   #   data[:from] = "Excited User <me@samples.mailgun.org>"
