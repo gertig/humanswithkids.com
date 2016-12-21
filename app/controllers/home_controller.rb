@@ -20,7 +20,7 @@ class HomeController < ApplicationController
   end
 
   def ios_for_parents
-    @preorder_ebook_only = Rails.env.production? ? Product.find(8) : Product.find(3) # Change this ID to whichever Book
+    @preorder_ebook_only = Rails.env.production? ? Product.find(8) : Product.find(1) # Change this ID to whichever Product is the Book
     @gertig = User.find(1)
     @weiler = User.find(2)
   end

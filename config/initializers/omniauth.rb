@@ -5,12 +5,12 @@
 #      # def request_phase
 #      #   redirect '/'
 #      # end
-     
+
 #      #Overriding this prevents the form from being displayed at all
 #      def registration_form
 #        redirect '/'
 #      end
-     
+
 #      #Overriding this makes submitting the form just redirect to the root
 #      def registration_phase
 #        options[:registration_path] = nil
@@ -19,10 +19,10 @@
 #    end
 
 # end
-  
-  
+
+
 Rails.application.config.middleware.use OmniAuth::Builder do
- provider :twitter, ENV["TWITTER_CONSUMER_KEY"], ENV["TWITTER_CONSUMER_SECRET"], 
+ provider :twitter, ENV["TWITTER_CONSUMER_KEY"], ENV["TWITTER_CONSUMER_SECRET"],
     {
       # :secure_image_url => 'true',
       # :image_size => 'original',
@@ -38,14 +38,12 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 
  # provider :github, GITHUB_CLIENT_ID, GITHUB_SECRET, scope: "repo" #not sure why something like "user,repo" is failing, url stuff
  # provider :identity, :fields => [:name], :on_register => SessionsController.action(:not_today)
- 
+
  # provider :identity,
  #   :fields => [:nickname],
  #   :locate_conditions => lambda { |req| { model.auth_key => req['nickname']} },
  #   :on_login => SessionController.action(:login),
  #   :on_register => SessionController.action(:register),
  #   :on_failed_registration => SessionController.action(:failure)
- 
-end
 
-  
+end
